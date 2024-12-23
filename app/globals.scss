@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background: var(--background);
+  font-family: "Work Sans", serif;
+}
+
+:root {
+  --background: #f2efef;
+  --foreground: #191919;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #191919;
+    --foreground: #f2efef;
+    --brand: #c00c26;
+  }
+}
+
+/* Change the color of Swiper arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--brand) !important;
+}
+
+/* Optional: Change hover color */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--foreground) !important;
+}
