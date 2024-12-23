@@ -1,101 +1,46 @@
-import Image from "next/image";
+import HeroSection from "../components/HeroSection";
+import MyGallery from "../components/Gallery/Gallery";
+import Socials from "../components/Socials";
+import VideoCard from "../components/VideoCard";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+const videos = [
+  {id: 1, title: "Wedding Highlights", description: "Beautiful moments captured.", thumbnail: "/wedding.jpg"},
+  {id: 2, title: "Vacation Recap", description: "Cherished memories from our travels.", thumbnail: "/vacation.jpg"},
+  {id: 3, title: "Vacation Recap", description: "Cherished memories from our travels.", thumbnail: "/vacation.jpg"},
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className=" w-full h-screen">
+      <HeroSection />
+      <section className="">
+        <div className="container text-center mx-auto my-16 text-gray-50 w-144">
+          <h5 className="text-lg font-extralight">sports videography | event coverage | cinematic storytelling</h5>
+          <h2 className="text-5xl my-4">about heart &amp; hustle films</h2>
+          <h3 className="text-lg font-extralight">
+            at heart &amp; hustle films, we are dedicated to showcasing the raw emotion and exhilarating moments in sports. Our team is passionate about capturing the essence of each game and
+            delivering compelling visual narratives. We specialize in sports videography, event coverage, and cinematic storytelling to create impactful and memorable videos.
+          </h3>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <section className="container mx-auto my-16">
+          <h2 className="text-3xl te font-assistant text-center mb-8 text-gray-50">heart</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {videos.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <button className="px-6 py-3 my-8 text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900 ju">
+              view more <ArrowForwardIcon fontSize="small" />
+            </button>
+          </div>
+        </section>
+        <section className="my-16">
+          <h2 className="text-3xl te font-assistant text-center mb-8 text-gray-50">hustle</h2>
+          <MyGallery />
+        </section>
+      </section>
+      <Socials />
     </div>
   );
 }
