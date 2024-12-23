@@ -1,6 +1,6 @@
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v15-appRouter";
 import type {Metadata} from "next";
-import {Geist, Geist_Mono} from "next/font/google";
+import {Geist, Geist_Mono, Assistant, Work_Sans} from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./globals.scss";
@@ -12,6 +12,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const assistant = Assistant({
+  variable: "--assistant",
+  subsets: ["latin"],
+});
+
+const work = Work_Sans({
+  variable: "--work-sans",
   subsets: ["latin"],
 });
 
@@ -27,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${assistant.variable}  ${work.variable}  antialiased`}>
         <div className="flex flex-col w-full h-screen prose-headings:font-assistant">
           <Header />
           <AppRouterCacheProvider>
