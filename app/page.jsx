@@ -3,17 +3,15 @@ import MyGallery from "../components/Gallery/Gallery";
 import Socials from "../components/Socials";
 import VideoCard from "../components/VideoCard";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-const videos = [];
 
-// {id: 1, title: "Wedding Highlights", description: "Beautiful moments captured.", thumbnail: "/wedding.jpg"}
-// {id: 2, title: "Vacation Recap", description: "Cherished memories from our travels.", thumbnail: "/vacation.jpg"},
-// {id: 3, title: "Vacation Recap", description: "Cherished memories from our travels.", thumbnail: "/vacation.jpg"},
+const videos = []; // Video data placeholder
 
 export default function Home() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full min-h-screen">
+      {/* Hero Section */}
       <HeroSection
-        containerClass="h-3/4"
+        containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
         backgroundType="image"
         backgroundSrc="/hero.jpg"
         overlayContent={{
@@ -26,46 +24,59 @@ export default function Home() {
         buttonLink="/contact"
       />
 
-      <section className="">
-        <div className="text-center w-full text-gray-50 bg-zinc-800">
-          <div className="container text-center mx-auto p-10 text-gray-50 w-1/2">
-            <h5 className="text-lg font-extralight">sports videography | event coverage | cinematic storytelling</h5>
-            <h2 className="text-5xl my-4">about heart &amp; hustle films</h2>
-            <h3 className="text-xl font-extralight">
-              based in dallas-fort worth, we are passionate about capturing the raw emotion and exhilarating moments that make every experience unforgettable. whether it’s the intensity of a game, the
-              energy of a live event, or the heart behind a personal story, our team is dedicated to creating compelling visual narratives. we specialize in sports videography, event coverage, and
-              cinematic storytelling, delivering impactful and memorable videos that bring your vision to life.
-            </h3>
-          </div>
+      {/* About Section */}
+      <section className="bg-zinc-800 text-gray-50 py-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h5 className="text-base sm:text-lg font-extralight">
+            sports videography | event coverage | cinematic storytelling
+          </h5>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl my-4 font-bold">
+            about heart &amp; hustle films
+          </h2>
+          <h3 className="text-sm sm:text-base lg:text-lg font-extralight leading-relaxed">
+            based in dallas-fort worth, we are passionate about capturing the raw emotion and exhilarating moments that make every experience unforgettable. whether it’s the intensity of a game, the
+            energy of a live event, or the heart behind a personal story, our team is dedicated to creating compelling visual narratives. we specialize in sports videography, event coverage, and
+            cinematic storytelling, delivering impactful and memorable videos that bring your vision to life.
+          </h3>
         </div>
-        <section className="container mx-auto my-16">
-          <h2 className="text-3xl font-assistant text-center mb-8 text-gray-50">heart</h2>
-
-          {Array.isArray(videos) && videos.length > 0 ? (
-            videos.map((video) => (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <VideoCard key={video.id} video={video} />
-              </div>
-            ))
-          ) : (
-            <p className="text-center text-gray-50">coming soon...</p>
-          )}
-
-          {videos.length > 0 ? (
-            <div className="flex justify-center">
-              <button className="px-6 py-3 my-8 text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900 ju">
-                view more <ArrowForwardIcon fontSize="small" />
-              </button>
-            </div>
-          ) : (
-            ""
-          )}
-        </section>
-        <section className="my-16">
-          <h2 className="text-3xl te font-assistant text-center mb-8 text-gray-50">hustle</h2>
-          <MyGallery />
-        </section>
       </section>
+
+      {/* Heart Section */}
+      <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">
+          heart
+        </h2>
+
+        {Array.isArray(videos) && videos.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {videos.map((video) => (
+              <VideoCard key={video.id} video={video} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-50">coming soon...</p>
+        )}
+
+        {videos.length > 0 ? (
+          <div className="flex justify-center">
+            <button className="px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
+              view more <ArrowForwardIcon fontSize="small" className="ml-2" />
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
+      </section>
+
+      {/* Hustle Section */}
+      <section className="my-16 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">
+          hustle
+        </h2>
+        <MyGallery />
+      </section>
+
+      {/* Socials */}
       <Socials />
     </div>
   );

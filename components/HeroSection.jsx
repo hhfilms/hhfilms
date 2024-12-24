@@ -16,12 +16,12 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
         )}
 
         {/* Overlay Content */}
-        <div className="absolute top-1/2 left-48 transform -translate-y-1/2 text-gray-50 text-left border-l-2 p-8">
-          <p className="mb-2 text-lg">{overlayContent.subheading}</p>
-          <h1 className="mb-4 text-5xl">{overlayContent.heading}</h1>
-          <p className="mb-6 max-w-md text-3xl font-extralight">{overlayContent.description}</p>
+        <div className="sm:left-12 lg:left-48 absolute transform top-1/2 -translate-y-1/2 text-gray-50 text-left border-l-2 p-12 sm:max-md:mt-[calc(199px+1rem)]">
+          <p className="mb-2 text-sm sm:text-base lg:text-lg">{overlayContent.subheading}</p>
+          <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold">{overlayContent.heading}</h1>
+          <p className="mb-6 text-sm sm:text-base lg:text-3xl font-extralight max-w-xs sm:max-w-md mx-auto sm:mx-0">{overlayContent.description}</p>
           {showButton && (
-            <a href={buttonLink} className="px-6 py-3 text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900">
+            <a href={buttonLink} className="px-6 py-3 text-sm sm:text-base lg:text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900">
               {overlayContent.buttonText}
             </a>
           )}
