@@ -41,7 +41,7 @@ export default function RootLayout({
         <div className="flex flex-col w-full h-screen prose-headings:font-assistant">
           <Header />
           <AppRouterCacheProvider>
-            <main className="flex-grow overflow-y-auto">{children}</main>
+            <main className="flex-grow overflow-y-auto pt-36">{children}</main>
           </AppRouterCacheProvider>
           <Footer />
         </div>

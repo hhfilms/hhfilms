@@ -10,7 +10,7 @@ const socialMedia = [
 
 const Socials = () => {
   return (
-    <div className="fixed bottom-8 right-8 flex flex-col space-y-3 bg-white/25 p-2 rounded-lg shadow-lg z-50">
+    <div className="flex bg-gray-50/25 p-2 shadow-lg z-50 sticky flex-row justify-around md:fixed md:bottom-8 md:right-8 md:flex-col md:space-y-3  md:rounded-lg">
       {socialMedia.map(({icon, link, color}, index) => (
         <a key={index} href={link} target="_blank" rel="noopener noreferrer" className={color}>
           {icon}
