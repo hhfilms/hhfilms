@@ -13,7 +13,9 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full h-36 bg-gray-800/50 text-white z-50 flex items-center p-4">
       <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={120} height={30} className="" priority />
+        <a href="/">
+          <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={120} height={30} className="" priority />
+        </a>
 
         {/* Hamburger Icon (visible on mobile) */}
         <button onClick={toggleMenu} className="sm:hidden text-white focus:outline-none focus:ring-2 focus:ring-brand" aria-label="Toggle Navigation Menu">
