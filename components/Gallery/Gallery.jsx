@@ -3,11 +3,11 @@ import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Image from "next/image";
 
-import jett from "./images/Jett.png"; // Import the image
-import zi from "./images/Zi.png"; // Import the image
-import jb from "./images/JB.png"; // Import the image
-import pm from "./images/Playmakers.png"; // Import the image
-import eb from "./images/EB.png"; // Import the image
+import jett from "./images/Jett.png";
+import zi from "./images/Zi.png";
+import jb from "./images/JB.png";
+import pm from "./images/Playmakers.png";
+import eb from "./images/EB.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -29,10 +29,10 @@ const Gallery = () => {
       // install Swiper modules
       className="pb-22"
       modules={[Navigation, A11y, Mousewheel, FreeMode]}
-      mousewheel={true}
+      mousewheel={false}
       spaceBetween={50}
       slidesPerView={5}
-      freeMode={true}
+      freeMode={false}
       navigation
       pagination={{clickable: true}}
       onSwiper={(swiper) => console.log(swiper)}
