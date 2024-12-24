@@ -1,6 +1,5 @@
 import HeroSection from "../components/HeroSection";
 import MyGallery from "../components/Gallery/Gallery";
-import Socials from "../components/Socials";
 import VideoCard from "../components/VideoCard";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -75,9 +74,6 @@ export default function Home() {
         </h2>
         <MyGallery />
       </section>
-
-      {/* Socials */}
-      <Socials />
     </div>
   );
 }
