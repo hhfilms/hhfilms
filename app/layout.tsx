@@ -38,13 +38,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${assistant.variable}  ${work.variable}  antialiased`}>
-        <div className="flex flex-col w-screen h-screen prose-headings:font-assistant">
+        <div className="flex flex-col w-full h-screen prose-headings:font-assistant">
           <Header />
           <AppRouterCacheProvider>
-            <main className=" overflow-y-auto">{children}</main>
+            <main className="flex-grow overflow-y-auto">{children}</main>
           </AppRouterCacheProvider>
+          <Footer />
         </div>
-        <Footer />
       </body>
     </html>
   );
