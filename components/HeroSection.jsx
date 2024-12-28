@@ -16,7 +16,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
         )}
 
         {/* Overlay Content */}
-        <div className="sm:left-12 lg:left-48 absolute transform top-1/2 -translate-y-1/2 text-gray-50 text-left border-l-2 p-12 sm:max-md:mt-[calc(199px+1rem)]">
+        <div className="sm:left-12 lg:left-48 absolute transform top-1/2 -translate-y-1/2 text-gray-50 text-left sm:border-l-2 p-12 sm:max-sm:mt-[calc(199px+1rem)]">
           <p className="mb-2 text-sm sm:text-base lg:text-lg">{overlayContent.subheading}</p>
           <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold">{overlayContent.heading}</h1>
           <p className="mb-6 text-sm sm:text-base lg:text-3xl font-extralight max-w-xs sm:max-w-md mx-auto sm:mx-0">{overlayContent.description}</p>

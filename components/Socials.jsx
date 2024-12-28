@@ -3,9 +3,9 @@ import YoutubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const socialMedia = [
-  {icon: <InstagramIcon fontSize="medium" />, link: "https://www.instagram.com/_hh_films/", color: "text-gray-50 hover:text-gray-800"},
-  {icon: <YoutubeIcon fontSize="medium" />, link: "https://www.youtube.com/@HeartHustleFilms", color: "text-gray-50 hover:text-gray-800"},
-  {icon: <FacebookIcon fontSize="medium" />, link: "https://www.facebook.com/heartandhustlefilms", color: "text-gray-50 hover:text-gray-800"},
+  {icon: <InstagramIcon fontSize="medium" />, link: "https://www.instagram.com/_hh_films/", color: "text-gray-950 md:text-gray-50 hover:text-gray-800"},
+  {icon: <YoutubeIcon fontSize="medium" />, link: "https://www.youtube.com/@HeartHustleFilms", color: "text-gray-950 md:text-gray-50 hover:text-gray-800"},
+  {icon: <FacebookIcon fontSize="medium" />, link: "https://www.facebook.com/heartandhustlefilms", color: "text-gray-950 md:text-gray-50 hover:text-gray-800"},
 ];
 
 const Socials = () => {

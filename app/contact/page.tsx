@@ -12,7 +12,7 @@ const About = () => {
         backgroundSrc="/dallas-skyline.jpg"
         overlayContent={{
           subheading: " ",
-          heading: "what type of filming are you looking for?",
+          heading: "are you ready to tell your story with high-level film production?",
           description:
             "long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps",
           buttonText: "Contact",
