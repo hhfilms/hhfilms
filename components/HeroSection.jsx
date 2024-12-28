@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function HeroSection({backgroundType, backgroundSrc, overlayContent, showButton = true, mediaClassName = "", containerClass = "", buttonLink}) {
   return (
     <div className={`relative w-full overflow-hidden bg-gray-100 ${containerClass}`}>
@@ -16,10 +14,10 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
         )}
 
         {/* Overlay Content */}
-        <div className="sm:left-12 lg:left-48 absolute transform top-1/2 -translate-y-1/2 text-gray-50 text-left sm:border-l-2 p-12 sm:max-sm:mt-[calc(199px+1rem)]">
-          <p className="mb-2 text-sm sm:text-base lg:text-lg">{overlayContent.subheading}</p>
-          <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold">{overlayContent.heading}</h1>
-          <p className="mb-6 text-sm sm:text-base lg:text-3xl font-extralight max-w-xs sm:max-w-md mx-auto sm:mx-0">{overlayContent.description}</p>
+        <div className="p-12 text-left absolute transform top-1/2 -translate-y-1/2 text-gray-50 sm:left-12 sm:border-l-2 lg:left-48">
+          <p className="mb-2 text-md sm:text-base lg:text-lg">{overlayContent.subheading}</p>
+          <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl sm:max-w-5xl font-bold">{overlayContent.heading}</h1>
+          <p className="mb-6 text-lg lg:text-3xl font-extralight sm:max-w-5xl mx-auto sm:mx-0">{overlayContent.description}</p>
           {showButton && (
             <a href={buttonLink} className="px-6 py-3 text-sm sm:text-base lg:text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900">
               {overlayContent.buttonText}

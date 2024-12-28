@@ -2,13 +2,14 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import {AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
-import {Menu, Home, Mail} from "@mui/icons-material";
+import {Menu, Home, Mail, MonochromePhotos} from "@mui/icons-material";
 import Image from "next/image";
 
 const drawerWidth = 240;
 const navItems = [
-  {name: "Home", url: "/", icon: <Home />},
-  {name: "Contact", url: "/contact", icon: <Mail />},
+  {name: "home", url: "/", icon: <Home />},
+  {name: "contact", url: "/contact", icon: <Mail />},
+  {name: "services", url: "/services", icon: <MonochromePhotos />},
 ];
 
 function HideOnScroll(props) {
@@ -69,9 +70,9 @@ const Header = (props) => {
             </div>
 
             {/* Navigation on the right */}
-            <Box className="flex-1 flex justify-end space-x-4">
+            <Box className="flex-1 flex justify-end">
               {navItems.map((item) => (
-                <a href={item.url} key={item.name} className="text-gray-50 text-xl mr-8">
+                <a href={item.url} key={item.name} className="text-gray-50 text-xl mr-8 text-center">
                   {item.icon} {item.name}
                 </a>
               ))}

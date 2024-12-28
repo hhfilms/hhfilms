@@ -1,7 +1,7 @@
 import HeroSection from "../components/HeroSection";
-import MyGallery from "../components/Gallery/Gallery";
+import Gallery from "../components/Gallery/Gallery";
 import VideoCard from "../components/VideoCard";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import {ArrowForward} from "@mui/icons-material";
 
 const videos = []; // Video data placeholder
 
@@ -26,12 +26,8 @@ export default function Home() {
       {/* About Section */}
       <section className="bg-zinc-800 text-gray-50 py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h5 className="text-base sm:text-lg font-extralight">
-            sports videography | event coverage | cinematic storytelling
-          </h5>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl my-4 font-bold">
-            about heart &amp; hustle films
-          </h2>
+          <h5 className="text-base sm:text-lg font-extralight">sports videography | event coverage | cinematic storytelling</h5>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl my-4 font-bold">about heart &amp; hustle films</h2>
           <h3 className="text-sm sm:text-base lg:text-lg font-extralight leading-relaxed">
             based in dallas-fort worth, we are passionate about capturing the raw emotion and exhilarating moments that make every experience unforgettable. whether it’s the intensity of a game, the
             energy of a live event, or the heart behind a personal story, our team is dedicated to creating compelling visual narratives. we specialize in sports videography, event coverage, and
@@ -42,14 +38,12 @@ export default function Home() {
 
       {/* Heart Section */}
       <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">
-          heart
-        </h2>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">heart</h2>
 
         {Array.isArray(videos) && videos.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video) => (
-              <VideoCard key={video.id} video={video} />
+              <VideoCard key={video.id} video={video.url} />
             ))}
           </div>
         ) : (
@@ -58,9 +52,9 @@ export default function Home() {
 
         {videos.length > 0 ? (
           <div className="flex justify-center">
-            <button className="px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
-              view more <ArrowForwardIcon fontSize="small" className="ml-2" />
-            </button>
+            <a href="/services" color="#fff" className="no-underline px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-50 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
+              view more <ArrowForward fontSize="small" className="ml-2" />
+            </a>
           </div>
         ) : (
           ""
@@ -69,10 +63,8 @@ export default function Home() {
 
       {/* Hustle Section */}
       <section className="my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">
-          hustle
-        </h2>
-        <MyGallery />
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">hustle</h2>
+        <Gallery />
       </section>
     </div>
   );

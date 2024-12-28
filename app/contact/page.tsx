@@ -14,7 +14,7 @@ const About = () => {
           subheading: " ",
           heading: "are you ready to tell your story with high-level film production?",
           description:
-            "long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps",
+            "dallas | fort worth | arlington | plano | irving | garland | frisco | mckinney | richardson | carrollton | denton | grand prairie | mesquite | lewisville | allen | flower mound",
           buttonText: "Contact",
         }}
         showButton={false}
@@ -27,13 +27,10 @@ const About = () => {
         <div className="flex flex-col lg:flex-row w-full lg:w-3/4 space-y-8 lg:space-y-0 lg:space-x-8">
           {/* About Text */}
           <div className="flex-1 text-left border-l-2 border-gray-200 pl-4 sm:pl-8">
-            <p className="mb-2 text-sm uppercase tracking-wide text-gray-400">contact</p>
+            <p className="mb-2 text-lg tracking-wide text-gray-400">contact</p>
             <p className="mb-6 text-base sm:text-lg lg:text-2xl font-light leading-relaxed">
-              ready to bring your story to life? whether it’s capturing the energy of the game, creating unforgettable memories, or promoting your cause we’d love to work with you. reach out today to
-              discuss your project, ask questions or find availability.
-            </p>
-            <p className="mb-6 text-base sm:text-lg lg:text-2xl font-light leading-relaxed">
-              available in dfw and surrounding cities.
+              do you have a story you want to bring to life? whether it’s capturing the energy of the game, creating unforgettable memories, or promoting your cause, we’d love to work with you. reach
+              out today to discuss your project, ask questions or find availability.
             </p>
           </div>
 

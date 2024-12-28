@@ -45,7 +45,7 @@ const ContactForm = () => {
 
   return (
     <div className=" mx-auto  p-6 bg-gray-800/50 rounded-lg shadow-md">
-      <h2 className="text-2xl text-gray-50 font-bold mb-4 text-center">Contact Us</h2>
+      <h2 className="text-2xl text-gray-50 font-bold mb-4 text-center">send us a message</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-gray-50">
