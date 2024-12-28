@@ -1,11 +1,11 @@
-import ServiceCard from "../../components/ServiceCard";
+// import ServiceCard from "../../components/ServiceCard";
 import HeroSection from "@/components/HeroSection";
 
-const services = [
-  {title: "Wedding Videography", description: "Capture your special day in stunning detail."},
-  {title: "Event Coverage", description: "Professional event videography for any occasion."},
-  {title: "Vacation Videos", description: "Turn your travels into cinematic memories."},
-];
+// const services = [
+//   {title: "Wedding Videography", description: "Capture your special day in stunning detail."},
+//   {title: "Event Coverage", description: "Professional event videography for any occasion."},
+//   {title: "Vacation Videos", description: "Turn your travels into cinematic memories."},
+// ];
 
 const Services = () => {
   return (
