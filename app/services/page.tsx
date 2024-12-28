@@ -25,10 +25,10 @@ const Services = () => {
         mediaClassName="object-top"
         buttonLink=""
       />
-      <section className="p-4 md:py-16 md:px-36">
+      <section className="p-4 xl:py-16 xl:px-36">
         <h1 className="text-3xl font-bold mb-8 w-full text-center">what we offer</h1>
 
-        <div className="container mx-auto md:flex md:space-x-32 text-justify">
+        <div className="container mx-auto xl:flex xl:space-x-32 text-justify">
           <div>
             <h1 className="text-3xl font-bold">sports filming</h1>
             <p className="text-lg mb-8">
