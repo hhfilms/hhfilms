@@ -9,7 +9,7 @@ const About = () => {
       <HeroSection
         containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
         backgroundType="image"
-        backgroundSrc="/dallas-skyline.jpg"
+        backgroundSrc="https://hhf-assets.s3.us-east-2.amazonaws.com/dallas-skyline.jpg"
         overlayContent={{
           subheading: " ",
           heading: "are you ready to tell your story with high-level film production?",
