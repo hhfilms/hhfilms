@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
               font-src 'self' https://fonts.gstatic.com data:;
               img-src 'self' https://hhf-assets.s3.us-east-2.amazonaws.com https://hhf-assets.s3.amazonaws.com data:;
               media-src 'self' https://hhf-assets.s3.us-east-2.amazonaws.com;
-              script-src 'self' 'unsafe-inline';
+              script-src 'self' 'unsafe-inline' 'unsafe-eval';
               connect-src 'self' https://hhf-assets.s3.us-east-2.amazonaws.com;
             `.replace(/\s{2,}/g, " ").trim(),
           },
