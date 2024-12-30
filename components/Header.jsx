@@ -60,14 +60,14 @@ const Header = (props) => {
         <AppBar position="fixed" sx={{zIndex: 1300}} className="bg-midnight">
           {/* desktop toolbar */}
           <Toolbar className="hidden p-8 md:flex items-center justify-between">
-            {/* Optional right section (hidden on mobile) */}
-            <Box className="flex-1"> </Box>
             {/* Centered Image */}
-            <div className="flex-1 flex justify-center">
+            <Box className="flex-1">
               <a href="/">
                 <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} priority />
               </a>
-            </div>
+            </Box>
+            {/* Optional section (hidden on mobile) */}
+            <div className="flex-1 flex justify-center"></div>
 
             {/* Navigation on the right */}
             <Box className="flex-1 flex justify-end">
