@@ -1,9 +1,20 @@
-import HeroSection from "../components/HeroSection";
-import Gallery from "../components/Gallery/Gallery";
-import VideoCard from "../components/VideoCard";
+import HeroSection from "@/components/HeroSection";
+import Gallery from "@/components/Gallery/Gallery";
+import VideoCard from "@/components/VideoCard";
 import {ArrowForward} from "@mui/icons-material";
 
-const videos = []; // Video data placeholder
+// import YouTubePlayer from "@/components/YouTubeEmbed";
+
+const videos = [
+  {
+    id: "1",
+    title: "el gambusino",
+    description: "grand opening for el gabusino jewewly in amarillo, tx",
+    url: "elgambusino",
+  },
+  {id: "2", title: "silverbell santas ", description: "changing lives for seniors in sallas, tx", url: "silverbellsantas"},
+  {id: "3", title: "wedding film highlights", description: "unforgettable moments of a special day", url: "wedding"},
+]; // Video data placeholder
 
 export default function Home() {
   return (
@@ -43,7 +54,7 @@ export default function Home() {
         {Array.isArray(videos) && videos.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video) => (
-              <VideoCard key={video.id} video={video.url} />
+              <VideoCard key={video.id} video={video} />
             ))}
           </div>
         ) : (
@@ -52,7 +63,11 @@ export default function Home() {
 
         {videos.length > 0 ? (
           <div className="flex justify-center">
-            <a href="/services" color="#fff" className="no-underline px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-50 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
+              color="#fff"
+              className="no-underline px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-50 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
               view more <ArrowForward fontSize="small" className="ml-2" />
             </a>
           </div>
