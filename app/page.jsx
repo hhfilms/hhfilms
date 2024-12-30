@@ -12,8 +12,8 @@ const videos = [
     description: "grand opening for el gabusino jewewly in amarillo, tx",
     url: "elgambusino",
   },
-  {id: "2", title: "silverbell santas ", description: "changing lives for seniors in sallas, tx", url: "silverbellsantas"},
-  {id: "3", title: "wedding film highlights", description: "unforgettable moments of a special day", url: "wedding"},
+  {id: "2", title: "silverbell santas ", description: "changing lives for seniors in dallas, tx", url: "silverbellsantas"},
+  {id: "3", title: "wedding film highlights", description: "unforgettable moments from a special day", url: "wedding"},
 ]; // Video data placeholder
 
 export default function Home() {
