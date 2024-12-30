@@ -49,7 +49,7 @@ export default function Home() {
 
       {/* Heart Section */}
       <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">heart</h2>
+        <h2 className="text-4xl font-extralight font-assistant text-center mb-8 text-gray-50 sm:text-5xl">heart</h2>
 
         {Array.isArray(videos) && videos.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Hustle Section */}
       <section className="my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-assistant text-center mb-8 text-gray-50">hustle</h2>
+        <h2 className="text-4xl font-extralight font-assistant text-center mb-8 text-gray-50 sm:text-5xl">hustle</h2>
         <Gallery />
       </section>
     </div>
