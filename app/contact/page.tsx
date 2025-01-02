@@ -14,8 +14,8 @@ const Contact = () => {
         <div className="flex flex-col lg:flex-row w-full lg:w-3/4 space-y-8 lg:space-y-0 lg:space-x-8">
           {/* About Text */}
           <div className="flex-1 text-left border-l-2 border-gray-200 pl-4 sm:pl-8">
-            <p className="mb-2 text-lg tracking-wide text-gray-400">contact</p>
-            <p className="mb-6 text-base sm:text-lg lg:text-2xl font-light leading-relaxed">
+            <p className="mb-2 text-3xl sm:text-4xl lg:text-5xl font-bold">contact</p>
+            <p className="mb-6 text-lg md:text-2xl font-extralight leading-relaxed">
               do you have a story you want to bring to life? whether it’s capturing the energy of the game, creating unforgettable memories, or promoting your cause, we’d love to work with you. reach
               out today to discuss your project, ask questions or find availability.
             </p>

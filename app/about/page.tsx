@@ -10,7 +10,7 @@ const About = () => {
       {/* About Section */}
       <div className="flex flex-col text-gray-50 py-8 px-4 sm:px-8 lg:px-16">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl my-4 font-bold">about heart &amp; hustle films</h2>
-        <h3 className="text-sm sm:text-base lg:text-lg font-extralight leading-relaxed">
+        <h3 className="text-lg md:text-2xl font-extralight leading-relaxed">
           based in dallas-fort worth, we are passionate about capturing the raw emotion and exhilarating moments that make every experience unforgettable. whether it’s the intensity of a game, the
           energy of a live event, or the heart behind a personal story, our team is dedicated to creating compelling visual narratives. we specialize in sports videography, event coverage, and
           cinematic storytelling, delivering impactful and memorable videos that bring your vision to life.

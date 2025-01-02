@@ -48,7 +48,7 @@ export default function Home() {
       {/* About Section */}
       <section className="bg-zinc-800 text-gray-50 py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h5 className="text-base sm:text-lg font-extralight">sports videography | event coverage | cinematic storytelling</h5>
+          <h5 className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">sports videography | event coverage | cinematic storytelling</h5>
         </div>
       </section>
 

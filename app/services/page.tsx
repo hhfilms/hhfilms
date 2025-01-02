@@ -43,7 +43,7 @@ const Services = () => {
       <section className="p-4 xl:py-16 xl:px-36">
         <h1 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-8">what we offer</h1>
 
-        <div className="container mx-auto xl:flex xl:space-x-32 text-justify">
+        <div className="container mx-auto xl:flex xl:space-x-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard key={index} service={service} />

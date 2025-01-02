@@ -2,15 +2,15 @@
 import {useState} from "react";
 import PropTypes from "prop-types";
 import {AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
-import {Menu, Home, Sms, MonochromePhotos, Favorite} from "@mui/icons-material";
+import {Menu, HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
 import Image from "next/image";
 
 const drawerWidth = 240;
 const navItems = [
-  {name: "home", url: "/", icon: <Home />},
-  {name: "about", url: "/about", icon: <Favorite />},
-  {name: "contact", url: "/contact", icon: <Sms />},
-  {name: "services", url: "/services", icon: <MonochromePhotos />},
+  {name: "home", url: "/", icon: <HomeOutlined />},
+  {name: "about", url: "/about", icon: <InfoOutlined />},
+  {name: "contact", url: "/contact", icon: <SmsOutlined />},
+  {name: "services", url: "/services", icon: <MonochromePhotosOutlined />},
 ];
 
 function HideOnScroll(props) {
@@ -44,7 +44,7 @@ const Header = (props) => {
         {navItems.map((item) => (
           <ListItem key={item.name}>
             <a href={item.url} className="text-center text-gray-50">
-              {item.icon} {item.name}
+              <span className="mr-1">{item.icon}</span> {item.name}
             </a>
           </ListItem>
         ))}
@@ -74,7 +74,7 @@ const Header = (props) => {
             <Box className="flex-1 flex justify-end">
               {navItems.map((item) => (
                 <a href={item.url} key={item.name} className="text-gray-50 text-xl mr-8 text-center">
-                  {item.icon} {item.name}
+                  <span className="mr-1">{item.icon}</span> {item.name}
                 </a>
               ))}
             </Box>
