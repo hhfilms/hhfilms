@@ -39,6 +39,7 @@ const Services = () => {
         showButton={false}
         mediaClassName="object-top object-cover"
         buttonLink=""
+        imagePosition="top"
       />
       <section className="p-4 xl:py-16 xl:px-36">
         <h1 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-8">what we offer</h1>

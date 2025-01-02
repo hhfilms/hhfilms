@@ -43,6 +43,7 @@ export default function Home() {
         showButton={true}
         buttonLink="/contact"
         mediaClassName="object-cover"
+        imagePosition="center"
       />
 
       {/* About Section */}

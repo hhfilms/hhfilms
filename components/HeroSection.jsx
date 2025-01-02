@@ -1,4 +1,6 @@
-export default function HeroSection({backgroundType, backgroundSrc, overlayContent, showButton = true, mediaClassName = "", containerClass = "", buttonLink}) {
+import Image from "next/image";
+
+export default function HeroSection({backgroundType, backgroundSrc, overlayContent, showButton = true, mediaClassName = "", containerClass = "", buttonLink, imagePosition}) {
   return (
     <div className={`relative w-full overflow-hidden bg-gray-100 ${containerClass}`}>
       {/* Hero Section */}
@@ -10,7 +12,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
             Your browser does not support the video tag.
           </video>
         ) : (
-          <img src={backgroundSrc} alt="hero background" className={`absolute top-0 left-0 w-full h-full opacity-50 ${mediaClassName}`} />
+          <Image src={backgroundSrc} alt="hero background" className={`w-full h-full opacity-50 ${mediaClassName}`} layout="fill" objectFit="cover" objectPosition={`${imagePosition}`}/>
         )}
 
         {/* Overlay Content */}
