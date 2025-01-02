@@ -1,6 +1,15 @@
-import type { NextConfig } from "next";
+import type {NextConfig} from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "hhf-assets.s3.us-east-2.amazonaws.com",
+        pathname: "/**", // Allow all paths under this domain
+      },
+    ],
+  },
   async headers() {
     return [
       {
@@ -16,7 +25,9 @@ const nextConfig: NextConfig = {
               media-src 'self' https://hhf-assets.s3.us-east-2.amazonaws.com;
               script-src 'self' 'unsafe-inline' 'unsafe-eval';
               connect-src 'self' https://hhf-assets.s3.us-east-2.amazonaws.com;
-            `.replace(/\s{2,}/g, " ").trim(),
+            `
+              .replace(/\s{2,}/g, " ")
+              .trim(),
           },
         ],
       },

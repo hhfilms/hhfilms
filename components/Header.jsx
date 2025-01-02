@@ -1,14 +1,15 @@
 "use client";
-import * as React from "react";
+import {useState} from "react";
 import PropTypes from "prop-types";
 import {AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
-import {Menu, Home, Mail, MonochromePhotos} from "@mui/icons-material";
+import {Menu, Home, Sms, MonochromePhotos, Favorite} from "@mui/icons-material";
 import Image from "next/image";
 
 const drawerWidth = 240;
 const navItems = [
   {name: "home", url: "/", icon: <Home />},
-  {name: "contact", url: "/contact", icon: <Mail />},
+  {name: "about", url: "/about", icon: <Favorite />},
+  {name: "contact", url: "/contact", icon: <Sms />},
   {name: "services", url: "/services", icon: <MonochromePhotos />},
 ];
 
@@ -30,7 +31,7 @@ HideOnScroll.propTypes = {
 
 const Header = (props) => {
   const {window} = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -54,7 +55,7 @@ const Header = (props) => {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar position="fixed" sx={{zIndex: 1300}} className="bg-midnight">
@@ -97,9 +98,8 @@ const Header = (props) => {
           </Toolbar>
         </AppBar>
       </HideOnScroll>
-      <nav className="">
+      <nav className="XXXXX">
         <Drawer
-          className=""
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -122,7 +122,7 @@ const Header = (props) => {
         </Drawer>
       </nav>
       <Toolbar />
-    </React.Fragment>
+    </>
   );
 };
 

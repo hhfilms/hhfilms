@@ -10,7 +10,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
             Your browser does not support the video tag.
           </video>
         ) : (
-          <img src={backgroundSrc} alt="hero background" className={`absolute top-0 left-0 w-full h-full object-cover opacity-50 ${mediaClassName}`} />
+          <img src={backgroundSrc} alt="hero background" className={`absolute top-0 left-0 w-full h-full opacity-50 ${mediaClassName}`} />
         )}
 
         {/* Overlay Content */}

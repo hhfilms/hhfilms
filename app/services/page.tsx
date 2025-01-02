@@ -1,11 +1,26 @@
-// import ServiceCard from "../../components/ServiceCard";
+import ServiceCard from "@/components/ServiceCard";
 import HeroSection from "@/components/HeroSection";
-
-// const services = [
-//   {title: "Wedding Videography", description: "Capture your special day in stunning detail."},
-//   {title: "Event Coverage", description: "Professional event videography for any occasion."},
-//   {title: "Vacation Videos", description: "Turn your travels into cinematic memories."},
-// ];
+import {StoreOutlined, SportsFootballOutlined, FavoriteBorderOutlined} from "@mui/icons-material/";
+const services = [
+  {
+    title: "sports filming",
+    description:
+      "specializing in sports videography, our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom professional, and dynamic, with cutting-edge techniques to capture every thrilling moment",
+    icon: <SportsFootballOutlined fontSize="inherit" />,
+  },
+  {
+    title: "business & non-profit promos",
+    description:
+      "we bring energy and expertise to every promotional project, tailoring our approach to meet your unique vision. Whether it's a corporate event, a product showcase, or a compelling story for your brand or non-profit, we use professional-grade equipment and thoughtful editing to ensure every frame delivers clarity, emotion, and impact. Our goal is to help you captivate your audience and make your message unforgettable.",
+    icon: <StoreOutlined fontSize="inherit" />,
+  },
+  {
+    title: "special moments",
+    description:
+      "from weddings and quinceañeras to birthdays and other milestone celebrations, we specialize in capturing the moments that matter most. using professional-grade equipment and meticulous editing, we create films that bring your cherished memories to life. every frame is thoughtfully crafted to tell your story with emotion, clarity, and the impact it deserves, preserving your special moments for years to come.",
+    icon: <FavoriteBorderOutlined fontSize="inherit" />,
+  },
+];
 
 const Services = () => {
   return (
@@ -22,37 +37,21 @@ const Services = () => {
           buttonText: "Contact",
         }}
         showButton={false}
-        mediaClassName="object-top"
+        mediaClassName="object-top object-cover"
         buttonLink=""
       />
       <section className="p-4 xl:py-16 xl:px-36">
-        <h1 className="text-3xl font-bold mb-8 w-full text-center">what we offer</h1>
+        <h1 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-8">what we offer</h1>
 
         <div className="container mx-auto xl:flex xl:space-x-32 text-justify">
-          <div>
-            <h1 className="text-3xl font-bold">sports filming</h1>
-            <p className="text-lg mb-8">
-              specializing in sports videography, our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom
-              highlight reels tailored to athletes and teams, perfect for college recruiting or preserving cherished memories. our editing team ensures your videos are polished, professional, and
-              dynamic, with cutting-edge techniques to capture every thrilling moment
-            </p>
-          </div>
-          <div>
-            <h1 className="text-3xl font-bold">tailored video production & filming</h1>
-            <p className="text-lg mb-8">
-              at heart & hustle films, we bring the same energy and expertise to every project, no matter the industry or purpose. from corporate events and promotional videos to special occasions and
-              creative storytelling, we tailor our approach to meet your unique vision. using professional-grade equipment and thoughtful editing, we ensure every frame tells a story with clarity,
-              emotion, and impact. whether you’re showcasing a product, capturing a milestone, or creating content for your brand, we’re here to make it unforgettable.
-            </p>
-          </div>
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard key={index} service={service} />
             ))}
-          </div> */}
+          </div>
         </div>
         <div className="text-center">
-          <p className="text-xl mb-4">ready to put your story on film?</p>
+          <p className="text-xl my-8">ready to put your story on film?</p>
           <a href="/contact" className="px-6 inline-block py-3 text-sm sm:text-base lg:text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900">
             contact us
           </a>

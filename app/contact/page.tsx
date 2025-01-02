@@ -1,26 +1,13 @@
-import React from "react";
-import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 
-const About = () => {
+const Contact = () => {
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection
-        containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
-        backgroundType="image"
-        backgroundSrc="https://hhf-assets.s3.us-east-2.amazonaws.com/dallas-skyline.jpg"
-        overlayContent={{
-          subheading: " ",
-          heading: "are you ready to tell your story with high-level film production?",
-          description:
-            "dallas | fort worth | arlington | plano | irving | garland | frisco | mckinney | richardson | carrollton | denton | grand prairie | mesquite | lewisville | allen | flower mound",
-          buttonText: "Contact",
-        }}
-        showButton={false}
-        mediaClassName="object-top"
-        buttonLink=""
-      />
+      {/* Header Img */}
+      <div className="relative w-full h-64 sm:h-96 md:h-[500px] mt-20 md:mt-24">
+        <Image src="https://hhf-assets.s3.us-east-2.amazonaws.com/sign.jpg" alt="Example Image" layout="fill" objectFit="cover" />
+      </div>
 
       {/* About Section */}
       <div className="flex flex-col items-center text-gray-50 py-16 px-4 sm:px-8 lg:px-16">
@@ -44,4 +31,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Contact;

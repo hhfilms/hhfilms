@@ -42,18 +42,13 @@ export default function Home() {
         }}
         showButton={true}
         buttonLink="/contact"
+        mediaClassName="object-cover"
       />
 
       {/* About Section */}
       <section className="bg-zinc-800 text-gray-50 py-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h5 className="text-base sm:text-lg font-extralight">sports videography | event coverage | cinematic storytelling</h5>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl my-4 font-bold">about heart &amp; hustle films</h2>
-          <h3 className="text-sm sm:text-base lg:text-lg font-extralight leading-relaxed">
-            based in dallas-fort worth, we are passionate about capturing the raw emotion and exhilarating moments that make every experience unforgettable. whether it’s the intensity of a game, the
-            energy of a live event, or the heart behind a personal story, our team is dedicated to creating compelling visual narratives. we specialize in sports videography, event coverage, and
-            cinematic storytelling, delivering impactful and memorable videos that bring your vision to life.
-          </h3>
         </div>
       </section>
 
