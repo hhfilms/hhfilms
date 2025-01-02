@@ -1,6 +1,6 @@
 import ServiceCard from "@/components/ServiceCard";
 import HeroSection from "@/components/HeroSection";
-import {StoreOutlined, SportsFootballOutlined, FavoriteBorderOutlined} from "@mui/icons-material/";
+import {StoreOutlined, SportsFootballOutlined, FavoriteBorderOutlined} from "@mui/icons-material";
 const services = [
   {
     title: "sports filming",
