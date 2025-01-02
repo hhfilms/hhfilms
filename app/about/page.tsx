@@ -1,6 +1,4 @@
-import React from "react";
 import HeroSection from "@/components/HeroSection";
-import ContactForm from "@/components/ContactForm";
 
 const About = () => {
   return (
