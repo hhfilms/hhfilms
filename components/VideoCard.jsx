@@ -6,8 +6,8 @@ const VideoCard = ({video}) => {
         <source src={`https://hhf-assets.s3.us-east-2.amazonaws.com/${video.url}.mp4`} type="video/mp4" />
       </video>
       <div className="p-4 text-center text-gray-50">
-        <h2 className="text-lg font-bold mb-2">{video.title}</h2>
-        <p className="text-xl mb-4">{video.description}</p>
+        <h2 className="text-2xl font-extralight font-assistant text-center text-gray-50 sm:text-3xl">{video.title}</h2>
+        <p className="text-gray-50 w-3/4 m-auto font-extralight leading-relaxed text-center mb-4 md:block sm:text-base lg:text-lg">{video.description}</p>
       </div>
     </div>
   );

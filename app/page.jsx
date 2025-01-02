@@ -1,7 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import Gallery from "@/components/Gallery/Gallery";
 import VideoCard from "@/components/VideoCard";
-import {ArrowForward} from "@mui/icons-material";
+import {YouTube} from "@mui/icons-material";
 
 // import YouTubePlayer from "@/components/YouTubeEmbed";
 
@@ -21,7 +21,7 @@ const videos = [
   {
     id: "3",
     title: "wedding film highlights",
-    description: "unforgettable moments from a special day",
+    description: "capture unforgettable moments from a special day",
     url: "wedding",
   },
 ]; // Video data placeholder
@@ -59,8 +59,8 @@ export default function Home() {
 
       {/* Heart Section */}
       <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extralight font-assistant text-center mb-4 text-gray-50 sm:text-5xl">heart</h2>
-        <p className="text-gray-50 w-3/4 m-auto text-sm sm:text-base lg:text-lg font-extralight leading-relaxed text-center mb-4">need to promote your business or nonprofit? or maybe you'd like to capture the magic of your special day? we bring the same passion and dedication to every project, whether it's crafting a compelling promotional video, telling the story of your organization, or preserving the unforgettable moments of your wedding or milestone event. let us help you create impactful, professional videos that reflect your unique vision and leave a lasting impression.</p>
+        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl">heart</h2>
+        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">promote your business or nonprofit | capture magical moments</p>
 
         {Array.isArray(videos) && videos.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -79,7 +79,7 @@ export default function Home() {
               href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
               color="#fff"
               className="no-underline px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-50 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
-              view more <ArrowForward fontSize="small" className="ml-2" />
+              more on youtube <YouTube fontSize="small" className="ml-2" />
             </a>
           </div>
         ) : (
@@ -89,8 +89,8 @@ export default function Home() {
 
       {/* Hustle Section */}
       <section className="my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extralight font-assistant text-center mb-4 text-gray-50 sm:text-5xl">hustle</h2>
-        <p className="text-gray-50 w-3/4 m-auto text-sm sm:text-base lg:text-lg font-extralight leading-relaxed text-center mb-4">want to showcase the energy and excitement of your team or athlete? whether it’s creating highlight reels, documenting championship games, or filming training sessions, we specialize in capturing the passion, skill, and unforgettable moments that make sports so thrilling. every project is crafted with a dynamic and professional touch to help tell your story and celebrate the heart and hustle behind every play.</p>
+        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl">hustle</h2>
+        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">sport highlights, reels & recaps | teams or individuals</p>
         <Gallery />
       </section>
     </div>
