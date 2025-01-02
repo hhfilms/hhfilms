@@ -2,6 +2,7 @@
 import { Navigation, Mousewheel, A11y, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
+import { OpenInNew } from "@mui/icons-material";
 
 import jett from "./images/Jett.png";
 import zi from "./images/Zi.png";
@@ -48,9 +49,10 @@ const Gallery = () => {
             {/* Image */}
             <Image src={image.src} alt={image.title} width={800} height={600} className="w-full h-64 sm:h-72 lg:h-80 object-cover rounded-lg" />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 px-4 transition-opacity duration-300 flex flex-col items-center justify-center">
-              <p className="text-sm sm:text-base lg:text-lg text-white font-semibold">{image.title}</p>
-              <p className="text-xs sm:text-sm lg:text-base text-white">{image.description}</p>
+            <div className="text-gray-50 absolute inset-0 bg-black/75 opacity-0 group-hover:opacity-100 px-4 transition-opacity duration-300 flex flex-col items-center justify-center">
+              <p className="text-sm sm:text-base lg:text-lg font-semibold">{image.title}</p>
+              <p className="text-xs sm:text-sm lg:text-base">{image.description}</p>
+              <p className="mt-3 text-3xl"><OpenInNew fontSize="inherit"/></p>
             </div>
           </a>
         </SwiperSlide>
