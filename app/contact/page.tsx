@@ -6,7 +6,7 @@ const Contact = () => {
     <>
       {/* Header Img */}
       <div className="relative w-full h-64 sm:h-96 md:h-[500px] mt-20 md:mt-24">
-        <Image src="https://hhf-assets.s3.us-east-2.amazonaws.com/sign.jpg" alt="Example Image" layout="fill" objectFit="cover" />
+        <Image src="https://hhf-assets.s3.us-east-2.amazonaws.com/sign.jpg" alt="do someting great" layout="fill" objectFit="cover" />
       </div>
 
       {/* About Section */}

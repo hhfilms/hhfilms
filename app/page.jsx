@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection";
-import Gallery from "@/components/Gallery/Gallery";
+import InstagramFeed from "@/components/Instagram";
 import VideoCard from "@/components/VideoCard";
 import {YouTube} from "@mui/icons-material";
 
@@ -87,7 +87,7 @@ export default function Home() {
       <section className="my-16 px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl">hustle</h2>
         <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">sport highlights, reels & recaps | teams or individuals</p>
-        <Gallery />
+        <InstagramFeed />
       </section>
     </div>
   );

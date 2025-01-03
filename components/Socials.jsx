@@ -3,16 +3,16 @@ import YoutubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const socialMedia = [
-  {icon: <InstagramIcon fontSize="medium" />, link: "https://www.instagram.com/_hh_films/", color: "text-gray-950 md:text-gray-50 hover:text-gray-800"},
-  {icon: <YoutubeIcon fontSize="medium" />, link: "https://www.youtube.com/@HeartHustleFilms", color: "text-gray-950 md:text-gray-50 hover:text-gray-800"},
-  {icon: <FacebookIcon fontSize="medium" />, link: "https://www.facebook.com/heartandhustlefilms", color: "text-gray-950 md:text-gray-50 hover:text-gray-800"},
+  {icon: <InstagramIcon fontSize="inherit" />, link: "https://www.instagram.com/_hh_films/", color: "inherit"},
+  {icon: <YoutubeIcon fontSize="inherit" />, link: "https://www.youtube.com/@HeartHustleFilms", color: "inherit"},
+  {icon: <FacebookIcon fontSize="inherit" />, link: "https://www.facebook.com/heartandhustlefilms", color: "inherit"},
 ];
 
-const Socials = () => {
+const Socials = ({containerClass}) => {
   return (
-    <div className="flex bg-gray-50/25 p-2 shadow-lg z-50 sticky flex-row justify-around md:fixed md:bottom-8 md:right-8 md:flex-col md:space-y-3  md:rounded-lg">
-      {socialMedia.map(({icon, link, color}, index) => (
-        <a key={index} href={link} target="_blank" rel="noopener noreferrer" className={color}>
+    <div className={` ${containerClass}`}>
+      {socialMedia.map(({icon, link}, index) => (
+        <a key={index} href={link} target="_blank" rel="noopener noreferrer">
           {icon}
         </a>
       ))}

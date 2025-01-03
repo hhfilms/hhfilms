@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import {AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
 import {Menu, HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
 import Image from "next/image";
+import Socials from "./Socials";
 
 const drawerWidth = 240;
 const navItems = [
@@ -67,16 +68,18 @@ const Header = (props) => {
                 <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} priority />
               </a>
             </Box>
-            {/* Optional section (hidden on mobile) */}
-            <div className="flex-1 flex justify-center"></div>
-
-            {/* Navigation on the right */}
-            <Box className="flex-1 flex justify-end">
+            {/* Center section (hidden on mobile) */}
+            <div className="flex-1 flex justify-center ">
               {navItems.map((item) => (
                 <a href={item.url} key={item.name} className="text-gray-50 text-xl mr-8 text-center">
                   <span className="mr-1">{item.icon}</span> {item.name}
                 </a>
               ))}
+            </div>
+
+            {/* Right Section */}
+            <Box className="flex-1 flex justify-end ">
+              <Socials containerClass="hidden md:inline-flex flex-row text-4xl w-full text-gray-50 justify-end space-x-4" />
             </Box>
           </Toolbar>
 

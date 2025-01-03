@@ -6,7 +6,7 @@ export default function handler(req, res) {
       res.status(400).send("Instagram login failed");
       return;
     }
-  
+
     if (code) {
       // Exchange the code for an access token
       const clientId = process.env.INSTAGRAM_CLIENT_ID;

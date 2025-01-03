@@ -26,7 +26,7 @@ export default function RootLayout({
             <AppRouterCacheProvider>
               <main className="flex-grow overflow-y-auto bg-midnight">{children}</main>
             </AppRouterCacheProvider>
-            <Socials />
+            <Socials containerClass="md:hidden bg-brand py-4 flex flex-row text-4xl w-full text-gray-50 justify-around space-x-4" />
             <Footer />
           </div>
         </Providers>
