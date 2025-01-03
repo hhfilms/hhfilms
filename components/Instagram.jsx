@@ -12,18 +12,18 @@ const InstagramFeed = () => {
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
 
-  const videoRefs: any = useRef([]);
+  const videoRefs = useRef([]);
 
-  const handleTogglePlay = (index: number) => {
+  const handleTogglePlay = (index) => {
     // Pause all videos
-    videoRefs.current.forEach((video: any, idx: number) => {
+    videoRefs.current.forEach((video, idx) => {
       if (video && idx !== index) {
         video.pause();
       }
     });
 
     // Play or pause the clicked video
-    const clickedVideo: any = videoRefs.current[index];
+    const clickedVideo = videoRefs.current[index];
     if (clickedVideo.paused) {
       clickedVideo.play();
     } else {
@@ -41,7 +41,7 @@ const InstagramFeed = () => {
         } else {
           throw new Error(data.error || "Failed to fetch Reels");
         }
-      } catch (err: any) {
+      } catch (err) {
         setError(err.message);
       }
     }
@@ -69,11 +69,11 @@ const InstagramFeed = () => {
         freeMode={false}
         navigation
         pagination={{clickable: true}}>
-        {reels.map((reel: any, index: number) => (
+        {reels.map((reel, index) => (
           <SwiperSlide key={reel.id}>
             <div className="insta-embed">
               <video
-                ref={(el: any) => (videoRefs.current[index] = el)} // Add video to refs array
+                ref={(el) => (videoRefs.current[index] = el)} // Add video to refs array
                 poster={`${reel.thumbnail_url}`}
                 onClick={() => handleTogglePlay(index)}
                 width="250"
