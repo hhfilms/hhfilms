@@ -2,6 +2,9 @@
 import {useEffect, useState, useRef} from "react";
 import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
+import Link from "next/link";
+import InstagramIcon from "@mui/icons-material/Instagram";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -54,7 +57,7 @@ const InstagramFeed = () => {
   }
 
   return (
-    <div className="text-gray-50 min-h-screen">
+    <div className="text-gray-50">
       <Swiper
         className=""
         modules={[Navigation, A11y, Mousewheel, FreeMode]}
@@ -64,7 +67,7 @@ const InstagramFeed = () => {
         breakpoints={{
           640: {slidesPerView: 2.5, spaceBetween: 20}, // Tablet (sm breakpoint)
           768: {slidesPerView: 3.5, spaceBetween: 30}, // Small laptop (md breakpoint)
-          1024: {slidesPerView: 4, spaceBetween: 50}, // Desktop (lg breakpoint)
+          1440: {slidesPerView: 5, spaceBetween: 50}, // Desktop (lg breakpoint)
         }}
         freeMode={false}
         navigation
@@ -81,7 +84,12 @@ const InstagramFeed = () => {
                 <source src={reel.media_url} type="video/mp4" />
               </video>
             </div>
-            <p className="font-light text-center px-2">{reel.caption}</p>
+            <div className="font-light text-sm text-justify">
+              <Link className="text-center block p-4 mb-2 bg-gray-50 text-midnight hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
+                <InstagramIcon /> <span className="">view on instagram</span>
+              </Link>
+              <p className="">{reel.caption}</p>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

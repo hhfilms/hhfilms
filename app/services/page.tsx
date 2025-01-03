@@ -5,7 +5,7 @@ const services = [
   {
     title: "sports filming",
     description:
-      "specializing in sports videography, our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom professional, and dynamic, with cutting-edge techniques to capture every thrilling moment",
+      "specializing in sports videography, our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom professional, and dynamic, with cutting-edge techniques to capture every thrilling moment for teams or individuals.",
     icon: <SportsFootballOutlined fontSize="inherit" />,
   },
   {

@@ -20,7 +20,7 @@ const videos = [
   },
   {
     id: "3",
-    title: "wedding film highlights",
+    title: "special moments",
     description: "capture unforgettable moments from a special day",
     url: "wedding",
   },
@@ -47,16 +47,16 @@ export default function Home() {
       />
 
       {/* About Section */}
-      <section className="bg-zinc-800 text-gray-50 py-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h5 className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">sports videography | event coverage | cinematic storytelling</h5>
+      <section className="bg-zinc-800 text-gray-50 py-4">
+        <div className="container mx-auto text-center">
+          <h5 className="text-gray-50 font-light text-center text md:text-3xl">sports videography | event coverage | business promos | cinematic storytelling</h5>
         </div>
       </section>
 
       {/* Heart Section */}
       <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl">heart</h2>
-        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">promote your business or nonprofit | capture magical moments</p>
+        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-4">heart</h2>
+        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl hidden">promote your business or nonprofit | capture magical moments</p>
 
         {Array.isArray(videos) && videos.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -85,8 +85,8 @@ export default function Home() {
 
       {/* Hustle Section */}
       <section className="my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl">hustle</h2>
-        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl">sport highlights, reels & recaps | teams or individuals</p>
+        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-4">hustle</h2>
+        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl hidden">sport highlights, reels & recaps | teams or individuals</p>
         <InstagramFeed />
       </section>
     </div>

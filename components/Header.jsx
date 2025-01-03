@@ -62,14 +62,15 @@ const Header = (props) => {
         <AppBar position="fixed" sx={{zIndex: 1300}} className="bg-midnight">
           {/* desktop toolbar */}
           <Toolbar className="hidden p-8 md:flex items-center justify-between">
-            {/* Centered Image */}
-            <Box className="flex-1">
+            {/* Left Section */}
+            <Box className="mr-8">
               <a href="/">
-                <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} priority />
+                <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </Box>
-            {/* Center section (hidden on mobile) */}
-            <div className="flex-1 flex justify-center ">
+
+            {/* Center Section (hidden on mobile) */}
+            <div className="flex-1 flex justify-start ">
               {navItems.map((item) => (
                 <a href={item.url} key={item.name} className="text-gray-50 text-xl mr-8 text-center">
                   <span className="mr-1">{item.icon}</span> {item.name}
@@ -79,7 +80,7 @@ const Header = (props) => {
 
             {/* Right Section */}
             <Box className="flex-1 flex justify-end ">
-              <Socials containerClass="hidden md:inline-flex flex-row text-4xl w-full text-gray-50 justify-end space-x-4" />
+              <Socials containerClass="hidden md:inline-flex flex-row text-2xl w-full text-brand justify-end space-x-4" />
             </Box>
           </Toolbar>
 
@@ -92,7 +93,7 @@ const Header = (props) => {
             {/* Image centered */}
             <div className="flex-1 flex justify-center">
               <a href="/">
-                <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} priority />
+                <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </div>
 
