@@ -44,7 +44,7 @@ const Header = (props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name}>
-            <a href={item.url} className="text-center text-gray-50">
+            <a href={item.url} className="p-1 text-gray-50 block w-full">
               <span className="mr-1">{item.icon}</span> {item.name}
             </a>
           </ListItem>

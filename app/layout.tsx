@@ -6,6 +6,11 @@ import Footer from "@/components/Footer";
 import Socials from "@/components/Socials";
 
 import "./globals.scss";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export const metadata: Metadata = {
   title: "Heart & Hustle Films",

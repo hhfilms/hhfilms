@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "hhf-assets.s3.us-east-2.amazonaws.com",
+        hostname: "**",
         pathname: "/**", // Allow all paths under this domain
       },
     ],
@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: `
               default-src 'self'; 
-              frame-src 'self' https://www.facebook.com/plugins/video.php https://www.instagram.com;
+              frame-src 'self' https://www.facebook.com/plugins/video.php https://www.instagram.com https://www.youtube.com;
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
               font-src 'self' https://fonts.gstatic.com data:;
               img-src 'self' https://*.cdninstagram.com https://hhf-assets.s3.us-east-2.amazonaws.com https://hhf-assets.s3.amazonaws.com data:;

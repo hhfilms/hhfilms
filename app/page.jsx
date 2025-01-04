@@ -1,30 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import InstagramFeed from "@/components/Instagram";
-import VideoCard from "@/components/VideoCard";
 import {YouTube} from "@mui/icons-material";
-
-// import YouTubePlayer from "@/components/YouTubeEmbed";
-
-const videos = [
-  {
-    id: "1",
-    title: "businesses",
-    description: "grand opening for el gabusino jewelry in amarillo, tx",
-    url: "elgambusino",
-  },
-  {
-    id: "2",
-    title: "non-profits ",
-    description: "how silverbell santas is changing lives for seniors in dallas, tx",
-    url: "silverbellsantas",
-  },
-  {
-    id: "3",
-    title: "special moments",
-    description: "capture unforgettable moments from a special day",
-    url: "wedding",
-  },
-]; // Video data placeholder
+import YouTubeGallery from "@/components/YouTubeGallery";
 
 export default function Home() {
   return (
@@ -49,44 +26,35 @@ export default function Home() {
       {/* About Section */}
       <section className="bg-zinc-800 text-gray-50 py-4">
         <div className="container mx-auto text-center">
-          <h5 className="text-gray-50 font-light text-center text md:text-3xl">sports videography | event coverage | business promos | cinematic storytelling</h5>
+          <h5 className="text-gray-50 font-extralight text-center text-lg md:text-3xl">sports videography | event coverage | business promos | cinematic storytelling</h5>
         </div>
       </section>
 
       {/* Heart Section */}
-      <section className="container mx-auto my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-4">heart</h2>
-        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl hidden">promote your business or nonprofit | capture magical moments</p>
-
-        {Array.isArray(videos) && videos.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {videos.map((video) => (
-              <VideoCard key={video.id} video={video} />
-            ))}
-          </div>
-        ) : (
-          <p className="text-center text-gray-50">coming soon...</p>
-        )}
-
-        {videos.length > 0 ? (
-          <div className="flex justify-center">
-            <a
-              target="_blank"
-              href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
-              color="#fff"
-              className="no-underline px-6 py-3 my-8 text-sm sm:text-base lg:text-lg text-gray-50 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
-              more on youtube <YouTube fontSize="small" className="ml-2" />
-            </a>
-          </div>
-        ) : (
-          ""
-        )}
+      <section className="mx-auto my-16 px-4 sm:px-6 lg:px-8 text-gray-50">
+        <div className="flex flex-col sm:flex-row items-center">
+          <h2 className="text-4xl font-extralight font-assistant  sm:text-5xl mb-4 flex-grow">heart</h2>
+          <p className="flex-grow text-center sm:text-right justify-end font-extralight mb-4 text md:text-lg">promote your business or nonprofit | capture magical moments</p>
+        </div>
+        <YouTubeGallery />
+        <div className="flex justify-center">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
+            color="#fff"
+            className="no-underline px-6 py-3 text-sm sm:text-base lg:text-lg text-gray-50 font-medium bg-brand rounded hover:bg-gray-900 flex items-center">
+            more on youtube <YouTube fontSize="small" className="ml-2" />
+          </a>
+        </div>
       </section>
 
       {/* Hustle Section */}
-      <section className="my-16 px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-4">hustle</h2>
-        <p className="text-gray-50 font-extralight text-center mb-4 text md:text-2xl hidden">sport highlights, reels & recaps | teams or individuals</p>
+      <section className="my-16 px-4 sm:px-6 lg:px-8 text-gray-50">
+        <div className="flex flex-col sm:flex-row items-center">
+          <h2 className="text-4xl font-extralight font-assistant  sm:text-5xl mb-4 flex-grow">hustle</h2>
+          <p className="flex-grow text-center sm:text-right justify-end font-extralight mb-4 text md:text-lg">sport highlights, reels & recaps | teams or individuals</p>
+        </div>
+
         <InstagramFeed />
       </section>
     </div>

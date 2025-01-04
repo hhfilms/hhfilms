@@ -5,12 +5,6 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import Link from "next/link";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
 const InstagramFeed = () => {
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
