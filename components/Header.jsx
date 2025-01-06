@@ -2,16 +2,16 @@
 import {useState} from "react";
 import PropTypes from "prop-types";
 import {AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
-import {Menu, HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
+import {HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
 import Image from "next/image";
 import Socials from "./Socials";
 
 const drawerWidth = 240;
 const navItems = [
-  {name: "home", url: "/", icon: <HomeOutlined />},
-  {name: "about", url: "/about", icon: <InfoOutlined />},
-  {name: "contact", url: "/contact", icon: <SmsOutlined />},
-  {name: "services", url: "/services", icon: <MonochromePhotosOutlined />},
+  {name: "home", url: "/", icon: <HomeOutlined className="md:hidden" />},
+  {name: "about", url: "/about", icon: <InfoOutlined className="md:hidden" />},
+  {name: "contact", url: "/contact", icon: <SmsOutlined className="md:hidden" />},
+  {name: "services", url: "/services", icon: <MonochromePhotosOutlined className="md:hidden" />},
 ];
 
 function HideOnScroll(props) {
@@ -39,7 +39,7 @@ const Header = (props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} className="text-center pt-32">
+    <Box onClick={handleDrawerToggle} className="text-center pt-48">
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -85,9 +85,25 @@ const Header = (props) => {
           </Toolbar>
 
           {/* mobile toolbar */}
-          <Toolbar className="md:hidden py-4 flex items-center justify-between">
+          <Toolbar className="md:hidden py-4 flex items-center justify-between shadow-md">
             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className="mr-2">
-              <Menu />
+              <button
+                className="group flex items-center justify-center w-8 h-8 rounded tap-highlight-transparent outline-none focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2"
+                type="button"
+                aria-label={mobileOpen ? "Close menu" : "Open menu"}
+                aria-pressed={mobileOpen}>
+                <span className="sr-only">{mobileOpen ? "Close navigation menu" : "Open navigation menu"}</span>
+                <span className={`relative flex flex-col items-center justify-center w-6 h-6 text-inherit transition-opacity ${mobileOpen ? "opacity-70" : "opacity-100"}`}>
+                  {/* Top Line */}
+                  <span className={`block h-[2px] w-full bg-current transition-transform duration-150 ${mobileOpen ? "translate-y-[2px] rotate-45" : "-translate-y-1 rotate-0"}`}></span>
+
+                  {/* Middle Line (hidden in "X" state) */}
+                  <span className={`block h-[2px] w-full bg-current transition-opacity duration-150 ${mobileOpen ? "opacity-0" : "opacity-100"}`}></span>
+
+                  {/* Bottom Line */}
+                  <span className={`block h-[2px] w-full bg-current transition-transform duration-150 ${mobileOpen ? "-translate-y-[2px] -rotate-45" : "translate-y-1 rotate-0"}`}></span>
+                </span>
+              </button>
             </IconButton>
 
             {/* Image centered */}
@@ -96,13 +112,13 @@ const Header = (props) => {
                 <Image src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </div>
-
             {/* Optional right section (hidden on mobile) */}
             <Box className=""></Box>
           </Toolbar>
+          <Socials containerClass="md:hidden border-t border-zinc-800 text-gray-50 py-2 flex flex-row text-3xl w-full text-gray-50 justify-around" />
         </AppBar>
       </HideOnScroll>
-      <nav className="XXXXX">
+      <nav>
         <Drawer
           container={container}
           variant="temporary"

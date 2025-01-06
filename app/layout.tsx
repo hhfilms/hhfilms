@@ -4,9 +4,9 @@ import {Providers} from "./providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Socials from "@/components/Socials";
-import {Suspense} from "react";
 
 import "./globals.scss";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -52,12 +52,9 @@ export default function RootLayout({
           <div className="w-100 h-screen">
             <Header />
             <AppRouterCacheProvider>
-              <Suspense fallback={<p>Loading...</p>}>
-                <main className="flex-grow overflow-y-auto bg-midnight">{children}</main>
-              </Suspense>
+              <main className="flex-grow overflow-y-auto bg-midnight">{children}</main>
+              <Footer />
             </AppRouterCacheProvider>
-            <Socials containerClass="md:hidden bg-brand py-4 flex flex-row text-4xl w-full text-gray-50 justify-around space-x-4" />
-            <Footer />
           </div>
         </Providers>
       </body>
