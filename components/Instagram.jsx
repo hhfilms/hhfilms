@@ -4,10 +4,12 @@ import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Link from "next/link";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import Loading from "@/components/Loading";
 
 const InstagramFeed = () => {
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const videoRefs = useRef([]);
 
@@ -35,6 +37,7 @@ const InstagramFeed = () => {
         const data = await response.json();
         if (response.ok) {
           setReels(data.data); // Adjust depending on your API response
+          setIsLoading(false);
         } else {
           throw new Error(data.error || "Failed to fetch Reels");
         }
@@ -50,7 +53,9 @@ const InstagramFeed = () => {
     return <div>Error: {error}</div>;
   }
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="text-gray-50">
       <Swiper
         className=""

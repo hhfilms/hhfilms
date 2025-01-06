@@ -2,10 +2,11 @@
 import {useEffect, useState} from "react";
 import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-
+import Loading from "@/components/Loading";
 const YouTubeGallery = () => {
   const [vids, setVids] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchVideos() {
@@ -14,6 +15,7 @@ const YouTubeGallery = () => {
         const data = await response.json();
         if (response.ok) {
           setVids(data); // Adjust depending on your API response
+          setIsLoading(false);
         } else {
           throw new Error(data.error || "Failed to fetch videos");
         }
@@ -29,7 +31,9 @@ const YouTubeGallery = () => {
     return <div>Error: {error}</div>;
   }
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="text-gray-50 w-full">
       <Swiper
         className=""

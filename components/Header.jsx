@@ -87,7 +87,7 @@ const Header = (props) => {
           {/* mobile toolbar */}
           <Toolbar className="md:hidden py-4 flex items-center justify-between shadow-md">
             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className="mr-2">
-              <button
+              <a
                 className="group flex items-center justify-center w-8 h-8 rounded tap-highlight-transparent outline-none focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2"
                 type="button"
                 aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -103,7 +103,7 @@ const Header = (props) => {
                   {/* Bottom Line */}
                   <span className={`block h-[2px] w-full bg-current transition-transform duration-150 ${mobileOpen ? "-translate-y-[2px] -rotate-45" : "translate-y-1 rotate-0"}`}></span>
                 </span>
-              </button>
+              </a>
             </IconButton>
 
             {/* Image centered */}
