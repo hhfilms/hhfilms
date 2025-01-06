@@ -30,17 +30,17 @@ const About = () => {
         <div className="flex flex-col text-gray-50 py-8 px-4 sm:px-8 lg:px-16">
           <p className="text-lg md:text-2xl font-extralight leading-relaxed mb-4">
             what started off as a way to document family trips and special occasions quickly turned into something much bigger. at first, it was to save the memories we've made, and piece together
-            highlight reels for my kids. but as time went on, i realized i wasn’t just making videos; i was preserving moments, telling stories, and giving people a way to relive the memories that
+            highlight reels for my kids. but as time went on, i realized i wasn't just making videos; i was preserving moments, telling stories, and giving people a way to relive the memories that
             matter most.
           </p>
-          <p className="text-lg md:text-2xl font-extralight leading-relaxed mb-4">that’s how heart & hustle films was born.</p>
+          <p className="text-lg md:text-2xl font-extralight leading-relaxed mb-4">that's how heart & hustle films was born.</p>
           <p className="text-lg md:text-2xl font-extralight leading-relaxed mb-4">
-            i wanted to take what i loved — storytelling through film — and share it with others. every project we take on gets the same attention and care as if it were my own - whether it’s a
-            championship game, a charity event, or a special moment. to me, this isn’t just about filmmaking; it’s about sharing stories that make life unforgettable.
+            i wanted to take what i loved — storytelling through film — and share it with others. every project we take on gets the same attention and care as if it were my own - whether it's a
+            championship game, a charity event, or a special moment. to me, this isn't just about filmmaking; it's about sharing stories that make life unforgettable.
           </p>
           <p className="text-lg md:text-2xl font-extralight leading-relaxed mb-4">
             at heart & hustle films, we bring passion and dedication to every frame. the “heart” comes from the special moments we share, and the “hustle” shows the effort and dedication behind every
-            experience we capture. armed with top-notch gear and a commitment to quality, we’re here to turn your moments into cinematic memories.
+            experience we capture. armed with top-notch gear and a commitment to quality, we're here to turn your moments into cinematic memories.
           </p>
         </div>
       </div>
