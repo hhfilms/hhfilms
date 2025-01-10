@@ -39,7 +39,7 @@ const Services = () => {
         }}
         overlayClassName="top-2/3"
         mediaClassName="object-top object-cover"
-        buttonLink=""
+        buttonLink="/contact"
         imagePosition="top"
       />
       <section className="my-12">

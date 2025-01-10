@@ -44,52 +44,28 @@ const ContactForm = () => {
   };
 
   return (
-    <div className=" mx-auto  p-6 bg-gray-800/50 rounded-lg shadow-md">
+    <div className=" mx-auto  p-6 bg-zinc-500 rounded-lg shadow-md">
       <h2 className="text-2xl text-gray-50 font-bold mb-4 text-center">send us a message</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="block text-sm font-medium text-gray-50">
             Name
           </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full text-gray-800 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-          />
+          <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="mt-1 block w-full text-gray-800 p-2  rounded-md shadow-sm" />
         </div>
         <div className="mb-4">
           <label htmlFor="email" className="block text-sm font-medium text-gray-50">
             Email
           </label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="text-gray-800 mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-          />
+          <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="text-gray-800 mt-1 block w-full p-2  rounded-md shadow-sm" />
         </div>
         <div className="mb-4">
           <label htmlFor="message" className="block text-sm font-medium text-gray-50">
             Message
           </label>
-          <textarea
-            name="message"
-            id="message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm text-gray-800"
-          />
+          <textarea name="message" id="message" rows="5" value={formData.message} onChange={handleChange} required className="mt-1 block w-full p-2  rounded-md shadow-sm text-gray-800" />
         </div>
-        <button type="submit" disabled={loading} className="w-full text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 disabled:bg-gray-400 outline outline-1 hover:text-brand hover:outline-brand">
+        <button type="submit" disabled={loading} className="w-full text-white py-2 px-4 rounded-md disabled:bg-gray-400 outline outline-1 hover:text-brand hover:outline-brand">
           {loading ? "Submitting..." : "Send Message"}
         </button>
         {success && <p className="mt-4 text-green-500">Message sent successfully!</p>}
