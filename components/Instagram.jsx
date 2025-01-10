@@ -10,11 +10,14 @@ const InstagramFeed = () => {
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isPlaying, setisPlaying] = useState(false);
 
   const videoRefs = useRef([]);
 
+  const [playingIndex, setPlayingIndex] = useState(null); // Index of the playing video or null
+
   const handleTogglePlay = (index) => {
-    // Pause all videos
+    // Pause all videos except the clicked one
     videoRefs.current.forEach((video, idx) => {
       if (video && idx !== index) {
         video.pause();
@@ -25,8 +28,10 @@ const InstagramFeed = () => {
     const clickedVideo = videoRefs.current[index];
     if (clickedVideo.paused) {
       clickedVideo.play();
+      setPlayingIndex(index); // Set the playing index
     } else {
       clickedVideo.pause();
+      setPlayingIndex(null); // No video is playing
     }
   };
 
@@ -62,7 +67,7 @@ const InstagramFeed = () => {
         modules={[Navigation, A11y, Mousewheel, FreeMode]}
         mousewheel={false}
         spaceBetween={20}
-        slidesPerView={1.2} // Defaults for mobile
+        slidesPerView={2.2} // Defaults for mobile
         breakpoints={{
           640: {slidesPerView: 2.5, spaceBetween: 20}, // Tablet (sm breakpoint)
           768: {slidesPerView: 3.5, spaceBetween: 30}, // Small laptop (md breakpoint)
@@ -73,21 +78,29 @@ const InstagramFeed = () => {
         pagination={{clickable: true}}>
         {reels.map((reel, index) => (
           <SwiperSlide key={reel.id}>
-            <div className="insta-embed">
+            <div className="group relative">
               <video
                 ref={(el) => (videoRefs.current[index] = el)} // Add video to refs array
                 poster={`${reel.thumbnail_url}`}
-                onClick={() => handleTogglePlay(index)}
                 width="250"
-                className="w-full">
+                onClick={() => handleTogglePlay(index)}
+                className="w-full rounded-xl">
                 <source src={reel.media_url} type="video/mp4" />
               </video>
+              <p
+                onClick={() => handleTogglePlay(index)}
+                className={`text-gray-50 absolute inset-0 bg-black/75 px-4 transition-opacity duration-300 flex flex-col items-center justify-center ${
+                  playingIndex === index ? "opacity-0 pointer-events-none" : "opacity-0 group-hover:opacity-100"
+                }`}>
+                {reel.caption.slice(0, 330)}
+                {reel.caption.length > 330 ? "..." : ""}
+              </p>
             </div>
-            <div className="font-light text-sm text-justify">
-              <Link className="text-center block p-4 mb-2 bg-gray-50 text-midnight hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
-                <InstagramIcon /> <span className="">view on instagram</span>
+
+            <div className="font-light text-sm justify-center flex">
+              <Link className="inline-flex items-center text-center p-4 mb-2 text-gray-50 hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
+                <InstagramIcon /> <span className="ml-4">view on instagram</span>
               </Link>
-              <p className="">{reel.caption}</p>
             </div>
           </SwiperSlide>
         ))}

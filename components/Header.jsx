@@ -1,7 +1,7 @@
 "use client";
 import {useState} from "react";
 import PropTypes from "prop-types";
-import {AppBar, Toolbar, CssBaseline, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
+import {AppBar, Toolbar, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
 import {HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
 import Image from "next/image";
 import Socials from "./Socials";
@@ -57,9 +57,8 @@ const Header = (props) => {
 
   return (
     <>
-      <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar position="fixed" sx={{zIndex: 1300}} className="bg-midnight">
+        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-midnight/25">
           {/* desktop toolbar */}
           <Toolbar className="hidden p-8 md:flex items-center justify-between">
             {/* Left Section */}
@@ -85,7 +84,7 @@ const Header = (props) => {
           </Toolbar>
 
           {/* mobile toolbar */}
-          <Toolbar className="md:hidden py-4 flex items-center justify-between shadow-md">
+          <Toolbar className="md:hidden py-4 flex items-center justify-between">
             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className="mr-2">
               <a
                 className="group flex items-center justify-center w-8 h-8 rounded tap-highlight-transparent outline-none focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2"
@@ -115,7 +114,7 @@ const Header = (props) => {
             {/* Optional right section (hidden on mobile) */}
             <Box className=""></Box>
           </Toolbar>
-          <Socials containerClass="md:hidden border-t border-zinc-800 text-gray-50 py-2 flex flex-row text-3xl w-full text-gray-50 justify-around" />
+          <Socials containerClass="md:hidden text-gray-50 py-2 flex flex-row text-3xl w-full text-gray-50 justify-around" />
         </AppBar>
       </HideOnScroll>
       <nav>
@@ -141,7 +140,6 @@ const Header = (props) => {
           {drawer}
         </Drawer>
       </nav>
-      <Toolbar />
     </>
   );
 };

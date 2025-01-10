@@ -1,10 +1,11 @@
 import Image from "next/image";
+import {ArrowForward} from "@mui/icons-material";
 
 export default function HeroSection({backgroundType, backgroundSrc, overlayContent, showButton = true, mediaClassName = "", containerClass = "", buttonLink, imagePosition}) {
   return (
-    <div className={`relative w-full overflow-hidden bg-gray-100 ${containerClass}`}>
+    <div className={`relative w-full overflow-hidden ${containerClass}`}>
       {/* Hero Section */}
-      <div className="relative w-full h-full bg-background">
+      <div className="relative w-full h-full">
         {/* Background */}
         {backgroundType === "video" ? (
           <video autoPlay loop muted className={`absolute top-0 left-0 w-full h-full object-cover -z-10 ${mediaClassName}`}>
@@ -21,8 +22,8 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
           <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl sm:max-w-5xl font-bold">{overlayContent.heading}</h1>
           <p className="mb-6 text-lg lg:text-3xl font-extralight sm:max-w-5xl mx-auto sm:mx-0">{overlayContent.description}</p>
           {showButton && (
-            <a href={buttonLink} className="px-6 py-3 text-sm sm:text-base lg:text-lg text-gray-100 font-medium bg-brand rounded hover:bg-gray-900">
-              {overlayContent.buttonText}
+            <a href={buttonLink} className="inline-flex items-center rounded-full outline outline-1 px-6 py-3 text-sm sm:text-base lg:text-lg font-medium hover:outline-brand hover:text-brand">
+              {overlayContent.buttonText} <ArrowForward />
             </a>
           )}
         </div>

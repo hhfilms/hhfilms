@@ -89,10 +89,7 @@ const ContactForm = () => {
             className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm text-gray-800"
           />
         </div>
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-brand text-white py-2 px-4 rounded-md hover:bg-background focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-gray-400">
+        <button type="submit" disabled={loading} className="w-full text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 disabled:bg-gray-400 outline outline-1 hover:text-brand hover:outline-brand">
           {loading ? "Submitting..." : "Send Message"}
         </button>
         {success && <p className="mt-4 text-green-500">Message sent successfully!</p>}

@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Providers} from "./providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import {CssBaseline} from "@mui/material";
 
 import "./globals.scss";
 
@@ -46,12 +47,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-midnight">
         <Providers>
           <div className="w-100 h-screen">
             <Header />
-            <AppRouterCacheProvider>
-              <main className="flex-grow overflow-y-auto bg-midnight">{children}</main>
+            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+              <CssBaseline />
+              <main className="bg-midnight">{children}</main>
               <Footer />
             </AppRouterCacheProvider>
           </div>
