@@ -37,7 +37,6 @@ const Services = () => {
             "long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps | special occasions | weddings | quinceañeras",
           buttonText: "Contact",
         }}
-        showButton={false}
         mediaClassName="object-top object-cover"
         buttonLink=""
         imagePosition="top"

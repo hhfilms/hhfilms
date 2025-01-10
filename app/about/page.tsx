@@ -15,7 +15,6 @@ const About = () => {
             "dallas | fort worth | arlington | plano | irving | garland | frisco | mckinney | richardson | carrollton | denton | grand prairie | mesquite | lewisville | allen | flower mound",
           buttonText: "Contact",
         }}
-        showButton={false}
         mediaClassName="object-top"
         buttonLink=""
         imagePosition="80% -10%"
