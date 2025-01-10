@@ -29,7 +29,7 @@ const Services = () => {
       <HeroSection
         containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
         backgroundType="image"
-        backgroundSrc="https://hhf-assets.s3.us-east-2.amazonaws.com/videography.jpg"
+        backgroundSrc="https://d3fpz3joletla1.cloudfront.net/videography.jpg"
         overlayContent={{
           subheading: " ",
           heading: "are you ready to tell your story with high-level film production?",
