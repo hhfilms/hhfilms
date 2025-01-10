@@ -89,7 +89,7 @@ const InstagramFeed = () => {
               </video>
               <p
                 onClick={() => handleTogglePlay(index)}
-                className={`absolute inset-0 bg-black/75 p-8 transition-opacity duration-300 flex flex-col items-center justify-center text-gray-50 text-xs md:text-base overflow-hidden ${
+                className={`absolute inset-0 bg-black/75 p-1 md:p-8 transition-opacity duration-300 flex flex-col items-center justify-center text-gray-50 text-xs md:text-base overflow-hidden ${
                   playingIndex === index ? "opacity-0 pointer-events-none" : "opacity-0 group-hover:opacity-100"
                 }`}>
                 {reel.caption.slice(0, 330)}
