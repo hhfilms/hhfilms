@@ -17,13 +17,13 @@ export default function ServiceDialog({open, data, onClose}) {
 
   return (
     <>
-      <Dialog fullScreen={fullScreen} fullWidth={true} maxWidth="lg" classes={{paper: "bg-stone-400"}} open={open} onClose={onClose} TransitionComponent={Transition}>
-        <AppBar className="bg-stone-500 relative">
-          <Toolbar>
+      <Dialog fullScreen={fullScreen} fullWidth={true} maxWidth="lg" classes={{paper: "bg-main-100"}} open={open} onClose={onClose} TransitionComponent={Transition}>
+        <AppBar className="bg-main-200 relative text-main-900">
+          <Toolbar className="flex items-center text-2xl">
             <IconButton edge="start" color="inherit" onClick={onClose} aria-label="close">
-              <CloseIcon />
+              <CloseIcon color="inherit" fontSize="inherit" fontStyle="inherit" />
             </IconButton>
-            <Typography variant="h6" component="div" className="ml-2">
+            <Typography fontSize="inherit" fontStyle="inherit" className="ml-1 relative top-[-2px]">
               {data}
             </Typography>
           </Toolbar>

@@ -47,13 +47,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-midnight">
+      <body className="bg-main-950">
         <Providers>
-          <div className="w-100 h-screen">
+          <div className="w-100 h-screen flex flex-col">
             <Header />
             <AppRouterCacheProvider options={{enableCssLayer: true}}>
               <CssBaseline />
-              <main className="bg-midnight">{children}</main>
+              <main className="bg-main-950f flex-grow">{children}</main>
               <Footer />
             </AppRouterCacheProvider>
           </div>

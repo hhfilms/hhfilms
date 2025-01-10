@@ -28,7 +28,7 @@ const ServiceCard = ({onOpenDialog}) => {
   };
 
   return services.map((service, index) => (
-    <div key={index} className="bg-zinc-800 shadow-md p-6 text-gray-50 font-light flex flex-col">
+    <div key={index} className="bg-main-100 shadow-md p-6 text-main-950 font-light flex flex-col">
       {/* mobile icon */}
       <p className="md:hidden text-5xl md:text-6xl text-brand flex justify-center">{service.icon}</p>
       <h3 className="text-center md:text-left md:flex items-center mb-4 text-xl md:text-3xl">
@@ -38,7 +38,7 @@ const ServiceCard = ({onOpenDialog}) => {
       <div className="mt-auto flex justify-center space-x-8">
         <button
           onClick={() => handleCardClick(service.title)} // Fix: Use an anonymous function
-          className="flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg outline outline-1 outline-gray-100 text-gray-100 hover:outline-brand hover:text-brand">
+          className="flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg outline outline-1 outline-main-500 text-main-500 hover:outline-brand hover:text-brand">
           more info <LightbulbOutlined className="ml-1" fontSize="inherit" />
         </button>
       </div>

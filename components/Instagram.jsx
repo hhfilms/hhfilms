@@ -98,7 +98,7 @@ const InstagramFeed = () => {
             </div>
 
             <div className="font-light text-sm justify-center flex">
-              <Link className="inline-flex items-center text-center p-4 mb-2 text-gray-50 hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
+              <Link className="inline-flex items-center text-center p-4 mb-2 text-main-200 hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
                 <InstagramIcon /> <span className="ml-1 hidden md:inline-block">view on instagram</span>
               </Link>
             </div>

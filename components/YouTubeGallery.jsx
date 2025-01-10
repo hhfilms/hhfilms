@@ -61,7 +61,7 @@ const YouTubeGallery = () => {
                 allowFullScreen></iframe>
             </div>
             <div className="p-4 text-center text-gray-50">
-              <h2 className="text-2xl sm:text-xl xl:text-2xl font-extralight font-assistant text-center text-gray-50">{item.snippet.title}</h2>
+              <h2 className="text-2xl sm:text-xl text-center text-main-200">{item.snippet.title}</h2>
             </div>
           </SwiperSlide>
         ))}

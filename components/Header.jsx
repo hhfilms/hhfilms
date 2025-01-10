@@ -58,7 +58,7 @@ const Header = (props) => {
   return (
     <>
       <HideOnScroll {...props}>
-        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-midnight/25">
+        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-main-950/25">
           {/* desktop toolbar */}
           <Toolbar className="hidden p-8 md:flex items-center justify-between">
             {/* Left Section */}

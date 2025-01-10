@@ -25,9 +25,9 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center text-gray-50">
+    <div className="min-h-screen flex flex-col items-center text-gray-50 ">
       <HeroSection
-        containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
+        containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh] bg-main-950"
         backgroundType="image"
         backgroundSrc="https://d3fpz3joletla1.cloudfront.net/videography.jpg"
         overlayContent={{
