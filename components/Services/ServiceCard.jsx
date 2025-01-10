@@ -38,7 +38,7 @@ const ServiceCard = ({onOpenDialog}) => {
         <button
           onClick={() => handleCardClick(service.title)} // Fix: Use an anonymous function
           className="flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg outline outline-1 outline-gray-100 text-gray-100 hover:outline-brand hover:text-brand">
-          more info <LightbulbOutlined fontSize="inherit" />
+          more info <LightbulbOutlined className="ml-1" fontSize="inherit" />
         </button>
       </div>
     </div>

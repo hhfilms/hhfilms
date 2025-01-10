@@ -20,6 +20,7 @@ export default function Home() {
           }}
           buttonLink="/contact"
           mediaClassName="object-cover"
+          overlayClassName="top-1/2"
           imagePosition="center"
         />
 
@@ -31,7 +32,7 @@ export default function Home() {
         </section>
       </section>
       {/* Heart Section */}
-      <section className="py-14 px-4 sm:px-6 lg:px-8 text-gray-50 w-full">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 text-gray-50 w-full">
         <div className="flex flex-col sm:flex-row items-center">
           <h2 className="text-4xl font-extralight font-assistant  sm:text-5xl mb-4 flex-grow">heart</h2>
           <p className="flex-grow text-center sm:text-right justify-end font-extralight mb-4 text md:text-lg">promote your business or nonprofit | capture magical moments</p>
@@ -49,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Hustle Section */}
-      <section className="py-14 px-4 sm:px-6 lg:px-8 text-gray-50 w-full">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 text-gray-50 w-full">
         <div className="flex flex-col sm:flex-row items-center">
           <h2 className="text-4xl font-extralight font-assistant  sm:text-5xl mb-4 flex-grow">hustle</h2>
           <p className="flex-grow text-center sm:text-right justify-end font-extralight mb-4 text md:text-lg">sport highlights, reels & recaps | teams or individuals</p>

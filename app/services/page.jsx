@@ -37,11 +37,12 @@ const Services = () => {
             "long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps | special occasions | weddings | quinceañeras",
           buttonText: "Contact",
         }}
+        overlayClassName="top-2/3"
         mediaClassName="object-top object-cover"
         buttonLink=""
         imagePosition="top"
       />
-      <section className="m-12">
+      <section className="my-12">
         <h1 className="text-4xl font-extralight font-assistant text-center text-gray-50 sm:text-5xl mb-8">what we offer</h1>
 
         <div className="mx-auto xl:flex xl:space-x-32">
