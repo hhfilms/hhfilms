@@ -11,7 +11,7 @@ export default function Home() {
         <HeroSection
           containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
           backgroundType="image"
-          backgroundSrc="https://hhf-assets.s3.us-east-2.amazonaws.com/hero.jpg"
+          backgroundSrc="https://d3fpz3joletla1.cloudfront.net/hero.jpg"
           overlayContent={{
             subheading: "welcome to",
             heading: "heart & hustle Films",

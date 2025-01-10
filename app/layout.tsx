@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Heart & Hustle Films",
     images: [
       {
-        url: "https://hhf-assets.s3.us-east-2.amazonaws.com/ogimage.jpg",
+        url: "https://d3fpz3joletla1.cloudfront.net/ogimage.jpg",
         width: 1200,
         height: 630,
         alt: "Heart & Hustle Films Hero Image",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Heart & Hustle Films",
     description: "sports videography | event coverage | business promos | cinematic storytelling",
-    images: ["https://hhf-assets.s3.us-east-2.amazonaws.com/ogimage.jpg"],
+    images: ["https://d3fpz3joletla1.cloudfront.net/ogimage.jpg"],
   },
 };
 
@@ -51,7 +51,7 @@ export default function RootLayout({
         <Providers>
           <div className="w-100 h-screen">
             <Header />
-            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+            <AppRouterCacheProvider options={{enableCssLayer: true}}>
               <CssBaseline />
               <main className="bg-midnight">{children}</main>
               <Footer />

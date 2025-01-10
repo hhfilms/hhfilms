@@ -1,4 +1,4 @@
-import {ArrowForward, StoreOutlined, SportsFootballOutlined, FavoriteBorderOutlined, LightbulbOutlined} from "@mui/icons-material";
+import {StoreOutlined, SportsFootballOutlined, FavoriteBorderOutlined, LightbulbOutlined} from "@mui/icons-material";
 
 const services = [
   {
@@ -29,7 +29,8 @@ const ServiceCard = ({onOpenDialog}) => {
 
   return services.map((service, index) => (
     <div key={index} className="bg-zinc-800 shadow-md p-6 text-gray-50 font-light flex flex-col">
-      <p className="md:hidden text-5xl md:text-6xl text-brand text-center">{service.icon}</p>
+      {/* mobile icon */}
+      <p className="md:hidden text-5xl md:text-6xl text-brand flex justify-center">{service.icon}</p>
       <h3 className="text-center md:text-left md:flex items-center mb-4 text-xl md:text-3xl">
         <span className="hidden md:block text-brand text-3xl md:text-6xl mr-1 md:mr-4">{service.icon}</span> {service.title}
       </h3>

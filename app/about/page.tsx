@@ -7,7 +7,7 @@ const About = () => {
       <HeroSection
         containerClass="h-[75vh]"
         backgroundType="image"
-        backgroundSrc="https://hhf-assets.s3.us-east-2.amazonaws.com/dallas-skyline.jpg"
+        backgroundSrc="https://d3fpz3joletla1.cloudfront.net/dallas-skyline.jpg"
         overlayContent={{
           subheading: " ",
           heading: "about heart & hustle films",
@@ -24,7 +24,7 @@ const About = () => {
       {/* About Section */}
       <div className="flex flex-col items-center text-gray-50 py-16 px-4 sm:px-8 lg:px-16">
         {/* <div className="relative w-full h-64 sm:h-96 md:h-[500px] mt-20 md:mt-24">
-          <Image src="https://hhf-assets.s3.us-east-2.amazonaws.com/dallas-skyline.jpg" alt="Example image" layout="fill" objectFit="cover" objectPosition="top" />
+          <Image src="https://d3fpz3joletla1.cloudfront.net/dallas-skyline.jpg" alt="Example image" layout="fill" objectFit="cover" objectPosition="top" />
         </div> */}
         {/* About Section */}
         <div className="flex flex-col text-gray-50 py-8 px-4 sm:px-8 lg:px-16">
