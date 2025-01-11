@@ -3,7 +3,7 @@ const SectionRenderer = ({data}) => {
 
   // Define components inline
   const BusinessSection = () => (
-    <section className="p-12 text-lg font-light text-main-950">
+    <section className="p-2 md:p-12 md:text-lg font-light text-main-950">
       <p className="mb-4">
         showcase your mission, services, or brand like never before with our range of professional video production services. whether you’re promoting your organization, creating content for marketing
         campaigns, or telling your unique story, we offer customized solutions to fit your vision. from engaging interviews to polished visuals, our team ensures every detail is handled with
@@ -52,7 +52,7 @@ const SectionRenderer = ({data}) => {
   );
 
   const SportsSection = () => (
-    <section className="p-12 text-lg font-light text-main-950">
+    <section className="p-2 md:p-12 md:text-lg font-light text-main-950">
       <p className="mb-4">
         Elevate your sports memories and showcase athletic talent like never before with our range of optional services. Whether you’re highlighting key moments for college recruiters, creating a
         keepsake for proud parents, or capturing the energy of a season, we offer tailored solutions to fit your vision. From expert filming to polished editing, our team ensures every detail is
@@ -103,7 +103,7 @@ const SectionRenderer = ({data}) => {
   );
 
   const SpecialSection = () => (
-    <section className="p-12 text-lg font-light text-main-950">
+    <section className="p-2 md:p-12 md:text-lg font-light text-main-950">
       <p className="mb-4">
         life’s most meaningful celebrations deserve to be remembered in a way that captures their beauty and significance. whether it’s a wedding, quinceañera, birthday, or any other milestone, we’re
         here to tell your story with care and creativity. using professional equipment and expert editing, we craft films that preserve every laugh, tear, and heartfelt moment, so you can relive them

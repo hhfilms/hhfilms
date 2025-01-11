@@ -4,7 +4,7 @@ import {useState} from "react";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/Services/ServiceCard";
 import ServiceDialog from "@/components/Services/ServiceDialog";
-
+import {ArrowForward} from "@mui/icons-material";
 const Services = () => {
   // State to control dialog visibility
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -35,7 +35,7 @@ const Services = () => {
           heading: "are you ready to tell your story with high-level film production?",
           description:
             "long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps | special occasions | weddings | quinceañeras",
-          buttonText: "Contact",
+          buttonText: "contact",
         }}
         overlayClassName="top-2/3"
         mediaClassName="object-top object-cover"
@@ -51,11 +51,11 @@ const Services = () => {
           </div>
         </div>
         <div className="text-center">
-          <p className="text-xl my-8">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
+          <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
           <a
             href="/contact"
             className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 outline-gray-100 text-gray-100 hover:outline-brand hover:text-brand">
-            contact us
+            contact us <ArrowForward fontSize="inherit" />
           </a>
         </div>
       </section>

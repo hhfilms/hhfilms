@@ -1,4 +1,5 @@
 import type {Config} from "tailwindcss";
+const {nextui} = require("@nextui-org/react");
 
 export default {
   content: [
@@ -8,10 +9,13 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./lib/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@mui/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
+        autofill: "e7e7e7",
+        autofillText: "e7e7e7",
         background: "var(--background)",
         foreground: "var(--foreground)",
         brand: "#c00c26",
@@ -43,5 +47,6 @@ export default {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui(), "@tailwindcss/forms"],
 } satisfies Config;

@@ -1,19 +1,36 @@
 "use client";
 import {useState} from "react";
+import {AccountCircle, AlternateEmail, PhoneIphone, VideocamOutlined, LocationOnOutlined, CalendarMonthOutlined, ArticleOutlined} from "@mui/icons-material/";
+import {Button, Form, Input, Select, SelectItem, Textarea, DateInput} from "@nextui-org/react";
+import {CalendarDate} from "@internationalized/date";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    serviceType: "sports",
+    location: "",
+    date: null,
     message: "",
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const {name, value} = e.target;
     setFormData({...formData, [name]: value});
+  };
+
+  const handleDateChange = (selectedDate) => {
+    if (selectedDate) {
+      // Example: Store as a string in the format "YYYY-MM-DD"
+      const formattedDate = `${selectedDate.year}-${String(selectedDate.month).padStart(2, "0")}-${String(selectedDate.day).padStart(2, "0")}`;
+      setFormData({...formData, date: formattedDate});
+    } else {
+      setFormData({...formData, date: null}); // Reset if no date is selected
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -31,46 +48,217 @@ const ContactForm = () => {
 
       if (response.ok) {
         setSuccess(true);
-        setFormData({name: "", email: "", message: ""});
+        setFormData({name: "", email: "", phone: "", serviceType: "sports", location: "", date: null, message: ""});
       } else {
         throw new Error("Something went wrong");
       }
     } catch (err) {
       setError(true);
     } finally {
-      console.log(process.env.SENDGRID_API_KEY);
       setLoading(false);
     }
   };
 
+  const formatPhoneNumber = (value) => {
+    // Remove all non-numeric characters
+    const phoneNumber = value.replace(/\D/g, "");
+
+    // Format as (111) 222-3333
+    if (phoneNumber.length <= 3) {
+      return `(${phoneNumber}`;
+    } else if (phoneNumber.length <= 6) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    } else {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+    }
+  };
+
+  const handlePhoneChange = (e) => {
+    const {value} = e.target;
+
+    // Format the phone number and update the state
+    setFormData({...formData, phone: formatPhoneNumber(value)});
+  };
+
+  const services = [
+    {key: "sports", label: "sports"},
+    {key: "business", label: "business/nonprofit"},
+    {key: "special ", label: "special occasion"},
+    {key: "other ", label: "other (details in message)"},
+  ];
+
   return (
-    <div className=" mx-auto  p-6 bg-zinc-500 rounded-lg shadow-md">
-      <h2 className="text-2xl text-gray-50 font-bold mb-4 text-center">send us a message</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-50">
-            Name
-          </label>
-          <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="mt-1 block w-full text-gray-800 p-2  rounded-md shadow-sm" />
+    <div className="contact-form">
+      <Form className="w-full" validationBehavior="native" onSubmit={handleSubmit}>
+        <Input
+          isRequired
+          isClearable
+          onClear={() => setFormData({...formData, name: ""})}
+          style={{
+            WebkitTextFillColor: "#e7e7e7",
+          }}
+          color="danger"
+          size="lg"
+          className="w-full mb-6 text-xl "
+          classNames={{
+            input: "text-lg",
+            label: "!text-main-100 text-lg mb-2",
+          }}
+          label="full name"
+          type="text"
+          variant="underlined"
+          name="name"
+          id="name"
+          value={formData.name}
+          onChange={handleInputChange}
+          required
+          startContent={<AccountCircle className="text-brand mb-0.5 pointer-events-none my-2" />}
+        />
+        <div className="flex flex-col md:flex-row md:justify-around md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-6 w-full">
+          <Input
+            isRequired
+            isClearable
+            onClear={() => setFormData({...formData, email: ""})}
+            color="danger"
+            style={{
+              WebkitTextFillColor: "#e7e7e7",
+            }}
+            size="lg"
+            className=""
+            classNames={{
+              label: "!text-main-100 text-lg mb-2",
+              input: ["text-lg"],
+            }}
+            label="email"
+            type="email"
+            variant="underlined"
+            name="email"
+            id="email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+            startContent={<AlternateEmail className="text-brand mb-0.5 pointer-events-none my-2" />}
+          />
+
+          <Input
+            isRequired
+            isClearable
+            onClear={() => setFormData({...formData, phone: ""})}
+            color="danger"
+            style={{
+              WebkitTextFillColor: "#e7e7e7",
+            }}
+            size="lg"
+            className=""
+            classNames={{
+              label: "!text-main-100 text-lg mb-2",
+              input: ["text-lg"],
+            }}
+            label="phone"
+            type="tel"
+            variant="underlined"
+            name="phone"
+            id="phone"
+            value={formData.phone}
+            onChange={handlePhoneChange} // Custom handler
+            required
+            startContent={<PhoneIphone className="text-brand mb-0.5 pointer-events-none my-2" />}
+          />
         </div>
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-50">
-            Email
-          </label>
-          <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="text-gray-800 mt-1 block w-full p-2  rounded-md shadow-sm" />
+        <div className="flex flex-col md:flex-row md:justify-around md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-6 w-full">
+          <Select
+            color="danger"
+            defaultSelectedKeys={["sports"]}
+            size="lg"
+            classNames={{
+              label: "!text-main-100 text-lg mb-2",
+              value: ["!text-main-100 text-lg"],
+            }}
+            className=""
+            isRequired
+            label="type of service?"
+            variant="underlined"
+            name="serviceType"
+            value={formData.serviceType}
+            onChange={handleInputChange}
+            startContent={<VideocamOutlined className="text-brand pointer-events-none my-2" />}>
+            {services.map((service) => (
+              <SelectItem key={service.key}>{service.label}</SelectItem>
+            ))}
+          </Select>
+          <Input
+            isClearable
+            onClear={() => setFormData({...formData, location: ""})}
+            isRequired
+            color="danger"
+            size="lg"
+            className=""
+            classNames={{
+              label: "!text-main-100 text-lg mb-2",
+              input: ["text-lg"],
+            }}
+            label="location"
+            type="location"
+            variant="underlined"
+            name="location"
+            id="location"
+            value={formData.location}
+            onChange={handleInputChange}
+            required
+            startContent={<LocationOnOutlined className="text-brand mb-0.5 pointer-events-none my-2" />}
+          />
         </div>
-        <div className="mb-4">
-          <label htmlFor="message" className="block text-sm font-medium text-gray-50">
-            Message
-          </label>
-          <textarea name="message" id="message" rows="5" value={formData.message} onChange={handleChange} required className="mt-1 block w-full p-2  rounded-md shadow-sm text-gray-800" />
-        </div>
-        <button type="submit" disabled={loading} className="w-full text-white py-2 px-4 rounded-md disabled:bg-gray-400 outline outline-1 hover:text-brand hover:outline-brand">
+
+        <DateInput
+          isRequired
+          color="danger"
+          name="date"
+          id="date"
+          className="mb-6"
+          classNames={{
+            label: "!text-main-100 text-lg",
+            input: ["!text main-100 text-lg"],
+          }}
+          onChange={handleDateChange} // Handle date change
+          value={
+            formData.date
+              ? new CalendarDate(...formData.date.split("-").map(Number)) // Convert string back to CalendarDate
+              : null
+          }
+          label="date of event"
+          placeholderValue={null} // Show placeholder if no date
+          variant="underlined"
+          startContent={<CalendarMonthOutlined className="text-brand mb-0.5 pointer-events-none" />}
+        />
+
+        <Textarea
+          isRequired
+          isClearable
+          onClear={() => setFormData({...formData, message: ""})}
+          color="danger"
+          startContent={<ArticleOutlined className="text-brand mb-0.5 pointer-events-none" />}
+          value={formData.message}
+          onChange={handleInputChange}
+          required
+          classNames={{
+            label: "!text-main-100 text-lg mb-2",
+            input: ["bg-brand text-lg"],
+          }}
+          className="mb-6"
+          // isInvalid={true}
+          label="tell us more about your project or event"
+          variant="underlined"
+          name="message"
+          id="message"
+        />
+
+        <Button color="inherit" className="outline outline-1 rounded-full hover:outline-brand hover:text-brand" type="submit" disabled={loading}>
           {loading ? "Submitting..." : "Send Message"}
-        </button>
+        </Button>
+
         {success && <p className="mt-4 text-green-500">Message sent successfully!</p>}
         {error && <p className="mt-4 text-red-500">Failed to send the message. Please try again.</p>}
-      </form>
+      </Form>
     </div>
   );
 };

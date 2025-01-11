@@ -3,22 +3,22 @@ import CloseIcon from "@mui/icons-material/Close";
 import {useMediaQuery, useTheme} from "@mui/material/";
 import Section from "./Section";
 
-import {Dialog, Button, AppBar, Toolbar, Divider, IconButton, List, ListItem, ListItemText, ListItemButton, Slide, Typography} from "@mui/material";
+import {Dialog, AppBar, Toolbar, IconButton, Slide, Typography} from "@mui/material";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} className=" xxxxxx" />;
+  return <Slide direction="up" ref={ref} {...props} className="" />;
 });
 
 export default function ServiceDialog({open, data, onClose}) {
-  if (!open) return null;
-
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
+  if (!open) return null;
+
   return (
     <>
-      <Dialog fullScreen={fullScreen} fullWidth={true} maxWidth="lg" classes={{paper: "bg-main-100"}} open={open} onClose={onClose} TransitionComponent={Transition}>
-        <AppBar className="bg-main-200 relative text-main-900">
+      <Dialog fullScreen={fullScreen} fullWidth={true} maxWidth="lg" classes={{paper: "!bg-main-100"}} open={open} onClose={onClose} TransitionComponent={Transition}>
+        <AppBar className="!bg-main-200 relative !text-main-900 md:!hidden">
           <Toolbar className="flex items-center text-2xl">
             <IconButton edge="start" color="inherit" onClick={onClose} aria-label="close">
               <CloseIcon color="inherit" fontSize="inherit" fontStyle="inherit" />
@@ -28,7 +28,15 @@ export default function ServiceDialog({open, data, onClose}) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Section data={data.split(" ")[0]} />
+        <div className="hidden md:flex items-center pt-4  ml-14 text-xl ">
+          <IconButton edge="start" color="inherit" onClick={onClose} aria-label="close">
+            <CloseIcon color="inherit" fontSize="inherit" fontStyle="inherit" />
+          </IconButton>
+          {data}
+        </div>
+        <div className="mt-16 md:mt-0">
+          <Section data={data.split(" ")[0]} />
+        </div>
       </Dialog>
     </>
   );

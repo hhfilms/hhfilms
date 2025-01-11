@@ -51,9 +51,8 @@ export default function RootLayout({
         <Providers>
           <div className="w-100 h-screen flex flex-col">
             <Header />
-            <AppRouterCacheProvider options={{enableCssLayer: true}}>
-              <CssBaseline />
-              <main className="bg-main-950f flex-grow">{children}</main>
+            <AppRouterCacheProvider>
+              <main className="bg-main-950 flex-grow">{children}</main>
               <Footer />
             </AppRouterCacheProvider>
           </div>
