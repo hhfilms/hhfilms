@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import {AppBar, Toolbar, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
 import {HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
 import Image from "next/image";
-import Socials from "./Socials";
+import Socials from "@/components/Socials";
 
 const drawerWidth = 240;
 const navItems = [

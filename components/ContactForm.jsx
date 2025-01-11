@@ -1,8 +1,16 @@
 "use client";
-import {useState} from "react";
-import {AccountCircle, AlternateEmail, PhoneIphone, VideocamOutlined, LocationOnOutlined, CalendarMonthOutlined, ArticleOutlined} from "@mui/icons-material/";
-import {Button, Form, Input, Select, SelectItem, Textarea, DateInput} from "@nextui-org/react";
-import {CalendarDate} from "@internationalized/date";
+import { useState } from "react";
+import {
+  AccountCircle,
+  AlternateEmail,
+  PhoneIphone,
+  VideocamOutlined,
+  LocationOnOutlined,
+  CalendarMonthOutlined,
+  ArticleOutlined,
+} from "@mui/icons-material";
+import { Button, Form, Input, Select, SelectItem, Textarea, DateInput } from "@nextui-org/react";
+import { CalendarDate } from "@internationalized/date";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
