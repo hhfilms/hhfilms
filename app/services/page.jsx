@@ -55,7 +55,7 @@ const Services = () => {
           <a
             href="/contact"
             className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 outline-gray-100 text-gray-100 hover:outline-brand hover:text-brand">
-            contact us <ArrowForward fontSize="inherit" />
+            contact <ArrowForward fontSize="inherit" />
           </a>
         </div>
       </section>

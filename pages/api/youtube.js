@@ -1,4 +1,5 @@
 import axios from "axios";
+
 let cachedData = null;
 let cacheTime = null;
 
@@ -15,8 +16,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Fetch media data
-    const ytResponse = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems`, {
+    // Fetch playlist items
+    const playlistResponse = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems`, {
       params: {
         part: "snippet",
         maxResults: 5,
@@ -25,21 +26,43 @@ export default async function handler(req, res) {
       },
     });
 
-    if (ytResponse.status !== 200) {
-      throw new Error(`Error fetching data: ${ytResponse.statusText}`);
+    if (playlistResponse.status !== 200) {
+      throw new Error(`Error fetching playlist data: ${playlistResponse.statusText}`);
     }
 
-    const youtubeData = ytResponse.data;
+    const playlistItems = playlistResponse.data.items;
+
+    // Extract video IDs
+    const videoIds = playlistItems.map((item) => item.snippet.resourceId.videoId);
+
+    // Fetch video details (including tags)
+    const videoResponse = await axios.get(`https://youtube.googleapis.com/youtube/v3/videos`, {
+      params: {
+        part: "snippet",
+        id: videoIds.join(","),
+        key: YT_API_KEY,
+      },
+    });
+
+    if (videoResponse.status !== 200) {
+      throw new Error(`Error fetching video details: ${videoResponse.statusText}`);
+    }
+
+    const videosWithTags = videoResponse.data.items.map((video) => ({
+      id: video.id,
+      title: video.snippet.title,
+      tags: video.snippet.tags || [],
+    }));
 
     // Cache the response
-    cachedData = youtubeData;
+    cachedData = videosWithTags;
     cacheTime = Date.now();
 
-    // Set Cache-Control header for the response
+    // Set Cache-Control header
     res.setHeader("Cache-Control", "s-maxage=3600, stale-while-revalidate=59");
 
-    // Respond with the media data
-    res.status(200).json(youtubeData);
+    // Respond with the combined data
+    res.status(200).json(videosWithTags);
   } catch (error) {
     console.error("Error:", error.message);
     res.status(500).json({error: "Internal server error"});

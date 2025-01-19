@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Layout.tsxx", "pages/about.jsx", "components/Layout.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/Layout.tsxx", "pages/about.jsx", "components/Layout.jsx", "app/services/page.jsx", "components/YouTubeGallery.jsx", "components/Instagram.jsx", "app/instagram/page.jsx", "styles/theme.js", "app/page.jsx"],
   "exclude": ["node_modules"]
 }

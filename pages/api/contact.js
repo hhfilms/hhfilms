@@ -4,9 +4,9 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const {name, email, phone, serviceType, location, date, message} = req.body;
+    const {name, email, phone, eventType, budget, location, date, message} = req.body;
 
-    if (!name || !email || !phone || !serviceType || !location || !date || !message) {
+    if (!name || !email || !phone || !eventType || !budget || !location || !date || !message) {
       return res.status(400).json({error: "All fields are required"});
     }
 
@@ -22,7 +22,8 @@ export default async function handler(req, res) {
           <p><strong>Phone:</strong> ${phone}</p>
           <p><strong>Date:</strong> ${date}</p>
           <p><strong>Location:</strong> ${location}</p>
-          <p><strong>Service Type:</strong> ${serviceType}</p>
+          <p><strong>Service Type:</strong> ${eventType}</p>
+          <p><strong>Budget:</strong> ${budget}</p>
           <p><strong>Message:</strong></p>
           <p>${message}</p>
         `,

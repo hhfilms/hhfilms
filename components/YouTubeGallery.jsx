@@ -50,21 +50,23 @@ const YouTubeGallery = () => {
           1440: {slidesPerView: 3, spaceBetween: 50}, // Desktop (lg breakpoint)
           1900: {slidesPerView: 4, spaceBetween: 50}, // Desktop (lg breakpoint)
         }}>
-        {vids.items?.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className="relative w-full pb-[56.25%]">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${item.snippet.resourceId.videoId}`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
-            </div>
-            <div className="p-4 text-center text-gray-50">
-              <h2 className="text-2xl sm:text-xl text-center text-main-200">{item.snippet.title}</h2>
-            </div>
-          </SwiperSlide>
-        ))}
+        {vids?.map((item) =>
+          item.tags.includes("sports") ? (
+            <SwiperSlide key={item.id}>
+              <div className="relative w-full pb-[56.25%]">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${item.id}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen></iframe>
+              </div>
+              <div className="p-4 text-center text-gray-50">
+                <h2 className="text-2xl sm:text-xl text-center text-main-200">{item.title}</h2>
+              </div>
+            </SwiperSlide>
+          ) : null
+        )}
       </Swiper>
     </div>
   );

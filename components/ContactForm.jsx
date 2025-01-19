@@ -1,23 +1,16 @@
 "use client";
-import { useState } from "react";
-import {
-  AccountCircle,
-  AlternateEmail,
-  PhoneIphone,
-  VideocamOutlined,
-  LocationOnOutlined,
-  CalendarMonthOutlined,
-  ArticleOutlined,
-} from "@mui/icons-material";
-import { Button, Form, Input, Select, SelectItem, Textarea, DateInput } from "@nextui-org/react";
-import { CalendarDate } from "@internationalized/date";
+import {useState} from "react";
+import {AccountCircle, AlternateEmail, PhoneIphone, VideocamOutlined, LocationOnOutlined, CalendarMonthOutlined, ArticleOutlined, MonetizationOnOutlined} from "@mui/icons-material";
+import {Button, Form, Input, Select, SelectItem, Textarea, DateInput} from "@nextui-org/react";
+import {CalendarDate} from "@internationalized/date";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    serviceType: "sports",
+    eventType: "sports",
+    budget: "",
     location: "",
     date: null,
     message: "",
@@ -56,7 +49,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         setSuccess(true);
-        setFormData({name: "", email: "", phone: "", serviceType: "sports", location: "", date: null, message: ""});
+        setFormData({name: "", email: "", phone: "", eventType: "sports", budget: "", location: "", date: null, message: ""});
       } else {
         throw new Error("Something went wrong");
       }
@@ -93,6 +86,14 @@ const ContactForm = () => {
     {key: "business", label: "business/nonprofit"},
     {key: "special ", label: "special occasion"},
     {key: "other ", label: "other (details in message)"},
+  ];
+
+  const budget = [
+    {key: "50-100", label: "$50-$100"},
+    {key: "100-500", label: "$100-$500"},
+    {key: "500-1000 ", label: "$500-$1000"},
+    {key: "1000-2500 ", label: "$1000-$2500"},
+    {key: "2500 ", label: "$2500+"},
   ];
 
   return (
@@ -184,16 +185,39 @@ const ContactForm = () => {
             }}
             className=""
             isRequired
-            label="type of service?"
+            label="type of event?"
             variant="underlined"
-            name="serviceType"
-            value={formData.serviceType}
+            name="eventType"
+            value={formData.eventType}
             onChange={handleInputChange}
             startContent={<VideocamOutlined className="text-brand pointer-events-none my-2" />}>
             {services.map((service) => (
               <SelectItem key={service.key}>{service.label}</SelectItem>
             ))}
           </Select>
+
+          <Select
+            color="danger"
+            size="lg"
+            classNames={{
+              label: "!text-main-100 text-lg mb-2",
+              value: ["!text-main-100 text-lg"],
+            }}
+            className=""
+            isRequired
+            label="what is your budget?"
+            variant="underlined"
+            name="budget"
+            value={formData.budget}
+            onChange={handleInputChange}
+            startContent={<MonetizationOnOutlined className="text-brand pointer-events-none my-2" />}>
+            {budget.map((price) => (
+              <SelectItem key={price.key}>{price.label}</SelectItem>
+            ))}
+          </Select>
+        </div>
+
+        <div className="flex flex-col md:flex-row md:justify-around md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-6 w-full">
           <Input
             isClearable
             onClear={() => setFormData({...formData, location: ""})}
@@ -215,30 +239,28 @@ const ContactForm = () => {
             required
             startContent={<LocationOnOutlined className="text-brand mb-0.5 pointer-events-none my-2" />}
           />
+          <DateInput
+            isRequired
+            color="danger"
+            name="date"
+            id="date"
+            className="mb-6"
+            classNames={{
+              label: "!text-main-100 text-lg",
+              input: ["!text main-100 text-lg"],
+            }}
+            onChange={handleDateChange} // Handle date change
+            value={
+              formData.date
+                ? new CalendarDate(...formData.date.split("-").map(Number)) // Convert string back to CalendarDate
+                : null
+            }
+            label="date of event"
+            placeholderValue={null} // Show placeholder if no date
+            variant="underlined"
+            startContent={<CalendarMonthOutlined className="text-brand mb-0.5 pointer-events-none" />}
+          />
         </div>
-
-        <DateInput
-          isRequired
-          color="danger"
-          name="date"
-          id="date"
-          className="mb-6"
-          classNames={{
-            label: "!text-main-100 text-lg",
-            input: ["!text main-100 text-lg"],
-          }}
-          onChange={handleDateChange} // Handle date change
-          value={
-            formData.date
-              ? new CalendarDate(...formData.date.split("-").map(Number)) // Convert string back to CalendarDate
-              : null
-          }
-          label="date of event"
-          placeholderValue={null} // Show placeholder if no date
-          variant="underlined"
-          startContent={<CalendarMonthOutlined className="text-brand mb-0.5 pointer-events-none" />}
-        />
-
         <Textarea
           isRequired
           isClearable
@@ -254,7 +276,7 @@ const ContactForm = () => {
           }}
           className="mb-6"
           // isInvalid={true}
-          label="tell us more about your project or event"
+          label="details about your project or event"
           variant="underlined"
           name="message"
           id="message"
