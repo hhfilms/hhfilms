@@ -4,7 +4,7 @@ import {useState} from "react";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/Services/ServiceCard";
 import ServiceDialog from "@/components/Services/ServiceDialog";
-import {ArrowForward, VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined, DirectionsRunOutlined} from "@mui/icons-material";
+import {VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined, DirectionsRunOutlined} from "@mui/icons-material";
 import Link from "next/link";
 const Services = () => {
   // State to control dialog visibility
@@ -45,11 +45,11 @@ const Services = () => {
       />
 
       <section className="p-2 md:p-12">
-        <h2 className="text-4xl font-extralight font-assistant text-gray-50 sm:text-5xl mb-8">options include</h2>
+        <h2 className="text-4xl font-extralight font-assistant text-gray-50 sm:text-5xl my-8">options include</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
-          <div className="border-1 rounded-lg p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
-              <VideocamOutlined fontSize="inherit" className="mb-8" />
+              <VideocamOutlined fontSize="inherit" className="mb-4 md:mb-8" />
             </div>
             <div className="">
               <p className="text-3xl text-brand">team or individual highlight</p>
@@ -59,9 +59,9 @@ const Services = () => {
             <span className="text-sm">*aspect ratios can include vertical, horizontal, or both for multiple platforms</span>
           </div>
 
-          <div className="border-1 rounded-lg p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
-              <VideoCameraFrontOutlined fontSize="inherit" className="mb-8" />
+              <VideoCameraFrontOutlined fontSize="inherit" className="mb-4 md:mb-8" />
             </div>
             <div className="">
               <p className="text-3xl text-brand">athlete interview</p>
@@ -72,9 +72,9 @@ const Services = () => {
             </p>
             <span className="text-sm">*to be filmed at a location on a date that is not a game day</span>
           </div>
-          <div className="border-1 rounded-lg p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
-              <CampaignOutlined fontSize="inherit" className="mb-8" />
+              <CampaignOutlined fontSize="inherit" className="mb-4 md:mb-8" />
             </div>
             <div className="">
               <p className="text-3xl text-brand">player introductions</p>
@@ -83,9 +83,9 @@ const Services = () => {
             <p className="mb-8">a fun way to have your athletes introduce themselves with their position and a personal message.</p>
             <span className="text-sm">*team only. no individuals</span>
           </div>
-          <div className="border-1 rounded-lg p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
-              <StadiumOutlined fontSize="inherit" className="mb-8" />
+              <StadiumOutlined fontSize="inherit" className="mb-4 md:mb-8" />
             </div>
             <div className="">
               <p className="text-3xl text-brand">drone shots</p>
@@ -95,9 +95,9 @@ const Services = () => {
             <span className="text-sm">*subject to local laws and regulations</span>
           </div>
 
-          <div className="border-1 rounded-lg p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
-              <DirectionsRunOutlined fontSize="inherit" className="mb-8" />
+              <DirectionsRunOutlined fontSize="inherit" className="mb-4 md:mb-8" />
             </div>
             <div className="">
               <p className="text-3xl text-brand">full-game filming</p>
@@ -106,14 +106,17 @@ const Services = () => {
             <p className="mb-8">comprehensive coverage of every play, capturing all the action from start to finish.</p>
             <span className="text-sm">*includes 1 camera angle. no music. no voiceover. no customization. only game action</span>
           </div>
-          <div className="border-1 rounded-lg p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
-              <CameraEnhanceOutlined fontSize="inherit" className="mb-8" />
+              <CameraEnhanceOutlined fontSize="inherit" className="mb-4 md:mb-8" />
             </div>
             <div className="">
               <p className="text-3xl text-brand">customized videos</p>
               <p className="mb-4 font-light">
-                <Link href="/contact" className="underline underline-offset-4 hover:text-brand">contact</Link> for pricing
+                <Link href="/contact" className="underline underline-offset-4 hover:text-brand">
+                  contact
+                </Link>{" "}
+                for pricing
               </p>
             </div>
             <p>tailored to your specific goals, blending professionalism, creativity, and advanced technology.</p>
@@ -121,7 +124,7 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="p-2 md:p-12">
+      <section className="p-2 md:p-12 border-double border-t-8 mt-8">
         <h1 className="text-4xl font-extralight font-assistant text-gray-50 sm:text-5xl text-left">additional services</h1>
         <p className="mb-8">
           long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps | special
@@ -136,11 +139,11 @@ const Services = () => {
       <section className="mb-12">
         <div className="text-center">
           <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
-          <a
+          <Link
             href="/contact"
             className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 outline-gray-100 text-gray-100 hover:outline-brand hover:text-brand">
-            contact <ArrowForward fontSize="inherit" />
-          </a>
+            contact
+          </Link>
         </div>
       </section>
 
