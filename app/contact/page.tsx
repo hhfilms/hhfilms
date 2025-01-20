@@ -27,6 +27,10 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <div className="text-center md:text-left md:pl-16 py-4 text-xs text-gray-400">
+        photo by <a href="https://unsplash.com/@clarktibbs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Clark Tibbs</a> on
+        <a href="https://unsplash.com/photos/do-something-great-neon-sign-oqStl2L5oxI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      </div>
     </>
   );
 };

@@ -9,7 +9,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full relative">
         <HeroSection
-          containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh]"
+          containerClass="h-[85vh] sm:h-[60vh] md:h-[85vh]"
           backgroundType="image"
           backgroundSrc="https://d3fpz3joletla1.cloudfront.net/hero.jpg"
           overlayContent={{

@@ -47,6 +47,10 @@ const About = () => {
             dedication behind every experience we capture. armed with top-notch gear and a commitment to quality, we&apos;re here to turn your moments into cinematic memories.
           </p>
         </div>
+        <div className="pl-1 py-4 text-xs text-gray-400">
+          sklyline photo by <a href="https://unsplash.com/@thmxfy?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">max fray</a> on
+          <a href="https://unsplash.com/photos/a-city-skyline-is-reflected-in-the-still-water-of-a-pond-XrvijafWAH8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> unsplash</a>
+        </div>
       </div>
     </>
   );

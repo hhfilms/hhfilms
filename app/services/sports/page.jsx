@@ -1,37 +1,16 @@
 "use client";
 
-import {useState} from "react";
 import HeroSection from "@/components/HeroSection";
-import ServiceCard from "@/components/Services/ServiceCard";
-import ServiceDialog from "@/components/Services/ServiceDialog";
 import {VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined, DirectionsRunOutlined} from "@mui/icons-material";
 import Link from "next/link";
 
-const Services = () => {
-  // State to control dialog visibility
-  const [dialogOpen, setDialogOpen] = useState(false);
-
-  // State to hold specific data for the dialog, if needed
-  const [dialogData, setDialogData] = useState(null);
-
-  // Function to open the dialog
-  const handleDialogOpen = (item) => {
-    setDialogData(item); // Set any data the dialog might need
-    setDialogOpen(true);
-  };
-
-  // Function to close the dialog
-  const handleDialogClose = () => {
-    setDialogOpen(false);
-    setDialogData(null);
-  };
-
+const Sports = () => {
   return (
     <div className="min-h-screen flex flex-col items-center text-gray-50 ">
       <HeroSection
         containerClass="h-[75vh] sm:h-[60vh] md:h-[75vh] bg-main-950"
         backgroundType="image"
-        backgroundSrc="https://d3fpz3joletla1.cloudfront.net/videography.jpg"
+        backgroundSrc="https://d3fpz3joletla1.cloudfront.net/p17-202-25502.jpg"
         overlayContent={{
           subheading: " ",
           heading: "specializing in sports videography",
@@ -42,7 +21,7 @@ const Services = () => {
         overlayClassName="top-2/3"
         mediaClassName="object-top object-cover"
         buttonLink="/contact"
-        imagePosition="top"
+        imagePosition="center"
       />
 
       <section className="p-2 md:p-12">
@@ -123,34 +102,8 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      <section className="p-2 md:p-12 border-double border-t-8 mt-8">
-        <h1 className="text-4xl font-extralight font-assistant text-gray-50 sm:text-5xl text-left">additional services</h1>
-        <p className="mb-8">
-          long form films | instagram reels | clips | promotional videos | documentaries | highlight reels | interviews | product demos | behind-the-scenes | drone footage | event recaps | special
-          occasions | weddings | quinceañeras
-        </p>
-
-        <div className="md:flex md:space-x-14">
-          <ServiceCard onOpenDialog={handleDialogOpen} />
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <div className="text-center">
-          <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
-          <Link
-            href="/contact"
-            className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 outline-gray-100 text-gray-100 hover:outline-brand hover:text-brand">
-            contact
-          </Link>
-        </div>
-      </section>
-
-      {/* Pass dialogOpen and dialogData to ServiceDialog */}
-      <ServiceDialog open={dialogOpen} data={dialogData} onClose={handleDialogClose} />
     </div>
   );
 };
 
-export default Services;
+export default Sports;
