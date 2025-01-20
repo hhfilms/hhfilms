@@ -2,12 +2,6 @@ import {StoreOutlined, SportsFootballOutlined, FavoriteBorderOutlined, Lightbulb
 
 const services = [
   {
-    title: "sports filming",
-    description:
-      "specializing in sports videography, our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom professional, and dynamic, with cutting-edge techniques to capture every thrilling moment for teams or individuals.",
-    icon: <SportsFootballOutlined fontSize="inherit" />,
-  },
-  {
     title: "business & nonprofit",
     description:
       "we bring energy and expertise to every promotional project, tailoring our approach to meet your unique vision. Whether it's a corporate event, a product showcase, or a compelling story for your brand or nonprofit, we use professional-grade equipment and thoughtful editing to ensure every frame delivers clarity, emotion, and impact. Our goal is to help you captivate your audience and make your message unforgettable.",
@@ -28,7 +22,7 @@ const ServiceCard = ({onOpenDialog}) => {
   };
 
   return services.map((service, index) => (
-    <div key={index} className="bg-main-100 shadow-md p-6 text-main-950 font-light flex flex-col">
+    <div key={index} className="mb-2 md:mb-0 bg-main-100 shadow-md p-6 text-main-950 font-light flex flex-col rounded-lg">
       {/* mobile icon */}
       <p className="md:hidden text-5xl md:text-6xl text-brand flex justify-center">{service.icon}</p>
       <h3 className="text-center md:text-left md:flex items-center mb-4 text-xl md:text-3xl">

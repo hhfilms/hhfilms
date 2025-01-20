@@ -51,57 +51,6 @@ const SectionRenderer = ({data}) => {
     </section>
   );
 
-  const SportsSection = () => (
-    <section className="p-2 md:p-12 md:text-lg font-light text-main-950">
-      <p className="mb-4">
-        Elevate your sports memories and showcase athletic talent like never before with our range of optional services. Whether you’re highlighting key moments for college recruiters, creating a
-        keepsake for proud parents, or capturing the energy of a season, we offer tailored solutions to fit your vision. From expert filming to polished editing, our team ensures every detail is
-        handled with professionalism and creativity, delivering videos that are as impactful as the athletes they feature. Explore the options below to see how we can bring your story to life.
-      </p>
-      <div className="px-4 flex flex-col space-y-4">
-        <div>
-          <p>
-            <span className="font-bold text-brand">team highlight</span> - short form | long form
-          </p>
-          <p>footage of the most exciting and pivotal moments of the game.</p>
-          <p className="text-sm">*aspect ratios can include vertical, horizontal, or both for multiple platforms</p>
-        </div>
-        <div>
-          <p>
-            <span className="font-bold text-brand">individual highlight</span> - short form | long form
-          </p>
-          <p>footage of the most exciting and pivotal moments of the game highlighting a single player.</p>
-          <p className="text-sm">*aspect ratios can include vertical, horizontal, or both for multiple platforms</p>
-        </div>
-
-        <div>
-          <span className="font-bold text-brand">athlete interview</span>
-          <p>personal interview with the athlete to capture their personal story.</p>
-          <p className="text-sm">*to be filmed at a location on a date that is not a game day</p>
-        </div>
-        <div>
-          <span className="font-bold text-brand">player introductions</span>
-          <p>film where athletes can introduce themselves & give their position and personal message.</p>
-          <p className="text-sm">*team only. no individuals</p>
-        </div>
-        <div>
-          <span className="font-bold text-brand">drone shots</span>
-          <p>stunning aerial perspectives ideal for outdoor games or large-scale events.</p>
-          <p className="text-sm">*subject to local laws and regulations</p>
-        </div>
-        <div>
-          <span className="font-bold text-brand">customized videos</span>
-          <p>tailored to your specific goals, blending professionalism, creativity, and advanced technology.</p>
-        </div>
-        <div>
-          <p className="font-bold text-brand">full-game filming</p>
-          <p>comprehensive coverage of every play, capturing all the action from start to finish.</p>
-          <p className="text-sm">*includes 1 camera angle. no music. no voiceover. no customization. only game action</p>
-        </div>
-      </div>
-    </section>
-  );
-
   const SpecialSection = () => (
     <section className="p-2 md:p-12 md:text-lg font-light text-main-950">
       <p className="mb-4">

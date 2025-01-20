@@ -1,17 +1,19 @@
 "use client";
 import {useState} from "react";
 import PropTypes from "prop-types";
-import {AppBar, Toolbar, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, ListItemText, Slide} from "@mui/material";
+import {AppBar, Toolbar, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, Slide} from "@mui/material";
 import {HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
 import Image from "next/image";
 import Socials from "@/components/Socials";
+import {usePathname} from "next/navigation";
+import Link from "next/link";
 
 const drawerWidth = 240;
 const navItems = [
   {name: "home", url: "/", icon: <HomeOutlined className="md:hidden" />},
   {name: "about", url: "/about", icon: <InfoOutlined className="md:hidden" />},
   {name: "contact", url: "/contact", icon: <SmsOutlined className="md:hidden" />},
-  {name: "services", url: "/services", icon: <MonochromePhotosOutlined className="md:hidden" />},
+  {name: "services & pricing", url: "/services", icon: <MonochromePhotosOutlined className="md:hidden" />},
 ];
 
 function HideOnScroll(props) {
@@ -31,6 +33,7 @@ HideOnScroll.propTypes = {
 };
 
 const Header = (props) => {
+  const pathname = usePathname();
   const {window} = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -44,9 +47,9 @@ const Header = (props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name}>
-            <a href={item.url} className="p-1 text-gray-50 block w-full">
+            <Link href={item.url} className={`p-1 block w-full ${pathname === item.url ? "text-brand" : "text-gray-50"}`}>
               <span className="mr-1">{item.icon}</span> {item.name}
-            </a>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -71,9 +74,9 @@ const Header = (props) => {
             {/* Center Section (hidden on mobile) */}
             <div className="flex-1 flex justify-start ">
               {navItems.map((item) => (
-                <a href={item.url} key={item.name} className="text-gray-50 text-xl mr-8 text-center">
+                <Link href={item.url} key={item.name} className={`text-xl mr-8 text-center ${pathname === item.url ? "text-brand underline underline-offset-8" : "text-gray-50 hover:text-brand"}`}>
                   <span className="mr-1">{item.icon}</span> {item.name}
-                </a>
+                </Link>
               ))}
             </div>
 
