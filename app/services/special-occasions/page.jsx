@@ -64,7 +64,11 @@ const specialoccasion = () => {
               </Tooltip>
             </p>
             <div className="text-xl">
-              <Button color="inherit" fontSize="inherit" className="rounded-0 border-1 hover:border-gray-50 hover:text-gray-50 text-lg text-brand border-brand" onClick={handleDialogOpen}>
+              <Button
+                color="inherit"
+                fontSize="inherit"
+                className="w-full md:w-auto rounded-0 border-1 hover:border-gray-50 hover:text-gray-50 text-lg text-brand border-brand"
+                onClick={handleDialogOpen}>
                 sample wedding video
               </Button>
             </div>
@@ -129,7 +133,7 @@ const specialoccasion = () => {
                 <Link href="/contact" className="underline underline-offset-4 hover:text-brand">
                   contact
                 </Link>
-                for pricing
+                &nbsp; for pricing
               </p>
             </div>
             <p className="mb-8">tailored to any celebration or special moment, blending creativity and professionalism to tell your story.</p>

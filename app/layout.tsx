@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Heart & Hustle Films",
     images: [
       {
-        url: "https://d3fpz3joletla1.cloudfront.net/ogimage.jpg",
+        url: "https://d3fpz3joletla1.cloudfront.net/hero.jpg",
         width: 1200,
         height: 630,
         alt: "Heart & Hustle Films Hero Image",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Heart & Hustle Films",
     description: "sports videography | event coverage | business promos | cinematic storytelling",
-    images: ["https://d3fpz3joletla1.cloudfront.net/ogimage.jpg"],
+    images: ["https://d3fpz3joletla1.cloudfront.net/hero.jpg"],
   },
 };
 
