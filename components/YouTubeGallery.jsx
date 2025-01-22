@@ -3,29 +3,14 @@ import {useEffect, useState} from "react";
 import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Loading from "@/components/Loading";
+import useYouTubeStore from "@/store/youtubeStore"; // Import the Zustand store
+
 const YouTubeGallery = () => {
-  const [vids, setVids] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const {videos, isLoading, error, refreshVideos} = useYouTubeStore();
 
   useEffect(() => {
-    async function fetchVideos() {
-      try {
-        const response = await fetch("/api/youtube");
-        const data = await response.json();
-        if (response.ok) {
-          setVids(data); // Adjust depending on your API response
-          setIsLoading(false);
-        } else {
-          throw new Error(data.error || "Failed to fetch videos");
-        }
-      } catch (err) {
-        setError(err.message);
-      }
-    }
-
-    fetchVideos();
-  }, []);
+    refreshVideos(); // Fetch latest videos on mount
+  }, [refreshVideos]);
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -43,14 +28,14 @@ const YouTubeGallery = () => {
         freeMode={false}
         navigation
         pagination={{clickable: true}}
-        slidesPerView={1} // Defaults for mobile
+        slidesPerView={1}
         breakpoints={{
-          640: {slidesPerView: 1, spaceBetween: 20}, // Tablet (sm breakpoint)
-          768: {slidesPerView: 2, spaceBetween: 30}, // Small laptop (md breakpoint)
-          1440: {slidesPerView: 3, spaceBetween: 50}, // Desktop (lg breakpoint)
-          1900: {slidesPerView: 4, spaceBetween: 50}, // Desktop (lg breakpoint)
+          640: {slidesPerView: 1, spaceBetween: 20},
+          768: {slidesPerView: 2, spaceBetween: 30},
+          1440: {slidesPerView: 3, spaceBetween: 50},
+          1900: {slidesPerView: 4, spaceBetween: 50},
         }}>
-        {vids?.map((item) =>
+        {videos?.map((item) =>
           item.tags.includes("sports") ? (
             <SwiperSlide key={item.id}>
               <div className="relative w-full pb-[56.25%]">

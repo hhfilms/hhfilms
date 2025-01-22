@@ -1,10 +1,13 @@
 "use client";
 import {useState} from "react";
 import HeroSection from "@/components/HeroSection";
-import {Diversity1Outlined, CelebrationOutlined, FavoriteBorderOutlined, CakeOutlined, CameraEnhanceOutlined, WbSunnyOutlined} from "@mui/icons-material";
+import {InfoOutlined, Diversity1Outlined, CelebrationOutlined, FavoriteBorderOutlined, CakeOutlined, CameraEnhanceOutlined, WbSunnyOutlined} from "@mui/icons-material";
 import Link from "next/link";
+import useYouTubeStore from "@/store/youtubeStore"; // Import the Zustand store
+import DialogComponent from "@/components/Modal";
+import {Tooltip, Button} from "@nextui-org/react";
 
-const business = () => {
+const specialoccasion = () => {
   // State to control dialog visibility
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -22,6 +25,9 @@ const business = () => {
     setDialogOpen(false);
     setDialogData(null);
   };
+
+  const videos = useYouTubeStore((state) => state.videos);
+  const weddingVidId = videos.find((video) => video.tags.includes("wedding"))?.id;
 
   return (
     <>
@@ -51,8 +57,18 @@ const business = () => {
               <p className="text-3xl text-brand">weddings</p>
               <p className="mb-4 font-light">starting at $500</p>
             </div>
-            <p className="mb-8">beautifully crafted films that capture every detail, from the ceremony to the reception. customizable to fit your style and preferences</p>
-            <span className="text-sm">*includes options for short and full-length edits</span>
+            <p className="mb-8">
+              beautifully crafted films that capture every detail, from the ceremony to the reception. customizable to fit your style and preferences &nbsp;
+              <Tooltip content="includes options for short and full-length edits" className="">
+                <InfoOutlined fontSize="inherit" className="mb-1" />
+              </Tooltip>
+            </p>
+            <div className="text-xl">
+              <Button color="inherit" fontSize="inherit" className="rounded-0 border-1 hover:border-gray-50 hover:text-gray-50 text-lg text-brand border-brand" onClick={handleDialogOpen}>
+                sample wedding video
+              </Button>
+            </div>
+            <span className="text-sm"></span>
           </div>
 
           <div className="border-1 rounded-lg p-4 md:p-10">
@@ -63,8 +79,13 @@ const business = () => {
               <p className="text-3xl text-brand">quinceañeras</p>
               <p className="mb-4 font-light">starting at $500</p>
             </div>
-            <p className="mb-8">stunning coverage of your special day, highlighting traditions, dances, and family moments.</p>
-            <span className="text-sm">*includes options for short and full-length edits</span>
+            <p className="mb-8">
+              stunning coverage of your special day, highlighting traditions, dances, and family moments. &nbsp;
+              <Tooltip content="includes options for short and full-length edits" className="">
+                <InfoOutlined fontSize="inherit" className="mb-1" />
+              </Tooltip>
+            </p>
+            <span className="text-sm"></span>
           </div>
           <div className="border-1 rounded-lg p-4 md:p-10">
             <div className="text-5xl">
@@ -107,7 +128,7 @@ const business = () => {
               <p className="mb-4 font-light">
                 <Link href="/contact" className="underline underline-offset-4 hover:text-brand">
                   contact
-                </Link>{" "}
+                </Link>
                 for pricing
               </p>
             </div>
@@ -129,8 +150,19 @@ const business = () => {
           contact
         </Link>
       </section>
+
+      <DialogComponent open={dialogOpen} onClose={handleDialogClose}>
+        <div className="relative w-full pb-[56.25%]">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src={`https://www.youtube.com/embed/${weddingVidId}`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </div>
+      </DialogComponent>
     </>
   );
 };
 
-export default business;
+export default specialoccasion;

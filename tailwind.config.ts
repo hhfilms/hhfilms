@@ -18,12 +18,17 @@ export default {
         autofillText: "e7e7e7",
         background: "var(--background)",
         foreground: "var(--foreground)",
-        brand: "#c00c26",
+        brand: "#BF0B26",
         primary: "#1D4ED8", // Custom primary color (e.g., blue-600)
-        secondary: "#9333EA", // Custom secondary color (e.g., purple-600)
+        secondary: "#0BBF2F", // Custom secondary color (e.g., purple-600)
         accent: "#F59E0B", // Accent color (e.g., amber-500)
         light: "#FBF9FA",
         lightaccent: "#817C70",
+        deepteal: "#1A6F7E", // - A deep teal blue to create a striking contrast.
+        softcream: "#F3E5AB", // - A soft cream or pale yellow for a balanced, warm tone.
+        darkcyan: "#0F4C5C", // - A rich, dark cyan to add depth and sophistication.
+        goldenorange: "#FFB94E", // - A warm, golden orange for a vibrant and energetic palette.
+        mutedplum: "#733C70", // - A muted plum or purple to add subtle elegance.
         main: {
           100: "#e7e7e7",
           200: "#d1d1d1",

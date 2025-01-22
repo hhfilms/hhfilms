@@ -1,9 +1,32 @@
 "use client";
 import HeroSection from "@/components/HeroSection";
-import {StoreOutlined, LocalActivityOutlined, ReviewsOutlined, RedeemOutlined, ThumbUpAltOutlined, Diversity3Outlined} from "@mui/icons-material";
+import {InfoOutlined, StoreOutlined, LocalActivityOutlined, ReviewsOutlined, RedeemOutlined, ThumbUpAltOutlined, Diversity3Outlined} from "@mui/icons-material";
+import {Tooltip, Button} from "@nextui-org/react";
 import Link from "next/link";
+import DialogComponent from "@/components/Modal";
+import {useState} from "react";
+import useYouTubeStore from "@/store/youtubeStore"; // Import the Zustand store
 
 const business = () => {
+  const videos = useYouTubeStore((state) => state.videos);
+  const promoId = videos.find((video) => video.tags.includes("promo"))?.id;
+  // State to control dialog visibility
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  // State to hold specific data for the dialog, if needed
+  const [dialogData, setDialogData] = useState(null);
+
+  // Function to open the dialog
+  const handleDialogOpen = (item) => {
+    setDialogData(item); // Set any data the dialog might need
+    setDialogOpen(true);
+  };
+
+  // Function to close the dialog
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+    setDialogData(null);
+  };
   return (
     <>
       <HeroSection
@@ -30,10 +53,23 @@ const business = () => {
             </div>
             <div className="">
               <p className="text-3xl text-brand">promotional video</p>
-              <p className="mb-4 font-light">starting at $1,000</p>
+              <p className="mb-4 font-light">starting at $500</p>
             </div>
-            <p className="mb-8">highlight your mission, products, or services. these videos are designed to connect with your audience, showcase what makes you unique, and drive action.</p>
-            <span className="text-sm">*aspect ratios can include vertical, horizontal, or both for multiple platforms</span>
+            <p className="mb-8">
+              highlight your mission, products, or services. these videos are designed to connect with your audience, showcase what makes you unique, and drive action.&nbsp;
+              <Tooltip content="aspect ratios can include vertical, horizontal, or both for multiple platforms" className="">
+                <InfoOutlined fontSize="inherit" className="mb-1" />
+              </Tooltip>
+            </p>
+            <div className="text-xl">
+              <Button
+                color="inherit"
+                fontSize="inherit"
+                className="w-full md:w-auto rounded-0 border-1 hover:border-gray-50 hover:text-gray-50 text-lg text-brand border-brand"
+                onClick={handleDialogOpen}>
+                sample promo video
+              </Button>
+            </div>
           </div>
 
           <div className="border-1 rounded-lg p-4 md:p-10">
@@ -42,7 +78,7 @@ const business = () => {
             </div>
             <div className="">
               <p className="text-3xl text-brand">testimonial videos</p>
-              <p className="mb-4 font-light">starting at $1,000</p>
+              <p className="mb-4 font-light">starting at $500</p>
             </div>
             <p className="mb-8">
               directly from satisfied customers, clients, or beneficiaries, testimonial videos showcase real people sharing their positive experiences with your organization, adding credibility and a
@@ -123,6 +159,16 @@ const business = () => {
           contact
         </Link>
       </section>
+      <DialogComponent open={dialogOpen} onClose={handleDialogClose}>
+        <div className="relative w-full pb-[56.25%]">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src={`https://www.youtube.com/embed/${promoId}`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen></iframe>
+        </div>
+      </DialogComponent>
     </>
   );
 };
