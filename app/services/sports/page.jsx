@@ -26,79 +26,69 @@ const Sports = () => {
 
       <section className="p-2 md:p-12">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
-          <div className="border-1 rounded-lg p-4 md:p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10 flex flex-col">
             <div className="text-5xl">
               <VideocamOutlined fontSize="inherit" className="mb-4 md:mb-8" />
-            </div>
-            <div className="">
               <p className="text-3xl text-brand">team | individual highlight</p>
-              <p className="mb-4 font-light">starting at $50</p>
+              <p className="font-light text-lg">individuals starting at $50</p>
+              <p className="mb-4 font-light text-lg">teams starting at $150</p>
+              <p className="mb-8 text-lg">footage of the most exciting and pivotal moments of the game. short form up to 1 minute and long form available.</p>
             </div>
-            <p className="mb-8">footage of the most exciting and pivotal moments of the game. short form up to 1 minute and long form available.</p>
-            <span className="text-sm">*aspect ratios can include vertical, horizontal, or both for multiple platforms</span>
+            <div className="text-sm mt-auto font-light">*aspect ratios can include vertical, horizontal, or both for multiple platforms</div>
           </div>
 
-          <div className="border-1 rounded-lg p-4 md:p-10">
-            <div className="text-5xl">
+          <div className="border-1 rounded-lg p-4 md:p-10 flex flex-col">
+            <div className="text-5xl ">
               <VideoCameraFrontOutlined fontSize="inherit" className="mb-4 md:mb-8" />
-            </div>
-            <div className="">
               <p className="text-3xl text-brand">athlete interview</p>
-              <p className="mb-4 font-light">starting at $250</p>
+              <p className="mb-4 font-light text-lg">starting at $250</p>
+              <p className="mb-8 text-lg">
+                interview with an athlete to capture their personal story and share their journey to inspire coaches, recruiters, and fans with their dedication, passion, and achievements.
+              </p>
             </div>
-            <p className="mb-8">
-              interview with an athlete to capture their personal story and share their journey to inspire coaches, recruiters, and fans with their dedication, passion, and achievements.
-            </p>
-            <span className="text-sm">*to be filmed at an agreed upon location on a date that is not a game day</span>
+            <div className="text-sm mt-auto font-light">*filmed at an agreed upon location on a date that is not a game day</div>
           </div>
-          <div className="border-1 rounded-lg p-4 md:p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10 flex flex-col">
             <div className="text-5xl">
               <CampaignOutlined fontSize="inherit" className="mb-4 md:mb-8" />
+              <p className="text-3xl text-brand ">player introductions</p>
+              <p className="mb-4 font-light text-lg">starting at $250</p>
+              <p className="mb-8 text-lg">a fun way to have your athletes introduce themselves with their position and a personal message.</p>
             </div>
-            <div className="">
-              <p className="text-3xl text-brand">player introductions</p>
-              <p className="mb-4 font-light">starting at $250</p>
-            </div>
-            <p className="mb-8">a fun way to have your athletes introduce themselves with their position and a personal message.</p>
-            <span className="text-sm">*team only. no individuals</span>
+            <div className="text-sm mt-auto font-light">*teams only</div>
           </div>
-          <div className="border-1 rounded-lg p-4 md:p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10 flex flex-col">
             <div className="text-5xl">
               <StadiumOutlined fontSize="inherit" className="mb-4 md:mb-8" />
-            </div>
-            <div className="">
               <p className="text-3xl text-brand">drone shots</p>
-              <p className="mb-4 font-light">starting at $50</p>
+              <p className="mb-4 font-light text-lg">starting at $50</p>
+              <p className="mb-8 text-lg">stunning aerial perspectives ideal for outdoor games or large-scale events.</p>
             </div>
-            <p className="mb-8">stunning aerial perspectives ideal for outdoor games or large-scale events.</p>
-            <span className="text-sm">*subject to local laws and regulations</span>
+            <div className="text-sm mt-auto font-light">*subject to local laws and regulations</div>
           </div>
 
-          <div className="border-1 rounded-lg p-4 md:p-10">
+          <div className="border-1 rounded-lg p-4 md:p-10 flex flex-col">
             <div className="text-5xl">
               <DirectionsRunOutlined fontSize="inherit" className="mb-4 md:mb-8" />
-            </div>
-            <div className="">
               <p className="text-3xl text-brand">full-game filming</p>
-              <p className="mb-4 font-light">starting at $500</p>
+              <p className="mb-4 text-lg font-light">starting at $500</p>
+              <p className="mb-8 text-lg">comprehensive coverage of every play, capturing all the action from start to finish.</p>
             </div>
-            <p className="mb-8">comprehensive coverage of every play, capturing all the action from start to finish.</p>
-            <span className="text-sm">*game action only. includes 1 camera angle. no music. no voiceover. no customization.</span>
+            <div className="text-sm mt-auto font-light">*includes 1 camera angle. no music, voiceover, or customization.</div>
           </div>
-          <div className="border-1 rounded-lg p-4 md:p-10">
+
+          <div className="border-1 rounded-lg p-4 md:p-10 flex flex-col">
             <div className="text-5xl">
               <CameraEnhanceOutlined fontSize="inherit" className="mb-4 md:mb-8" />
-            </div>
-            <div className="">
               <p className="text-3xl text-brand">customized videos</p>
-              <p className="mb-4 font-light">
+              <p className="mb-4 font-light text-lg">
                 <Link href="/contact" className="underline underline-offset-4 hover:text-brand">
                   contact
                 </Link>{" "}
                 for pricing
               </p>
+              <p className="text-lg">tailored to your specific goals, blending professionalism, creativity, and advanced technology.</p>
             </div>
-            <p>tailored to your specific goals, blending professionalism, creativity, and advanced technology.</p>
           </div>
         </div>
       </section>
