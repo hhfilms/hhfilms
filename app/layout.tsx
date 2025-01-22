@@ -46,12 +46,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-main-950">
+      <body className="bg-main-100">
         <Providers>
           <div className="w-100 h-screen flex flex-col">
             <Header />
             <AppRouterCacheProvider>
-              <main className="bg-main-950 flex-grow">{children}</main>
+              <main className="bg-main-100 flex-grow">{children}</main>
               <Footer />
             </AppRouterCacheProvider>
           </div>

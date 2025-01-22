@@ -93,55 +93,57 @@ const Header = (props) => {
   return (
     <>
       <HideOnScroll {...props}>
-        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-main-950/25">
+        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-main-950">
           {/* desktop toolbar */}
-          <Toolbar className="hidden p-8 md:flex items-center justify-between">
+          <Toolbar className="hidden pl-12 pr-2 py-2 md:flex items-center justify-between">
             {/* Left Section */}
-            <Box className="mr-8">
+            <Box className="">
               <a href="/">
-                <Image className="w-44 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
+                <Image className="w-28 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </Box>
 
             {/* Center Section (hidden on mobile) */}
-            <div className="flex-1 flex justify-start ">
-              <Link href="/" className={`text-xl mr-8 text-center ${pathname === "/" ? "text-brand underline underline-offset-8" : "text-gray-50 hover:text-brand"}`}>
-                <span className="mr-1"></span> home
-              </Link>
-              <Link href="/about" className={`text-xl mr-8 text-center ${pathname === "/about" ? "text-brand underline underline-offset-8" : "text-gray-50 hover:text-brand"}`}>
-                <span className="mr-1"></span> about
-              </Link>
-              <Link href="/contact" className={`text-xl mr-8 text-center ${pathname === "/contact" ? "text-brand underline underline-offset-8" : "text-gray-50 hover:text-brand"}`}>
-                <span className="mr-1"></span> contact
-              </Link>
-              <div>
-                <Button
-                  className="text-gray-50 lowercase text-xl p-0"
-                  id="basic-button"
-                  aria-controls={open ? "basic-menu" : undefined}
-                  aria-haspopup="true"
-                  aria-expanded={open ? "true" : undefined}
-                  onClick={handleClick}>
-                  services & pricing
-                </Button>
-                <Menu
-                  id="basic-menu"
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  MenuListProps={{
-                    "aria-labelledby": "basic-button",
-                  }}>
-                  <MenuItem onClick={handleClose} className={`${pathname === "/services/sports" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                    <Link href="/services/sports">sports</Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose} className={`${pathname === "/services/special-occasions" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                    <Link href="/services/special-occasions">special occasions</Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose} className={`${pathname === "/services/business" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                    <Link href="/services/business">business & nonprofit</Link>
-                  </MenuItem>
-                </Menu>
+            <div className="flex-1">
+              <div className="flex justify-end">
+                <Link href="/" className={`uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+                  <span className="mr-1"></span> home
+                </Link>
+                <Link href="/about" className={`uppercase mr-8 text-center ${pathname === "/about" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+                  <span className="mr-1"></span> about
+                </Link>
+                <Link href="/contact" className={`uppercase mr-8 text-center ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+                  <span className="mr-1"></span> contact
+                </Link>
+                <div>
+                  <Button
+                    className={`uppercase text-base p-0 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-darkaccent"}`}
+                    id="basic-button"
+                    aria-controls={open ? "basic-menu" : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? "true" : undefined}
+                    onClick={handleClick}>
+                    services & pricing
+                  </Button>
+                  <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{
+                      "aria-labelledby": "basic-button",
+                    }}>
+                    <MenuItem onClick={handleClose} className={`${pathname === "/services/sports" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
+                      <Link href="/services/sports">sports</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} className={`${pathname === "/services/special-occasions" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
+                      <Link href="/services/special-occasions">special occasions</Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClose} className={`${pathname === "/services/business" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
+                      <Link href="/services/business">business & nonprofit</Link>
+                    </MenuItem>
+                  </Menu>
+                </div>
               </div>
             </div>
 

@@ -6,7 +6,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
   const pathname = usePathname();
 
   return (
-    <div className={`relative w-full overflow-hidden ${containerClass}`}>
+    <div className={`bg-dark relative w-full overflow-hidden ${containerClass}`}>
       {/* Hero Section */}
       <div className="relative w-full h-full">
         {/* Background */}
@@ -16,7 +16,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
             Your browser does not support the video tag.
           </video>
         ) : (
-          <Image src={backgroundSrc} alt="hero background" className={`w-full h-full opacity-30 ${mediaClassName}`} fill style={{objectFit: "cover", objectPosition: `${imagePosition}`}} priority />
+          <Image src={backgroundSrc} alt="hero background" className={`w-full h-full opacity-70 ${mediaClassName}`} fill style={{objectFit: "cover", objectPosition: `${imagePosition}`}} priority />
         )}
 
         {/* Overlay Content */}

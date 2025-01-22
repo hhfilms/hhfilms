@@ -42,7 +42,7 @@ export default {
           950: "#191919",
         },
         darkaccent: "#6B6F71",
-        dark: "#261E28",
+        dark: "#1D1D1D",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"], // Custom sans-serif font

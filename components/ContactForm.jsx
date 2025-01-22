@@ -1,6 +1,6 @@
 "use client";
 import {useState} from "react";
-import {AccountCircle, AlternateEmail, PhoneIphone, VideocamOutlined, LocationOnOutlined, CalendarMonthOutlined, ArticleOutlined, MonetizationOnOutlined} from "@mui/icons-material";
+import {AccountCircleOutlined, AlternateEmail, PhoneIphone, VideocamOutlined, LocationOnOutlined, CalendarMonthOutlined, ArticleOutlined, MonetizationOnOutlined} from "@mui/icons-material";
 import {Button, Form, Input, Select, SelectItem, Textarea, DateInput} from "@nextui-org/react";
 import {CalendarDate} from "@internationalized/date";
 
@@ -104,14 +104,14 @@ const ContactForm = () => {
           isClearable
           onClear={() => setFormData({...formData, name: ""})}
           style={{
-            WebkitTextFillColor: "#e7e7e7",
+            WebkitTextFillColor: "#1D1D1D",
           }}
-          color="danger"
+          color="inherit"
           size="lg"
           className="w-full mb-6 text-xl "
           classNames={{
             input: "text-lg",
-            label: "!text-main-100 text-lg mb-2",
+            label: "!text-darkaccent text-lg mb-2",
           }}
           label="full name"
           type="text"
@@ -121,21 +121,21 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleInputChange}
           required
-          startContent={<AccountCircle className="text-brand mb-0.5 pointer-events-none my-2" />}
+          startContent={<AccountCircleOutlined className="text-darkaccent mb-0.5 pointer-events-none my-2" />}
         />
         <div className="flex flex-col md:flex-row md:justify-around md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-6 w-full">
           <Input
             isRequired
             isClearable
             onClear={() => setFormData({...formData, email: ""})}
-            color="danger"
+            color="inherit"
             style={{
-              WebkitTextFillColor: "#e7e7e7",
+              WebkitTextFillColor: "#1D1D1D",
             }}
             size="lg"
             className=""
             classNames={{
-              label: "!text-main-100 text-lg mb-2",
+              label: "!text-darkaccent text-lg mb-2",
               input: ["text-lg"],
             }}
             label="email"
@@ -146,21 +146,21 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleInputChange}
             required
-            startContent={<AlternateEmail className="text-brand mb-0.5 pointer-events-none my-2" />}
+            startContent={<AlternateEmail className="text-darkaccent mb-0.5 pointer-events-none my-2" />}
           />
 
           <Input
             isRequired
             isClearable
             onClear={() => setFormData({...formData, phone: ""})}
-            color="danger"
+            color="inherit"
             style={{
-              WebkitTextFillColor: "#e7e7e7",
+              WebkitTextFillColor: "#1D1D1D",
             }}
             size="lg"
             className=""
             classNames={{
-              label: "!text-main-100 text-lg mb-2",
+              label: "!text-darkaccent text-lg mb-2",
               input: ["text-lg"],
             }}
             label="phone"
@@ -171,17 +171,17 @@ const ContactForm = () => {
             value={formData.phone}
             onChange={handlePhoneChange} // Custom handler
             required
-            startContent={<PhoneIphone className="text-brand mb-0.5 pointer-events-none my-2" />}
+            startContent={<PhoneIphone className="text-darkaccent mb-0.5 pointer-events-none my-2" />}
           />
         </div>
         <div className="flex flex-col md:flex-row md:justify-around md:items-center space-y-4 md:space-y-0 md:space-x-6 mb-6 w-full">
           <Select
-            color="danger"
+            color="inherit"
             defaultSelectedKeys={["sports"]}
             size="lg"
             classNames={{
-              label: "!text-main-100 text-lg mb-2",
-              value: ["!text-main-100 text-lg"],
+              label: "!text-darkaccent text-lg mb-2",
+              value: ["!text-dark text-lg"],
             }}
             className=""
             isRequired
@@ -190,18 +190,18 @@ const ContactForm = () => {
             name="eventType"
             value={formData.eventType}
             onChange={handleInputChange}
-            startContent={<VideocamOutlined className="text-brand pointer-events-none my-2" />}>
+            startContent={<VideocamOutlined className="text-darkaccent pointer-events-none my-2" />}>
             {services.map((service) => (
               <SelectItem key={service.key}>{service.label}</SelectItem>
             ))}
           </Select>
 
           <Select
-            color="danger"
+            color="inherit"
             size="lg"
             classNames={{
-              label: "!text-main-100 text-lg mb-2",
-              value: ["!text-main-100 text-lg"],
+              label: "!text-darkaccent text-lg mb-2",
+              value: ["!text-dark text-lg"],
             }}
             className=""
             isRequired
@@ -210,7 +210,7 @@ const ContactForm = () => {
             name="budget"
             value={formData.budget}
             onChange={handleInputChange}
-            startContent={<MonetizationOnOutlined className="text-brand pointer-events-none my-2" />}>
+            startContent={<MonetizationOnOutlined className="text-darkaccent pointer-events-none my-2" />}>
             {budget.map((price) => (
               <SelectItem key={price.key}>{price.label}</SelectItem>
             ))}
@@ -222,11 +222,11 @@ const ContactForm = () => {
             isClearable
             onClear={() => setFormData({...formData, location: ""})}
             isRequired
-            color="danger"
+            color="inherit"
             size="lg"
             className=""
             classNames={{
-              label: "!text-main-100 text-lg mb-2",
+              label: "!text-darkaccent text-lg mb-2",
               input: ["text-lg"],
             }}
             label="location"
@@ -237,17 +237,17 @@ const ContactForm = () => {
             value={formData.location}
             onChange={handleInputChange}
             required
-            startContent={<LocationOnOutlined className="text-brand mb-0.5 pointer-events-none my-2" />}
+            startContent={<LocationOnOutlined className="text-darkaccent mb-0.5 pointer-events-none my-2" />}
           />
           <DateInput
             isRequired
-            color="danger"
+            color="inherit"
             name="date"
             id="date"
             className="mb-6"
             classNames={{
-              label: "!text-main-100 text-lg",
-              input: ["!text main-100 text-lg"],
+              label: ["!text-darkaccent text-base"],
+              input: ["!text-darkaccent text-lg"],
             }}
             onChange={handleDateChange} // Handle date change
             value={
@@ -258,20 +258,20 @@ const ContactForm = () => {
             label="date of event"
             placeholderValue={null} // Show placeholder if no date
             variant="underlined"
-            startContent={<CalendarMonthOutlined className="text-brand mb-0.5 pointer-events-none" />}
+            startContent={<CalendarMonthOutlined className="text-darkaccent mb-0.5 pointer-events-none" />}
           />
         </div>
         <Textarea
           isRequired
           isClearable
           onClear={() => setFormData({...formData, message: ""})}
-          color="danger"
-          startContent={<ArticleOutlined className="text-brand mb-0.5 pointer-events-none" />}
+          color="inherit"
+          startContent={<ArticleOutlined className="text-darkaccent mb-0.5 pointer-events-none" />}
           value={formData.message}
           onChange={handleInputChange}
           required
           classNames={{
-            label: "!text-main-100 text-lg mb-2",
+            label: "!text-darkaccent text-lg mb-2",
             input: ["bg-brand text-lg"],
           }}
           className="mb-6"
@@ -286,8 +286,8 @@ const ContactForm = () => {
           {loading ? "Submitting..." : "Send Message"}
         </Button>
 
-        {success && <p className="mt-4 text-green-500">Message sent successfully!</p>}
-        {error && <p className="mt-4 text-red-500">Failed to send the message. Please try again.</p>}
+        {success && <p className="mt-4 text-green-600">Message sent successfully!</p>}
+        {error && <p className="mt-4 text-red-600">Failed to send the message. Please try again.</p>}
       </Form>
     </div>
   );

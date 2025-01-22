@@ -23,12 +23,12 @@ const About = () => {
       />
 
       {/* About Section */}
-      <div className="bg-main-950 items-center text-main-200 py-16 px-4 sm:px-8 lg:px-16">
+      <div className="bg-main-100 items-center text-dark py-16 px-4 sm:px-8 lg:px-16">
         <div className="relative hidden md:inline-block md:w-1/2 h-64 sm:h-96 md:h-[500px] md:float-right md:ml-6">
           <Image src="https://d3fpz3joletla1.cloudfront.net/Snow-1.jpg" alt="Family pic" layout="fill" objectFit="cover" objectPosition="center" />
         </div>
         {/* About Section */}
-        <div className=" text-main-200 text-justify">
+        <div className=" text-dark text-justify">
           <p className="text-lg md:text-2xl leading-relaxed mb-4 ">
             what started off as a way to document family trips and special occasions quickly turned into something much bigger. at first, it was to save the memories we&apos;ve made, and piece
             together highlight reels for my kids. but as time went on, i realized i wasn&apos;t just making videos; i was preserving moments, telling stories, and giving people a way to relive the

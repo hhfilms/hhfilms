@@ -5,12 +5,12 @@ const Contact = () => {
   return (
     <>
       {/* Header Img */}
-      <div className="relative w-full h-96 sm:h-96 md:h-[500px] bg-black ">
+      <div className="relative w-full h-96 sm:h-96 md:h-[500px] ">
         <Image src="https://d3fpz3joletla1.cloudfront.net/sign.jpg" alt="do someting great" layout="fill" objectFit="cover" className="pt-44 md:pt-0" />
       </div>
 
       {/* About Section */}
-      <div className="flex flex-col items-center text-gray-50 py-16 px-4 sm:px-8 lg:px-16">
+      <div className="flex flex-col items-center text-dark py-16 px-4 sm:px-8 lg:px-16">
         <div className="flex flex-col lg:flex-row w-full space-y-8 lg:space-y-0 lg:space-x-8">
           {/* About Text */}
           <div className="flex-1 text-left border-l-2 border-gray-200 pl-4 sm:pl-8">

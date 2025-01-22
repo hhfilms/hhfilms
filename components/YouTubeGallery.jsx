@@ -1,5 +1,5 @@
 "use client";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Loading from "@/components/Loading";
@@ -46,8 +46,8 @@ const YouTubeGallery = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen></iframe>
               </div>
-              <div className="p-4 text-center text-gray-50">
-                <h2 className="text-2xl sm:text-xl text-center text-main-200">{item.title}</h2>
+              <div className=" text-center text-darkaccent">
+                <h2 className="text-2xl sm:text-lg text-center">{item.title}</h2>
               </div>
             </SwiperSlide>
           ) : null

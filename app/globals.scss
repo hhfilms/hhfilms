@@ -39,3 +39,8 @@ input:-webkit-autofill {
 .swiper-button-prev:hover {
   color: var(--foreground) !important;
 }
+
+/* date input value color for contact form */
+.data-\[editable\=true\]\:text-foreground[data-editable="true"] {
+  color: #1d1d1d !important;
+}
