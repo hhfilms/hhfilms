@@ -106,18 +106,18 @@ const Header = (props) => {
             {/* Center Section (hidden on mobile) */}
             <div className="flex-1">
               <div className="flex justify-end">
-                <Link href="/" className={`uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+                <Link href="/" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
                   <span className="mr-1"></span> home
                 </Link>
-                <Link href="/about" className={`uppercase mr-8 text-center ${pathname === "/about" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+                <Link href="/about" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/about" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
                   <span className="mr-1"></span> about
                 </Link>
-                <Link href="/contact" className={`uppercase mr-8 text-center ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+                <Link href="/contact" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
                   <span className="mr-1"></span> contact
                 </Link>
                 <div>
                   <Button
-                    className={`uppercase text-base p-0 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-darkaccent"}`}
+                    className={`hover:cursor-pointer hover:text-gray-50 uppercase text-base p-0 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-darkaccent"}`}
                     id="basic-button"
                     aria-controls={open ? "basic-menu" : undefined}
                     aria-haspopup="true"
@@ -134,13 +134,19 @@ const Header = (props) => {
                       "aria-labelledby": "basic-button",
                     }}>
                     <MenuItem onClick={handleClose} className={`${pathname === "/services/sports" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                      <Link href="/services/sports">sports</Link>
+                      <Link className="block w-full" href="/services/sports">
+                        sports
+                      </Link>
                     </MenuItem>
                     <MenuItem onClick={handleClose} className={`${pathname === "/services/special-occasions" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                      <Link href="/services/special-occasions">special occasions</Link>
+                      <Link className="block w-full" href="/services/special-occasions">
+                        special occasions
+                      </Link>
                     </MenuItem>
                     <MenuItem onClick={handleClose} className={`${pathname === "/services/business" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                      <Link href="/services/business">business & nonprofit</Link>
+                      <Link className="block w-full" href="/services/business">
+                        business & nonprofit
+                      </Link>
                     </MenuItem>
                   </Menu>
                 </div>
@@ -176,15 +182,15 @@ const Header = (props) => {
             </IconButton>
 
             {/* Image centered */}
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 flex justify-center -ml-10">
               <a href="/">
-                <Image className="w-44 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
+                <Image className="w-24 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </div>
             {/* Optional right section (hidden on mobile) */}
             <Box className=""></Box>
           </Toolbar>
-          <Socials containerClass="md:hidden text-gray-50 py-2 flex flex-row text-3xl w-full text-gray-50 justify-around" />
+          {/* <Socials containerClass="md:hidden text-gray-50 py-2 flex flex-row text-3xl w-full text-gray-50 justify-around" /> */}
         </AppBar>
       </HideOnScroll>
       <nav>

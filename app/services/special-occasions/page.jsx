@@ -49,7 +49,7 @@ const specialoccasion = () => {
         imagePosition="center"
       />
       <section className="p-2 md:p-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
           <ServiceCard
             title="weddings"
             price="$500"
@@ -61,7 +61,7 @@ const specialoccasion = () => {
                 color="inherit"
                 fontSize="inherit"
                 className="w-full md:w-auto rounded-0 border-1 hover:border-gray-900 hover:text-gray-900 text-lg text-brand border-brand"
-                onClick={handleDialogOpen}>
+                onPress={handleDialogOpen}>
                 sample wedding video
               </Button>
             </div>
@@ -100,7 +100,7 @@ const specialoccasion = () => {
           />
 
           <ServiceCard
-            title="custom event videos"
+            title="custom film"
             description="tailored to any celebration or special moment, blending creativity and professionalism to tell your story"
             icon={<CameraEnhanceOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
@@ -119,7 +119,7 @@ const specialoccasion = () => {
         <a href="https://unsplash.com/photos/person-holding-clear-wine-glass-eiJfBem7cPw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> unsplash</a>
       </div>
 
-      <DialogComponent open={dialogOpen} onClose={handleDialogClose}>
+      <DialogComponent open={dialogOpen} closeModal={handleDialogClose}>
         <div className="relative w-full pb-[56.25%]">
           <iframe
             className="absolute top-0 left-0 w-full h-full"

@@ -1,7 +1,7 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
-import {VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined} from "@mui/icons-material";
+import {DirectionsRunOutlined, VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined} from "@mui/icons-material";
 import Link from "next/link";
 import ServiceCard from "@/components/Services/ServiceCard";
 
@@ -28,7 +28,7 @@ const Sports = () => {
       <section className="p-2 md:p-12">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
           <ServiceCard
-            title="team | individual highlight"
+            title="solo | team highlight"
             price="$50 | $100"
             disclaimer="*aspect ratios can include vertical, horizontal, or both for multiple platforms"
             description="footage of the most exciting and pivotal moments of the game. short form up to 1 minute and long form available."
@@ -64,11 +64,11 @@ const Sports = () => {
             price="$500"
             disclaimer="*includes 1 camera angle. no music, voiceover, or customization"
             description="comprehensive coverage of every play, capturing all the action from start to finish."
-            icon={<VideocamOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
+            icon={<DirectionsRunOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
           <ServiceCard
-            title="customized videos"
+            title="custom film"
             description="tailored to your specific goals, blending professionalism, creativity, and advanced technology."
             icon={<CameraEnhanceOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />

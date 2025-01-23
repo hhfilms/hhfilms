@@ -46,7 +46,7 @@ const business = () => {
         buttonLink="/contact"
         imagePosition="center"
       />
-      <section className="p-2 md:p-12 text-gray-50">
+      <section className="p-2 md:p-12 ">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
           <ServiceCard
             title="promotional video"
@@ -54,12 +54,12 @@ const business = () => {
             disclaimer="*aspect ratios can include vertical, horizontal, or both for multiple platforms"
             description="highlight your mission, products, or services. these videos are designed to connect with your audience, showcase what makes you unique, and drive action"
             icon={<StoreOutlined fontSize="inherit" className="mb-4 md:mb-8" />}>
-            <div className="text-xl">
+            <div className="text-xl mb-8">
               <Button
                 color="inherit"
                 fontSize="inherit"
-                className="w-full md:w-auto rounded-0 border-1 hover:border-gray-50 hover:text-gray-50 text-lg text-brand border-brand"
-                onClick={handleDialogOpen}>
+                className="w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand"
+                onPress={handleDialogOpen}>
                 sample promo video
               </Button>
             </div>
@@ -115,7 +115,7 @@ const business = () => {
         photo by <a href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">tim mossholder</a> on
         <a href="https://unsplash.com/photos/a-black-and-gold-sign-that-says-grand-opening-Cg7xHNo0ur0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> unsplash</a>
       </div>
-      <DialogComponent open={dialogOpen} onClose={handleDialogClose}>
+      <DialogComponent open={dialogOpen} closeModal={handleDialogClose}>
         <div className="relative w-full pb-[56.25%]">
           <iframe
             className="absolute top-0 left-0 w-full h-full"

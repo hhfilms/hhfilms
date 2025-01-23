@@ -54,9 +54,7 @@ export default function Home() {
                 <p className="mb-8 text-lg text-darkaccent">promos | testimonials | events | fundraising | stories</p>
               </div>
               <div className="text-sm mt-auto">
-                <Link
-                  href="/services/business"
-                  className="inline-block text-center py-2 px-12 w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand">
+                <Link href="/services/business" className="inline-block text-center py-2 px-12 w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand">
                   info & pricing
                 </Link>
               </div>
@@ -82,7 +80,7 @@ export default function Home() {
       {/* instagram Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">instagram reels</h2>
+          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">newest instagram reels</h2>
         </div>
         <div className="py-12 px-4 sm:px-6 lg:px-8 w-full bg-main-100">
           <div>
@@ -94,7 +92,7 @@ export default function Home() {
       {/* youtube Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">youtube videos</h2>
+          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">newest youtube videos</h2>
         </div>
       </section>
       <section className="py-12 px-4 sm:px-6 lg:px-8  w-full bg-main-100">
