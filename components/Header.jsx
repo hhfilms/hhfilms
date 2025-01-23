@@ -1,14 +1,12 @@
 "use client";
 import {useState} from "react";
 import PropTypes from "prop-types";
-import {Menu, MenuItem, Button, AppBar, Toolbar, useScrollTrigger, Box, Divider, Drawer, IconButton, List, ListItem, Slide} from "@mui/material";
-import {PriceChangeOutlined, HomeOutlined, SmsOutlined, MonochromePhotosOutlined, InfoOutlined} from "@mui/icons-material";
+import {AppBar, Toolbar, useScrollTrigger, Box, IconButton, Slide} from "@mui/material";
 import Image from "next/image";
 import Socials from "@/components/Socials";
 import {usePathname} from "next/navigation";
-import Link from "next/link";
-
-const drawerWidth = 240;
+import DesktopMenu from "@/components/Header/DesktopMenu";
+import MobileDrawer from "@/components/Header/MobileDrawer";
 
 function HideOnScroll(props) {
   const {children, window} = props;
@@ -27,68 +25,13 @@ HideOnScroll.propTypes = {
 };
 
 const Header = (props) => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
   const pathname = usePathname();
-  const {window} = props;
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
-  const drawer = (
-    <Box onClick={handleDrawerToggle} className="pt-48 text-lg">
-      <Divider />
-      <Link href="/" className={`p-1 block w-full ${pathname === "/" ? "text-brand" : "text-gray-50 hover:text-brand"}`}>
-        <span className="mr-1">
-          <HomeOutlined className="md:hidden" />
-        </span>
-        home
-      </Link>
-      <Link href="/about" className={`p-1 block w-full ${pathname === "/about" ? "text-brand" : "text-gray-50 hover:text-brand"}`}>
-        <span className="mr-1">
-          <InfoOutlined className="md:hidden" />
-        </span>
-        about
-      </Link>
-      <Link href="/contact" className={`p-1 block w-full ${pathname === "/contact" ? "text-brand" : "text-gray-50 hover:text-brand"}`}>
-        <span className="mr-1">
-          <SmsOutlined className="md:hidden" />
-        </span>
-        contact
-      </Link>
-      <p className="text-gray-50 pl-1">
-        <span className="mr-1">
-          <PriceChangeOutlined className="md:hidden" />
-        </span>
-        services & pricing
-      </p>
-      <List className="text-gray-50 pl-3">
-        <ListItem className="py-1 block w-full text-lg">
-          <Link className={`${pathname === "/services/sports" ? "text-brand" : "text-gray-50 hover:text-brand"}`} href="/services/sports">
-            sports
-          </Link>
-        </ListItem>
-        <ListItem className="py-1  block w-full text-lg">
-          <Link className={`${pathname === "/services/special-occasions" ? "text-brand" : "text-gray-50 hover:text-brand"}`} href="/services/special-occasions">
-            special occasions
-          </Link>
-        </ListItem>
-        <ListItem className={`${pathname === "/services/business" ? "text-brand" : "text-gray-50 hover:text-brand"}`}>
-          <Link href="/services/business">business & nonprofit</Link>
-        </ListItem>
-      </List>
-    </Box>
-  );
-
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <>
@@ -105,52 +48,7 @@ const Header = (props) => {
 
             {/* Center Section (hidden on mobile) */}
             <div className="flex-1">
-              <div className="flex justify-end">
-                <Link href="/" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
-                  <span className="mr-1"></span> home
-                </Link>
-                <Link href="/about" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/about" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
-                  <span className="mr-1"></span> about
-                </Link>
-                <Link href="/contact" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
-                  <span className="mr-1"></span> contact
-                </Link>
-                <div>
-                  <Button
-                    className={`hover:cursor-pointer hover:text-gray-50 uppercase text-base p-0 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-darkaccent"}`}
-                    id="basic-button"
-                    aria-controls={open ? "basic-menu" : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? "true" : undefined}
-                    onClick={handleClick}>
-                    services & pricing
-                  </Button>
-                  <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      "aria-labelledby": "basic-button",
-                    }}>
-                    <MenuItem onClick={handleClose} className={`${pathname === "/services/sports" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                      <Link className="block w-full" href="/services/sports">
-                        sports
-                      </Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose} className={`${pathname === "/services/special-occasions" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                      <Link className="block w-full" href="/services/special-occasions">
-                        special occasions
-                      </Link>
-                    </MenuItem>
-                    <MenuItem onClick={handleClose} className={`${pathname === "/services/business" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
-                      <Link className="block w-full" href="/services/business">
-                        business & nonprofit
-                      </Link>
-                    </MenuItem>
-                  </Menu>
-                </div>
-              </div>
+              <DesktopMenu pathname={pathname} />
             </div>
 
             {/* Right Section */}
@@ -159,7 +57,7 @@ const Header = (props) => {
             </Box>
           </Toolbar>
 
-          {/* mobile toolbar */}
+          {/* mobile toolbar button */}
           <Toolbar className="md:hidden py-4 flex items-center justify-between">
             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className="mr-2">
               <a
@@ -187,35 +85,14 @@ const Header = (props) => {
                 <Image className="w-24 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </div>
-            {/* Optional right section (hidden on mobile) */}
+            {/* Optional right section */}
             <Box className=""></Box>
           </Toolbar>
           {/* <Socials containerClass="md:hidden text-gray-50 py-2 flex flex-row text-3xl w-full text-gray-50 justify-around" /> */}
         </AppBar>
       </HideOnScroll>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          PaperProps={{
-            sx: {
-              backgroundColor: "rgba(0, 0, 0, 0.8)", // Custom background color
-              borderRadius: "8px", // Custom border radius
-            },
-            elevation: 16, // Add a shadow elevation
-          }}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: {xs: "block", md: "none"},
-            "& .MuiDrawer-paper": {boxSizing: "border-box", width: drawerWidth},
-          }}>
-          {drawer}
-        </Drawer>
-      </nav>
+
+      <MobileDrawer pathname={pathname} mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} props={props} />
     </>
   );
 };
