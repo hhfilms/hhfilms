@@ -55,11 +55,7 @@ const business = () => {
             description="highlight your mission, products, or services. these videos are designed to connect with your audience, showcase what makes you unique, and drive action"
             icon={<StoreOutlined fontSize="inherit" className="mb-4 md:mb-8" />}>
             <div className="text-xl mb-8">
-              <Button
-                color="inherit"
-                fontSize="inherit"
-                className="w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand"
-                onPress={handleDialogOpen}>
+              <Button color="inherit" fontSize="inherit" className="w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand" onPress={handleDialogOpen}>
                 sample promo video
               </Button>
             </div>
@@ -105,11 +101,14 @@ const business = () => {
         </div>
       </section>
 
-      <section className="mb-12  text-center">
+      <section className="mb-12 text-center">
         <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
         <Link href="/contact" className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-dark hover:text-dark outline-brand text-brand">
           contact
         </Link>
+        <p className="text-xs text-center text-darkaccent w-1/2 m-auto my-8">
+          *prices displayed on this site are base prices and may vary depending on customization, additional features, or specific requirements. Please contact us for a detailed quote
+        </p>
       </section>
       <div className="pl-24 py-4 text-left text-xs text-gray-400">
         photo by <a href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">tim mossholder</a> on

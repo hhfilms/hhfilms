@@ -74,6 +74,15 @@ const Sports = () => {
           />
         </div>
       </section>
+      <section className="mb-12 text-dark text-center">
+        <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
+        <Link href="/contact" className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-dark hover:text-dark outline-brand text-brand">
+          contact
+        </Link>
+        <p className="text-xs text-center text-darkaccent w-3/4 mx-auto my-8">
+          *prices displayed on this site are base prices and may vary depending on customization, additional features, or specific requirements. Please contact us for a detailed quote
+        </p>
+      </section>
     </div>
   );
 };

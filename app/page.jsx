@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full">
         <HeroSection
-          containerClass="h-[85vh] sm:h-[60vh] md:h-[85vh]"
+          containerClass="h-[75vh] sm:h-[60vh] md:h-[85vh]"
           backgroundType="image"
           backgroundSrc="https://d3fpz3joletla1.cloudfront.net/hero.jpg"
           overlayContent={{
@@ -28,47 +28,47 @@ export default function Home() {
       </section>
 
       {/* services Section */}
-      <section className="w-full mb-12">
+      <section className="w-full">
         <div className="flex flex-col sm:flex-row md:items-center bg-main-950 py-4 px-8">
           <h2 className="text-3xl font-assistant  md:text-4xl flex-grow text-gray-100">services</h2>
           <p className="hidden md:inline-block text-main-200 flex-grow  sm:text-right justify-end text md:text-lg">sports videography | event coverage | business promos | special occasions</p>
         </div>
         <div className="sm:p-6 lg:p-8 bg-main-100 border-t-1">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
-            <div className="p-4 md:p-0 flex flex-col">
-              <div className="text-5xl text-brand">
-                <SportsBasketballOutlined fontSize="inherit" className="mb-4 md:mb-8 " />
-                <p className="text-3xl text-dark">sports videography</p>
-                <p className="mb-8 text-lg text-darkaccent">highlights | interviews | intros | full game | drone</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-4 text-xl">
+            <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
+              <div className="text-2xl md:text-5xl text-brand">
+                <SportsBasketballOutlined fontSize="inherit" className="md:mb-8 " />
+                <p className="text-lg md:text-3xl text-dark">sports videography</p>
+                <p className="mb-8 text-sm md:text-lg text-darkaccent">highlights | interviews | intros | full game | drone</p>
               </div>
               <div className="text-sm mt-auto">
-                <Link href="/services/sports" className="inline-block text-center py-2 px-12 w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand">
+                <Link href="/services/sports" className="inline-block text-center py-2 px-12 rounded-0 border-1 hover:border-dark hover:text-dark text-sm md:text-lg text-brand border-brand">
                   info & pricing
                 </Link>
               </div>
             </div>
-            <div className=" p-4 md:p-0 flex flex-col">
-              <div className="text-5xl text-brand">
-                <StorefrontOutlined fontSize="inherit" className="mb-4 md:mb-8 " />
-                <p className="text-3xl text-dark">business & nonprofits</p>
-                <p className="mb-8 text-lg text-darkaccent">promos | testimonials | events | fundraising | stories</p>
+            <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
+              <div className="text-2xl md:text-5xl text-brand">
+                <StorefrontOutlined fontSize="inherit" className="md:mb-8 " />
+                <p className="text-lg md:text-3xl text-dark">business & nonprofits</p>
+                <p className="mb-8 text-sm md:text-lg text-darkaccent">promos | testimonials | events | fundraising | stories</p>
               </div>
               <div className="text-sm mt-auto">
-                <Link href="/services/business" className="inline-block text-center py-2 px-12 w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand">
+                <Link href="/services/business" className="inline-block text-center py-2 px-12 rounded-0 border-1 hover:border-dark hover:text-dark text-sm md:text-lg text-brand border-brand">
                   info & pricing
                 </Link>
               </div>
             </div>
-            <div className=" p-4 md:p-0 flex flex-col">
-              <div className="text-5xl text-brand">
-                <FavoriteBorderOutlined fontSize="inherit" className="mb-4 md:mb-8 " />
-                <p className="text-3xl text-dark">special occasions</p>
-                <p className="mb-8 text-lg text-darkaccent">weddings | quinceañeras | birthdays | anniversary | vacations</p>
+            <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
+              <div className="text-2xl md:text-5xl text-brand">
+                <FavoriteBorderOutlined fontSize="inherit" className="md:mb-8 " />
+                <p className="text-lg md:text-3xl text-dark">special occasions</p>
+                <p className="mb-8 text-sm md:text-lg text-darkaccent">weddings | quinceañeras | birthdays | anniversary | vacations</p>
               </div>
               <div className="text-sm mt-auto">
                 <Link
                   href="/services/special-occasions"
-                  className="inline-block text-center py-2 px-12 w-full md:w-auto rounded-0 border-1 hover:border-dark hover:text-dark text-lg text-brand border-brand">
+                  className="inline-block text-center py-2 px-12 rounded-0 border-1 hover:border-dark hover:text-dark text-sm md:text-lg text-brand border-brand">
                   info & pricing
                 </Link>
               </div>

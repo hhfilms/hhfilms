@@ -44,3 +44,11 @@ input:-webkit-autofill {
 .data-\[editable\=true\]\:text-foreground[data-editable="true"] {
   color: #1d1d1d !important;
 }
+
+.MuiInputBase-root {
+  width: 100%;
+}
+
+.multi-text-area textarea {
+  padding-top: 10px;
+}
