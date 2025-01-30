@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="w-full">
+    <div className="w-full capitalize">
       {/* Hero Section */}
       <section className="w-full">
         <HeroSection

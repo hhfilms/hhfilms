@@ -42,7 +42,7 @@ const Header = (props) => {
             {/* Left Section */}
             <Box className="">
               <a href="/">
-                <Image className="w-28 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
+                <Image className="w-56 h-auto" src="/logo-white.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </Box>
 
@@ -82,7 +82,7 @@ const Header = (props) => {
             {/* Image centered */}
             <div className="flex-1 flex justify-center -ml-10">
               <a href="/">
-                <Image className="w-24 h-auto" src="/hhf_nopadding_light.svg" alt="heart & hustle films logo" width={175} height={30} />
+                <Image className="w-64 h-auto" src="/logo-white.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </div>
             {/* Optional right section */}
