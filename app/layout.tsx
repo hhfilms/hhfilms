@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Providers} from "./providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 
 import "./globals.scss";
 
@@ -46,6 +47,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <Head>
+          <link rel="icon" type="image/svg+xml" href="/icon-white.svg" />
+          <link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="alternate icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        </Head>
+      </Head>
       <body className="bg-main-100">
         <Providers>
           <div className="w-100 h-screen flex flex-col">
