@@ -36,29 +36,29 @@ const Header = (props) => {
   return (
     <>
       <HideOnScroll {...props}>
-        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-main-950">
+        <AppBar elevation="0" position="fixed" sx={{zIndex: 1300}} className="app-bar bg-main-950 p-4">
           {/* desktop toolbar */}
-          <Toolbar className="hidden pl-12 pr-2 py-2 md:flex items-center justify-between">
+          <Toolbar className="hidden pl-12 pr-2 py-2 xl:flex items-center relative justify-between w-full">
             {/* Left Section */}
-            <Box className="">
-              <a href="/">
-                <Image className="w-56 h-auto" src="/logo-white.svg" alt="heart & hustle films logo" width={175} height={30} />
-              </a>
+            <Box className="flex-1">
+              <DesktopMenu pathname={pathname} />
             </Box>
 
             {/* Center Section (hidden on mobile) */}
-            <div className="flex-1">
-              <DesktopMenu pathname={pathname} />
-            </div>
+            <Box className="flex-1 absolute left-1/2 transform -translate-x-1/2">
+              <a href="/">
+                <Image className="w-64 h-auto" src="/logo-white.svg" alt="heart & hustle films logo" width={175} height={30} />
+              </a>
+            </Box>
 
             {/* Right Section */}
-            <Box className="flex-1 flex justify-end ">
+            <Box className="flex-1">
               <Socials containerClass="hidden md:inline-flex flex-row text-2xl w-full text-brand justify-end space-x-4" />
             </Box>
           </Toolbar>
 
           {/* mobile toolbar button */}
-          <Toolbar className="md:hidden py-4 flex items-center justify-between">
+          <Toolbar className="xl:hidden py-4 flex items-center justify-between">
             <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className="mr-2">
               <a
                 className="group flex items-center justify-center w-8 h-8 rounded tap-highlight-transparent outline-none focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-focus focus-visible:outline-offset-2"
@@ -80,9 +80,10 @@ const Header = (props) => {
             </IconButton>
 
             {/* Image centered */}
-            <div className="flex-1 flex justify-center -ml-10">
+            <div className="flex-1 flex justify-center">
               <a href="/">
-                <Image className="w-64 h-auto" src="/logo-white.svg" alt="heart & hustle films logo" width={175} height={30} />
+                <Image className="hidden md:block w-64 h-auto" src="/logo-white.svg" alt="heart & hustle films logo" width={175} height={30} />
+                <Image className="w-16 -ml-4 h-auto md:hidden" src="/icon-white.svg" alt="heart & hustle films logo" width={175} height={30} />
               </a>
             </div>
             {/* Optional right section */}

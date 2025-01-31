@@ -13,7 +13,7 @@ export default function DesktopMenu({pathname}) {
   };
 
   return (
-    <div className="flex justify-end">
+    <div className="flex">
       <Link href="/" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
         <span className="mr-1"></span> home
       </Link>

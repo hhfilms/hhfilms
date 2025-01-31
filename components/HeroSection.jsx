@@ -22,7 +22,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
         {/* Overlay Content */}
         <div className={`p-8 md:p-12 text-left absolute transform -translate-y-2/3 text-gray-50 sm:left-12 sm:border-l-2 lg:left-48 ${overlayClassName}`}>
           <p className="mb-2 text-md sm:text-base lg:text-lg">{overlayContent.subheading}</p>
-          <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl sm:max-w-5xl font-bold">{overlayContent.heading}</h1>
+          <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl sm:max-w-5xl">{overlayContent.heading}</h1>
           <p className="mb-6 text-lg lg:text-xl sm:max-w-5xl mx-auto sm:mx-0 ">{overlayContent.description}</p>
 
           <a href={buttonLink} className="mr-4 inline-flex items-center rounded-full outline outline-1 px-6 py-3 text-sm sm:text-base lg:text-lg font-medium hover:outline-brand hover:text-brand">
