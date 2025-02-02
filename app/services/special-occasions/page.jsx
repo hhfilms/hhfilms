@@ -1,7 +1,7 @@
 "use client";
 import {useState} from "react";
 import HeroSection from "@/components/HeroSection";
-import {Diversity1Outlined, CelebrationOutlined, FavoriteBorderOutlined, CakeOutlined, CameraEnhanceOutlined, WbSunnyOutlined} from "@mui/icons-material";
+import {Diversity1Outlined, CelebrationOutlined, DiamondOutlined, CakeOutlined, CameraEnhanceOutlined, WbSunnyOutlined} from "@mui/icons-material";
 import Link from "next/link";
 import useYouTubeStore from "@/store/youtubeStore"; // Import the Zustand store
 import DialogComponent from "@/components/Modal";
@@ -72,7 +72,7 @@ const specialoccasion = () => {
             price="$500"
             disclaimer="*includes options for short and full-length edits"
             description="stunning coverage of your special day, highlighting traditions, dances, and family moments"
-            icon={<FavoriteBorderOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
+            icon={<DiamondOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
           <ServiceCard

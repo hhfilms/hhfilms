@@ -8,9 +8,12 @@ const ServiceCard = ({title, icon, price, description, disclaimer, children}) =>
         <div className="text-2xl text-dark flex items-center justify-between mb-4">
           <div>{title}</div>
 
-          <p className="font-light text-darkaccent">
+          <div className="flex justify-end flex-col font-light text-darkaccent text-right">
             {price ? (
-              `${price}`
+              <>
+                <p className="text-[8px] leading-none pr-[2]">*starting at</p>
+                <p>{price}</p>
+              </>
             ) : (
               <>
                 <Link className="text-brand" href="/contact">
@@ -18,7 +21,7 @@ const ServiceCard = ({title, icon, price, description, disclaimer, children}) =>
                 </Link>
               </>
             )}
-          </p>
+          </div>
         </div>
 
         {/* {!price && (
