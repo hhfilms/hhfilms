@@ -76,34 +76,36 @@ const InstagramFeed = () => {
         freeMode={false}
         navigation
         pagination={{clickable: true}}>
-        {reels.map((reel, index) => (
-          <SwiperSlide key={reel.id}>
-            <div className="group relative">
-              <video
-                ref={(el) => (videoRefs.current[index] = el)} // Add video to refs array
-                poster={`${reel.thumbnail_url}`}
-                width="250"
-                onClick={() => handleTogglePlay(index)}
-                className="w-full rounded-xl">
-                <source src={reel.media_url} type="video/mp4" />
-              </video>
-              <p
-                onClick={() => handleTogglePlay(index)}
-                className={`absolute inset-0 bg-black/75 p-1 md:p-8 transition-opacity duration-300 flex flex-col items-center justify-center text-gray-50 text-xs md:text-base overflow-hidden ${
-                  playingIndex === index ? "opacity-0 pointer-events-none" : "opacity-0 group-hover:opacity-100"
-                }`}>
-                {reel.caption.slice(0, 330)}
-                {reel.caption.length > 330 ? "..." : ""}
-              </p>
-            </div>
+        {reels.map((reel, index) =>
+          reel.media_type === "VIDEO" && reel.id !== "17941856960969628" ? (
+            <SwiperSlide key={reel.id}>
+              <div className="group relative">
+                <video
+                  ref={(el) => (videoRefs.current[index] = el)} // Add video to refs array
+                  poster={`${reel.thumbnail_url}`}
+                  width="250"
+                  onClick={() => handleTogglePlay(index)}
+                  className="w-full rounded-xl">
+                  <source src={reel.media_url} type="video/mp4" />
+                </video>
+                <p
+                  onClick={() => handleTogglePlay(index)}
+                  className={`absolute inset-0 bg-black/75 p-1 md:p-8 transition-opacity duration-300 flex flex-col items-center justify-center text-gray-50 text-xs md:text-base overflow-hidden ${
+                    playingIndex === index ? "opacity-0 pointer-events-none" : "opacity-0 group-hover:opacity-100"
+                  }`}>
+                  {reel.caption.slice(0, 330)}
+                  {reel.caption.length > 330 ? "..." : ""}
+                </p>
+              </div>
 
-            <div className="font-light text-sm justify-center flex ">
-              <Link className="inline-flex items-center text-center p-4 mb-2 text-dark hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
-                <InstagramIcon color="inherit" /> <span className="ml-1 hidden md:inline-block">view on instagram</span>
-              </Link>
-            </div>
-          </SwiperSlide>
-        ))}
+              <div className="font-light text-sm justify-center flex ">
+                <Link className="inline-flex items-center text-center p-4 mb-2 text-dark hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
+                  <InstagramIcon color="inherit" /> <span className="ml-1 hidden md:inline-block">view on instagram</span>
+                </Link>
+              </div>
+            </SwiperSlide>
+          ) : null
+        )}
       </Swiper>
     </div>
   );
