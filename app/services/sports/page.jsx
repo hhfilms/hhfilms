@@ -1,7 +1,7 @@
 "use client";
 
 import HeroSection from "@/components/HeroSection";
-import {DirectionsRunOutlined, VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined} from "@mui/icons-material";
+import {ScoreboardOutlined, VideocamOutlined, CampaignOutlined, VideoCameraFrontOutlined, StadiumOutlined, CameraEnhanceOutlined} from "@mui/icons-material";
 import Link from "next/link";
 import ServiceCard from "@/components/Services/ServiceCard";
 
@@ -39,13 +39,13 @@ const Sports = () => {
             title="athlete interview"
             price="$250"
             disclaimer="*filmed at an agreed upon location on a date that is not a game day"
-            description="interview with an athlete to capture their personal story and share their journey to inspire coaches, recruiters, and fans with their dedication, passion, and achievements."
+            description="have your athlete share their journey and tell a personal story to inspire coaches, recruiters, and fans with their dedication, passion, and achievements."
             icon={<VideoCameraFrontOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
           <ServiceCard
             title="player introductions"
-            price="$250"
+            price="$150"
             disclaimer="*teams only"
             description="a fun way to have your athletes introduce themselves with their position and a personal message."
             icon={<CampaignOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
@@ -62,9 +62,9 @@ const Sports = () => {
           <ServiceCard
             title="full-game filming"
             price="$500"
-            disclaimer="*includes 1 camera angle. no music, voiceover, or customization"
+            disclaimer="*includes 1 camera angle. does not include music, voiceover, or customization"
             description="comprehensive coverage of every play, capturing all the action from start to finish."
-            icon={<DirectionsRunOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
+            icon={<ScoreboardOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
           <ServiceCard
