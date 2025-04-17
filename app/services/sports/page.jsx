@@ -29,9 +29,9 @@ const Sports = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
           <ServiceCard
             title="solo | team highlight"
-            price="$50 | $100"
+            price="$100 | $200"
             disclaimer="*aspect ratios can include vertical, horizontal, or both for multiple platforms"
-            description="footage of the most exciting and pivotal moments of the game. short form up to 1 minute and long form available."
+            description="footage of the most exciting and pivotal moments of the game. short form up to 90 seconds and long form available. includes individual clips for social sharing. tournament pricing also available - contact for details"
             icon={<VideocamOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
