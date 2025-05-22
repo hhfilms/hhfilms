@@ -35,7 +35,7 @@ const ServiceCard = ({title, icon, price, description, disclaimer, children}) =>
 
         {description && <p className="mb-8 text-lg text-darkaccent">{description}</p>}
       </div>
-      {children && <div className="extra-content">{children}</div>}
+      {children && <div className="mt-auto extra-content">{children}</div>}
       {disclaimer && <div className="text-xs mt-auto text-darkaccent">{disclaimer}</div>}
     </article>
   );

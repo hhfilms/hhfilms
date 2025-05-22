@@ -17,7 +17,7 @@ const specialoccasion = () => {
 
   // Function to open the dialog
   const handleDialogOpen = (item) => {
-    setDialogData(item); // Set any data the dialog might need
+    // setDialogData(item); // Set any data the dialog might need
     setDialogOpen(true);
   };
 

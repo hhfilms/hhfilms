@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     const playlistResponse = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems`, {
       params: {
         part: "snippet",
-        maxResults: 5,
+        maxResults: 15,
         playlistId: UPLOADS_PLAYLIST_ID,
         key: YT_API_KEY,
       },

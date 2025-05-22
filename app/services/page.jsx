@@ -65,7 +65,7 @@ const Services = () => {
             </div>
             <div className="">
               <p className="text-3xl text-brand">athlete interview</p>
-              <p className="mb-4 font-light">starting at $250</p>
+              <p className="mb-4 font-light">starting at $150</p>
             </div>
             <p className="mb-8">
               interview with an athlete to capture their personal story and share their journey to inspire coaches, recruiters, and fans with their dedication, passion, and achievements.
