@@ -71,7 +71,7 @@ const Sports = () => {
 
             <ServiceCard
               title="personal brand hype film"
-              price="$200"
+              price="$250"
               disclaimer="*filmed at an agreed upon location on a date that is not a game day"
               description="have your athlete share their journey and tell a personal story to inspire coaches, recruiters, and fans with their dedication, passion, and achievements."
               icon={<VideoCameraFrontOutlined fontSize="inherit" className="mb-4 md:mb-8" />}>
