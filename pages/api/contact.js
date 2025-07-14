@@ -1,6 +1,4 @@
-import sendgrid from "@sendgrid/mail";
-
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -10,25 +8,51 @@ export default async function handler(req, res) {
       return res.status(400).json({error: "All fields are required"});
     }
 
-    try {
-      await sendgrid.send({
-        to: "hearthustlefilms@gmail.com", // Replace with your email
-        from: "eric@hearthustlefilms.com", // Replace with a verified sender email (can be temporary)
-        subject: `New Contact Form Submission from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-        html: `
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Date:</strong> ${date}</p>
-          <p><strong>Location:</strong> ${location}</p>
-          <p><strong>Service Type:</strong> ${eventType}</p>
-          <p><strong>Budget:</strong> ${budget}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message}</p>
-        `,
-      });
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_USER, // your Gmail address
+        pass: process.env.GMAIL_APP_PASSWORD, // your Gmail app password
+      },
+    });
 
+    const mailOptions = {
+      from: process.env.GMAIL_USER,
+      to: "hearthustlefilms@gmail.com", // recipient
+      subject: `New Contact Form Submission from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      html: `
+  <html>
+    <body style="background-color: #121212; padding: 40px 20px; font-family: Arial, sans-serif; color: #f0f0f0;">
+      <table align="center" cellpadding="0" cellspacing="0" width="600" style="background-color: #1e1e1e; border-radius: 8px; padding: 30px;">
+        <tr>
+          <td align="center" style="color: #bf0b26; font-size: 24px; font-weight: bold; padding-bottom: 24px;">
+            New Contact Submission
+          </td>
+        </tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Name:</strong> ${name}</td></tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Email:</strong> ${email}</td></tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Phone:</strong> ${phone}</td></tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Date:</strong> ${date}</td></tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Location:</strong> ${location}</td></tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Service Type:</strong> ${eventType}</td></tr>
+        <tr><td style="padding: 8px 0;"><strong style="color:#9fc5e8;">Budget:</strong> ${budget}</td></tr>
+        <tr>
+          <td style="padding-top: 20px;">
+            <p style="margin: 0; color: #cccccc;"><strong style="color:#f5c242;">Message:</strong></p>
+            <div style="margin-top: 10px; background-color: #2a2a2a; padding: 15px; border-radius: 4px; color: #bf0b26; white-space: pre-wrap;">
+              ${message}
+            </div>
+          </td>
+        </tr>
+      </table>
+    </body>
+  </html>
+`,
+    };
+
+    try {
+      await transporter.sendMail(mailOptions);
       res.status(200).json({success: true});
     } catch (err) {
       console.error("Error sending email:", err);
