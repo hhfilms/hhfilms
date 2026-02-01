@@ -19,7 +19,7 @@ const About = () => {
         overlayClassName="top-2/3"
         mediaClassName="object-top"
         buttonLink=""
-        imagePosition="80% -10%"
+        imagePosition="0% 0%"
       />
 
       {/* About Section */}

@@ -80,7 +80,7 @@ export default function Home() {
       {/* instagram Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">newest instagram reels</h2>
+          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">instagram reels <span className="small text-sm">(click to play)</span> </h2>
         </div>
         <div className="py-2 md:py-10 px-4 sm:px-6 lg:px-8 w-full bg-main-100">
           <div>
@@ -92,7 +92,7 @@ export default function Home() {
       {/* youtube Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">newest youtube videos</h2>
+          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">youtube videos</h2>
         </div>
       </section>
       <section className="py-2 md:py-10 px-4 sm:px-6 lg:px-8  w-full bg-main-100">

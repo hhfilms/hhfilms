@@ -5,8 +5,8 @@ const Contact = () => {
   return (
     <>
       {/* Header Img */}
-      <div className="relative w-full h-80 sm:h-96 md:h-[500px] ">
-        <Image src="https://d3fpz3joletla1.cloudfront.net/sign.jpg" alt="do someting great" layout="fill" objectFit="cover" className="md:pt-0" />
+      <div className="relative w-full h-80 sm:h-96 md:h-[600px]">
+        <Image src="https://d3fpz3joletla1.cloudfront.net/sign.jpg" alt="do someting great" layout="fill" style={{objectFit: "cover", objectPosition: `-80% 45%`}} className="md:pt-0" />
       </div>
 
       {/* About Section */}

@@ -10,7 +10,6 @@ const InstagramFeed = () => {
   const [reels, setReels] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [isPlaying, setisPlaying] = useState(false);
 
   const videoRefs = useRef([]);
 
