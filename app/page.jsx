@@ -7,15 +7,15 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="w-full capitalize">
+    <div className="w-full uppercase">
       {/* Hero Section */}
       <section className="w-full">
         <HeroSection
-          containerClass="h-[75vh] sm:h-[60vh] md:h-[85vh]"
-          backgroundType="image"
-          backgroundSrc="https://d3fpz3joletla1.cloudfront.net/hero.jpg"
+          containerClass="h-[75vh] sm:h-[60vh] md:h-[80vh]"
+          backgroundType="video"
+          backgroundSrc="https://d3fpz3joletla1.cloudfront.net/Compilation.mp4"
           overlayContent={{
-            subheading: "welcome to",
+            subheading: "",
             heading: "heart & hustle Films",
             description: `heart in every shot | hustle in every frame`,
             buttonText: "contact",
@@ -30,16 +30,16 @@ export default function Home() {
       {/* services Section */}
       <section className="w-full">
         <div className="flex flex-col sm:flex-row md:items-center bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant  md:text-4xl flex-grow text-gray-100">services</h2>
-          <p className="hidden md:inline-block text-main-200 flex-grow  sm:text-right justify-end text md:text-lg">sports videography | event coverage | business promos | special occasions</p>
+          <h2 className="text-3xl font-assistant font-semibold  md:text-4xl flex-grow text-gray-100">services</h2>
+          {/* <p className="hidden md:inline-block text-main-200 flex-grow  sm:text-right justify-end text uppercase tracking-wide md:text-md">sports videography | event coverage | business promos | special occasions</p> */}
         </div>
         <div className="sm:p-6 lg:p-8 bg-main-100 border-t-1">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-4 text-xl">
             <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
               <div className="text-2xl md:text-5xl text-brand">
                 <SportsBasketballOutlined fontSize="inherit" className="md:mb-8 " />
-                <p className="text-lg md:text-3xl text-dark">sports videography</p>
-                <p className="mb-8 text-sm md:text-lg text-darkaccent">highlights | interviews | intros | full game | drone</p>
+                <p className="text-lg md:text-2xl text-dark font-semibold">sports</p>
+                <p className="mb-8 text-sm md:text-md text-darkaccent">hype reel | highlights | interviews | intros | recruiting film | full game</p>
               </div>
               <div className="text-sm mt-auto">
                 <Link href="/services/sports" className="inline-block text-center py-2 px-12 rounded-0 border-1 hover:border-dark hover:text-dark text-sm md:text-lg text-brand border-brand">
@@ -50,8 +50,8 @@ export default function Home() {
             <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
               <div className="text-2xl md:text-5xl text-brand">
                 <StorefrontOutlined fontSize="inherit" className="md:mb-8 " />
-                <p className="text-lg md:text-3xl text-dark">business & nonprofits</p>
-                <p className="mb-8 text-sm md:text-lg text-darkaccent">promos | testimonials | events | fundraising | stories</p>
+                <p className="text-lg md:text-2xl text-dark font-semibold">business & nonprofits</p>
+                <p className="mb-8 text-sm md:text-md text-darkaccent">promos | testimonials | corporate events | fundraising</p>
               </div>
               <div className="text-sm mt-auto">
                 <Link href="/services/business" className="inline-block text-center py-2 px-12 rounded-0 border-1 hover:border-dark hover:text-dark text-sm md:text-lg text-brand border-brand">
@@ -62,8 +62,8 @@ export default function Home() {
             <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
               <div className="text-2xl md:text-5xl text-brand">
                 <FavoriteBorderOutlined fontSize="inherit" className="md:mb-8 " />
-                <p className="text-lg md:text-3xl text-dark">special occasions</p>
-                <p className="mb-8 text-sm md:text-lg text-darkaccent">weddings | quinceañeras | birthdays | anniversary | vacations</p>
+                <p className="text-lg md:text-2xl text-dark font-semibold">special occasions</p>
+                <p className="mb-8 text-sm md:text-md text-darkaccent">weddings | quinceañeras | birthdays | anniversaries</p>
               </div>
               <div className="text-sm mt-auto">
                 <Link
@@ -80,7 +80,7 @@ export default function Home() {
       {/* instagram Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">instagram reels <span className="small text-sm">(click to play)</span> </h2>
+          <h2 className="text-3xl font-assistant font-semibold sm:text-4xl flex-grow text-gray-100">instagram reels <span className="small text-sm">(click to play)</span> </h2>
         </div>
         <div className="py-2 md:py-10 px-4 sm:px-6 lg:px-8 w-full bg-main-100">
           <div>
@@ -92,7 +92,7 @@ export default function Home() {
       {/* youtube Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant sm:text-4xl flex-grow text-gray-100">youtube videos</h2>
+          <h2 className="text-3xl font-assistant font-semibold sm:text-4xl flex-grow text-gray-100">youtube videos</h2>
         </div>
       </section>
       <section className="py-2 md:py-10 px-4 sm:px-6 lg:px-8  w-full bg-main-100">

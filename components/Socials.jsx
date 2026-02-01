@@ -12,7 +12,7 @@ const Socials = ({containerClass}) => {
   return (
     <div className={`${containerClass}`}>
       {socialMedia.map(({icon, link}, index) => (
-        <a key={index} href={link} target="_blank" rel="noopener noreferrer">
+        <a className="hover:text-gray-300" key={index} href={link} target="_blank" rel="noopener noreferrer">
           {icon}
         </a>
       ))}

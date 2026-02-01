@@ -1,10 +1,10 @@
 "use client";
 import {useEffect, useState, useRef} from "react";
-import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
+import {Navigation, Mousewheel, A11y, FreeMode, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Link from "next/link";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import Loading from "@/components/Loading";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const InstagramFeed = () => {
   const [reels, setReels] = useState([]);
@@ -63,18 +63,21 @@ const InstagramFeed = () => {
     <div className="text-gray-50">
       <Swiper
         className=""
-        modules={[Navigation, A11y, Mousewheel, FreeMode]}
+        modules={[Navigation, A11y, Mousewheel, FreeMode, Pagination]}
         mousewheel={false}
         spaceBetween={20}
         slidesPerView={2.2} // Defaults for mobile
-        breakpoints={{
-          640: {slidesPerView: 2.5, spaceBetween: 20}, // Tablet (sm breakpoint)
-          768: {slidesPerView: 3.5, spaceBetween: 30}, // Small laptop (md breakpoint)
-          1440: {slidesPerView: 5, spaceBetween: 50}, // Desktop (lg breakpoint)
-        }}
+        loop={true}
         freeMode={false}
         navigation
-        pagination={{clickable: true}}>
+        pagination={{
+          dynamicBullets: true,
+        }}
+        breakpoints={{
+          640: {slidesPerView: 3, spaceBetween: 20}, // Tablet (sm breakpoint)
+          768: {slidesPerView: 4, spaceBetween: 30}, // Small laptop (md breakpoint)
+          1440: {slidesPerView: 5, spaceBetween: 50}, // Desktop (lg breakpoint)
+        }}>
         {reels.map((reel, index) =>
           reel.media_type === "VIDEO" && reel.id !== "17941856960969628" ? (
             <SwiperSlide key={reel.id}>
@@ -103,7 +106,7 @@ const InstagramFeed = () => {
                 </Link>
               </div>
             </SwiperSlide>
-          ) : null
+          ) : null,
         )}
       </Swiper>
     </div>

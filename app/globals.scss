@@ -19,6 +19,8 @@ body {
     --background: #191919;
     --foreground: #f2efef;
     --brand: #c00c26;
+    --swiper-pagination-color: var(--brand); // Change the color of Swiper pagination dots
+    --swiper-navigation-color: var(--brand); // Change the color of Swiper arrows
   }
 }
 
@@ -26,12 +28,6 @@ input:-webkit-autofill {
   background-color: theme("colors.autofill") !important;
   -webkit-text-fill-color: theme("colors.autofillText") !important;
   box-shadow: 0 0 0px 1000px theme("colors.autofill") inset !important;
-}
-
-/* Change the color of Swiper arrows */
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--brand) !important;
 }
 
 /* Optional: Change hover color */
