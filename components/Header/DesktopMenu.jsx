@@ -14,18 +14,18 @@ export default function DesktopMenu({pathname}) {
 
   return (
     <div className="flex">
-      <Link href="/" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+      <Link href="/" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/" ? "text-gray-50 font-bold" : "text-gray-300"}`}>
         <span className="mr-1"></span> home
       </Link>
-      <Link href="/about" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/about" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+      <Link href="/about" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/about" ? "text-gray-50 font-bold" : "text-gray-300"}`}>
         <span className="mr-1"></span> about
       </Link>
-      <Link href="/contact" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+      <Link href="/contact" className={`hover:text-gray-50 uppercase mr-8 text-center ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-gray-300"}`}>
         <span className="mr-1"></span> contact
       </Link>
       <div>
         <Button
-          className={`hover:cursor-pointer hover:text-gray-50 uppercase text-base p-0 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-darkaccent"}`}
+          className={`hover:cursor-pointer hover:text-gray-50 uppercase text-base p-0 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-gray-300"}`}
           id="basic-button"
           aria-controls={open ? "basic-menu" : undefined}
           aria-haspopup="true"
@@ -39,7 +39,7 @@ export default function DesktopMenu({pathname}) {
           open={open}
           onClose={handleClose}
           MenuListProps={{
-            "aria-labelledby": "basic-button",
+              "aria-labelledby": "basic-button",
           }}>
           <MenuItem onClick={handleClose} className={`${pathname === "/services/sports" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
             <Link className="block w-full" href="/services/sports">
