@@ -4,14 +4,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
-body {
-  background: var(--background);
-  font-family: "Work Sans", serif;
-}
-
 :root {
   --background: #f2efef;
   --foreground: #191919;
+}
+
+body {
+  background: var(--background);
+  font-family: "Assistant", serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,12 +30,6 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px theme("colors.autofill") inset !important;
 }
 
-/* Optional: Change hover color */
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  color: var(--foreground) !important;
-}
-
 /* date input value color for contact form */
 .data-\[editable\=true\]\:text-foreground[data-editable="true"] {
   color: #1d1d1d !important;
@@ -47,4 +41,18 @@ input:-webkit-autofill {
 
 .multi-text-area textarea {
   padding-top: 10px;
+}
+
+/* Optional: Change hover color */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--foreground) !important;
+}
+
+/* Swiper sets overflow:hidden on its own container; override it here */
+.swiper {
+  padding-bottom: 30px !important; /* Add space for the pagination dots */
+}
+.swiper-pagination {
+  bottom: 0 !important; /* Position the dots at the bottom of the padding space */
 }

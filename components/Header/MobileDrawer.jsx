@@ -37,21 +37,21 @@ export default function MobileDrawer({props, pathname, mobileOpen, handleDrawerT
         display: {xs: "block", md: "none"},
         "& .MuiDrawer-paper": {boxSizing: "border-box", width: "100%", borderRadius: 0},
       }}>
-      <Box className="pt-28 text-lg">
+      <Box className="pt-28 text-lg capitalize">
         <Divider />
-        <Link onClick={handleMenuItemClick} href="/" className={`text-darkaccent uppercase px-2 py-1 block w-full ${pathname === "/" ? "text-gray-50 font-bold" : "text-darkaccent"}}`}>
+        <Link onClick={handleMenuItemClick} href="/" className={`text-gray-300 uppercase px-2 py-1 block w-full ${pathname === "/" ? "text-gray-50 font-bold" : "text-gray-300"}}`}>
           <span className="mr-1">
             <HomeOutlined className="md:hidden" />
           </span>
           home
         </Link>
-        <Link onClick={handleMenuItemClick} href="/about" className={`text-darkaccent uppercase px-2 py-1 block w-full ${pathname === "/about" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+        <Link onClick={handleMenuItemClick} href="/about" className={`text-gray-300 uppercase px-2 py-1 block w-full ${pathname === "/about" ? "text-gray-50 font-bold" : "text-gray-300"}`}>
           <span className="mr-1">
             <InfoOutlined className="md:hidden" />
           </span>
           about
         </Link>
-        <Link onClick={handleMenuItemClick} href="/contact" className={`uppercase px-2 py-1 block w-full ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-darkaccent"}`}>
+        <Link onClick={handleMenuItemClick} href="/contact" className={`uppercase px-2 py-1 block w-full ${pathname === "/contact" ? "text-gray-50 font-bold" : "text-gray-300"}`}>
           <span className="mr-1">
             <SmsOutlined className="md:hidden" />
           </span>
@@ -60,7 +60,7 @@ export default function MobileDrawer({props, pathname, mobileOpen, handleDrawerT
         <div className="relative inline-block text-left w-full">
           {/* Button to toggle the menu */}
           <Button
-            className={`hover:cursor-pointer hover:text-gray-50 uppercase text-xl px-2 py-1 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-darkaccent"}`}
+            className={`hover:cursor-pointer hover:text-gray-50 uppercase text-xl px-2 py-1 ${pathname.includes("/services/") ? "text-gray-50 font-bold" : "text-gray-300"}`}
             id="basic-button"
             aria-controls={mobileOpen ? "basic-menu" : undefined}
             aria-haspopup="true"

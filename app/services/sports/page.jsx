@@ -39,12 +39,12 @@ const Sports = () => {
           backgroundSrc="https://d3fpz3joletla1.cloudfront.net/p17-202-25502.jpg"
           overlayContent={{
             subheading: " ",
-            heading: "specializing in sports videography",
+            heading: "sports videography",
             description:
-              "our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom professional, and dynamic, with cutting-edge techniques to capture every thrilling moment for teams or individuals.",
-            buttonText: "contact",
+              "Our services include full-game filming, slow-motion highlights, drone videography for aerial shots, and coaching analysis videos. we create custom professional, and dynamic, with cutting-edge techniques to capture every thrilling moment for teams or individuals.",
+            buttonText: "Contact",
           }}
-          overlayClassName="top-2/3"
+          overlayClassName="top-1/3 lg:top-2/3"
           mediaClassName="object-top object-cover"
           buttonLink="/contact"
           imagePosition="center"
@@ -53,10 +53,10 @@ const Sports = () => {
         <section className="p-2 md:p-12">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
             <ServiceCard
-              title="solo | team game highlight"
+              title="Solo | Team Game Gighlight"
               price="$100 | $200"
               disclaimer="*aspect ratios can include vertical, horizontal, or both for multiple platforms"
-              description="footage of the most exciting and pivotal moments of the game. short form up to 90 seconds and long form available. includes individual clips for social sharing. tournament pricing also available - contact for details"
+              description="Footage of the most exciting and pivotal moments of the game. Short form up to 90 seconds and long form available. Includes individual clips for social sharing. Tournament pricing also available - contact for details"
               icon={<VideocamOutlined fontSize="inherit" className="mb-4 md:mb-8" />}>
               <div className="text-xl mb-8">
                 <Button
@@ -70,10 +70,10 @@ const Sports = () => {
             </ServiceCard>
 
             <ServiceCard
-              title="personal brand hype film"
+              title="Personal Brand Hype Film"
               price="$400"
               disclaimer="*filmed at an agreed upon location on a date that is not a game day"
-              description="have your athlete share their journey and tell a personal story to inspire coaches, recruiters, and fans with their dedication, passion, and achievements."
+              description="Have your athlete share their journey and tell a personal story to inspire coaches, recruiters, and fans with their dedication, passion, and achievements."
               icon={<VideoCameraFrontOutlined fontSize="inherit" className="mb-4 md:mb-8" />}>
               <div className="text-xl mb-8">
                 <Button
@@ -87,40 +87,40 @@ const Sports = () => {
             </ServiceCard>
 
             <ServiceCard
-              title="athlete interview"
+              title="Athlete Interview"
               price="$150"
               disclaimer="*filmed at an agreed upon location on a date that is not a game day"
-              description="a sit-down session where athletes open up about their journey, mindset, and goals—shot and edited for a clean, cinematic look. great for NIL, recruiting, or personal branding."
+              description="A sit-down session where athletes open up about their journey, mindset, and goals, shot and edited for a clean, cinematic look. Great for NIL, recruiting, or personal branding."
               icon={<RecordVoiceOverOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
             />
 
             <ServiceCard
-              title="player introductions"
+              title="Player Introductions"
               price="$150"
               disclaimer="*teams only"
-              description="a fun way to have your athletes introduce themselves with their position and a personal message."
+              description="A fun way to have your athletes introduce themselves with their position and a personal message."
               icon={<CampaignOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
             />
 
-            <ServiceCard
+            {/* <ServiceCard
               title="drone shots"
               price="$50"
               disclaimer="*subject to local laws and regulations"
               description="stunning aerial perspectives ideal for outdoor games or large-scale events"
               icon={<StadiumOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
-            />
+            /> */}
 
             <ServiceCard
-              title="full-game filming"
+              title="Full-Game Filming"
               price="$500"
               disclaimer="*includes 1 camera angle. does not include music, voiceover, or customization"
-              description="comprehensive coverage of every play, capturing all the action from start to finish."
+              description="Comprehensive coverage of every play, capturing all the action from start to finish."
               icon={<ScoreboardOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
             />
 
             <ServiceCard
-              title="custom film"
-              description="tailored to your specific goals, blending professionalism, creativity, and advanced technology."
+              title="Custom Sports Video"
+              description="Tailored to your specific goals, blending professionalism, creativity, and advanced technology."
               icon={<CameraEnhanceOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
             />
           </div>
@@ -129,7 +129,7 @@ const Sports = () => {
           <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
           <Link
             href="/contact"
-            className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-dark hover:text-dark outline-brand text-brand">
+            className="uppercase rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-dark hover:text-dark outline-brand text-brand">
             contact
           </Link>
           <p className="text-xs text-center text-darkaccent w-3/4 mx-auto my-8">

@@ -152,7 +152,7 @@ export default function FirstComponent() {
     // validateForm();
   };
   return (
-    <form className="w-full" onSubmit={handleSubmit}>
+    <form className="w-full capitalize" onSubmit={handleSubmit}>
       <Box className="mb-12">
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DesktopDatePicker
@@ -181,7 +181,7 @@ export default function FirstComponent() {
             helperText={errors.name ? errors.name : ""}
             onChange={handleInputChange}
             name="name"
-            placeholder="full name"
+            placeholder="Full Name"
             id="input-with-icon-adornment"
             slotProps={{
               input: {
@@ -205,7 +205,7 @@ export default function FirstComponent() {
             onChange={handleInputChange}
             name="email"
 
-            placeholder="email"
+            placeholder="Email"
             id="input-with-icon-adornment"
             slotProps={{
               input: {
@@ -229,7 +229,7 @@ export default function FirstComponent() {
             value={formData.phone}
             onChange={handlePhoneChange}
             name="phone"
-            placeholder="phone"
+            placeholder="Phone"
             id="input-with-icon-adornment"
             slotProps={{
               input: {
@@ -318,7 +318,7 @@ export default function FirstComponent() {
             onChange={handleInputChange}
             name="location"
             value={formData.location}
-            placeholder="location"
+            placeholder="Location"
             id="input-with-icon-adornment"
             slotProps={{
               input: {
@@ -356,7 +356,7 @@ export default function FirstComponent() {
               ),
             },
           }}
-          placeholder="details about your project or event"
+          placeholder="Details about your project or event"
           id="outlined-multiline-flexible"
           label=""
           multiline
@@ -364,7 +364,7 @@ export default function FirstComponent() {
         />
       </Box>
       <Box className="mb-12 text-brand">
-        <button color="inherit" className="px-4 py-2 outline outline-1 outline-dark text-dark rounded-full hover:outline-brand hover:text-brand" type="submit" disabled={loading}>
+        <button color="inherit" className="uppercase px-4 py-2 outline outline-1 outline-dark text-dark rounded-full hover:outline-brand hover:text-brand" type="submit" disabled={loading}>
           {loading ? "Submitting..." : "Send Message"}
         </button>
       </Box>

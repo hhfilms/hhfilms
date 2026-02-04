@@ -40,10 +40,10 @@ const specialoccasion = () => {
           subheading: " ",
           heading: "special occasions",
           description:
-            "life’s most meaningful celebrations deserve to be remembered in a way that captures their beauty and significance. whether it’s a wedding, quinceañera, birthday, or any other milestone, we’re here to tell your story with care and creativity. using professional equipment and expert editing, we craft films that preserve every laugh, tear, and heartfelt moment, so you can relive them for years to come.",
+            "Life’s most meaningful celebrations deserve to be remembered in a way that captures their beauty and significance. Whether it’s a wedding, quinceañera, birthday, or any other milestone, we’re here to tell your story with care and creativity. Using professional equipment and expert editing, we craft films that preserve every laugh, tear, and heartfelt moment, so you can relive them for years to come.",
           buttonText: "contact",
         }}
-        overlayClassName="top-2/3"
+        overlayClassName="top-1/4 lg:top-2/3"
         mediaClassName="object-top object-cover"
         buttonLink="/contact"
         imagePosition="center"
@@ -51,10 +51,10 @@ const specialoccasion = () => {
       <section className="p-2 md:p-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 text-xl">
           <ServiceCard
-            title="weddings"
+            title="Weddings"
             price="$500"
             disclaimer="*includes options for short and full-length edits"
-            description="beautifully crafted films that capture every detail, from the ceremony to the reception. customizable to fit your style and preferences"
+            description="Beautifully crafted films that capture every detail, from the ceremony to the reception. Customizable to fit your style and preferences"
             icon={<Diversity1Outlined fontSize="inherit" className="mb-4 md:mb-8" />}>
             <div className="text-xl mb-8">
               <Button
@@ -68,56 +68,56 @@ const specialoccasion = () => {
           </ServiceCard>
 
           <ServiceCard
-            title="quinceañeras"
+            title="Quinceañeras"
             price="$500"
             disclaimer="*includes options for short and full-length edits"
-            description="stunning coverage of your special day, highlighting traditions, dances, and family moments"
+            description="Stunning coverage of your special day, highlighting traditions, dances, and family moments"
             icon={<DiamondOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
           <ServiceCard
-            title="birthday celebrations"
+            title="Birthdays"
             price="$300"
             disclaimer=""
-            description="vibrant and fun videos capturing the energy and joy of your birthday celebration. ideal for milestone birthdays and family gatherings"
+            description="Vibrant and fun videos capturing the energy and joy of your birthday celebration. Ideal for milestone birthdays and family gatherings"
             icon={<CelebrationOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
           <ServiceCard
-            title="anniversary films"
+            title="Anniversaries"
             price="$200"
             disclaimer=""
-            description="celebrate your love story with a film that highlights your journey and special moments together. perfect for sharing at parties or keeping as a cherished memory"
+            description="Celebrate your love story with a film that highlights your journey and special moments together. Perfect for sharing at parties or keeping as a cherished memory"
             icon={<CakeOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
 
-          <ServiceCard
+          {/* <ServiceCard
             title="vacation edits"
             price="$100"
             disclaimer=""
             description="do you have footage of a recent trip? let us create a memorable film highliting the best moments for you to have and share for a lifetime"
             icon={<WbSunnyOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
-          />
+          /> */}
 
           <ServiceCard
-            title="custom film"
-            description="tailored to any celebration or special moment, blending creativity and professionalism to tell your story"
+            title="Custom Film"
+            description="Tailored to any celebration or special moment, blending creativity and professionalism to tell your story"
             icon={<CameraEnhanceOutlined fontSize="inherit" className="mb-4 md:mb-8" />}
           />
         </div>
       </section>
 
       <section className="mb-12 text-dark text-center">
-        <p className="text-xl my-8 px-4">have a unique vision in mind? let us bring it to life with a custom video tailored just for you.</p>
-        <Link href="/contact" className="rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-dark hover:text-dark outline-brand text-brand">
+        <p className="text-xl my-8 px-4">Have a unique vision in mind? Let us bring it to life with a custom video tailored just for you.</p>
+        <Link href="/contact" className="uppercase rounded-full px-6 inline-block py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-dark hover:text-dark outline-brand text-brand">
           contact
         </Link>
         <p className="text-xs text-center text-darkaccent w-1/2 m-auto my-8">
-          *prices displayed on this site are base prices and may vary depending on customization, additional features, or specific requirements. Please contact us for a detailed quote
+          *Prices displayed on this site are base prices and may vary depending on customization, additional features, or specific requirements. Please contact us for a detailed quote
         </p>
       </section>
 
-      <div className="pl-24 py-4 text-xs text-gray-400">
+      <div className="pl-4 lg:pl-24 py-4 text-xs text-gray-400">
         photo by <a href="https://unsplash.com/@michaelbenz?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">michael benz</a> on
         <a href="https://unsplash.com/photos/person-holding-clear-wine-glass-eiJfBem7cPw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"> unsplash</a>
       </div>

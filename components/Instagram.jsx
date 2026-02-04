@@ -100,7 +100,7 @@ const InstagramFeed = () => {
                 </p>
               </div>
 
-              <div className="font-light text-sm justify-center flex ">
+              <div className="font-light text-sm justify-center flex capitalize">
                 <Link className="inline-flex items-center text-center p-4 mb-2 text-dark hover:text-brand" href={`https://instagram.com/reel/${reel.shortcode}`} target="_blank">
                   <InstagramIcon color="inherit" /> <span className="ml-1 hidden md:inline-block">view on instagram</span>
                 </Link>

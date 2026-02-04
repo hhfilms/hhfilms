@@ -34,12 +34,13 @@ export default function DesktopMenu({pathname}) {
           services & pricing
         </Button>
         <Menu
+          className="capitalize"
           id="basic-menu"
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
           MenuListProps={{
-              "aria-labelledby": "basic-button",
+            "aria-labelledby": "basic-button",
           }}>
           <MenuItem onClick={handleClose} className={`${pathname === "/services/sports" ? "bg-brand text-gray-50 pointer-events-none" : "hover:text-gray-50 hover:bg-brand"}`}>
             <Link className="block w-full" href="/services/sports">

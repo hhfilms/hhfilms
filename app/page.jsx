@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="w-full uppercase">
+    <div className="w-full">
       {/* Hero Section */}
       <section className="w-full">
         <HeroSection
@@ -17,7 +17,7 @@ export default function Home() {
           overlayContent={{
             subheading: "",
             heading: "heart & hustle Films",
-            description: `heart in every shot | hustle in every frame`,
+            description: `Heart in every shot | Hustle in every frame`,
             buttonText: "contact",
           }}
           buttonLink="/contact"
@@ -28,13 +28,13 @@ export default function Home() {
       </section>
 
       {/* services Section */}
-      <section className="w-full">
+      <section className="w-full capitalize">
         <div className="flex flex-col sm:flex-row md:items-center bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant font-semibold  md:text-4xl flex-grow text-gray-100">services</h2>
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">We create content for</h2>
           {/* <p className="hidden md:inline-block text-main-200 flex-grow  sm:text-right justify-end text uppercase tracking-wide md:text-md">sports videography | event coverage | business promos | special occasions</p> */}
         </div>
         <div className="sm:p-6 lg:p-8 bg-main-100 border-t-1">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-4 text-xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 text-xl">
             <div className="px-4 text-center mb-4 md:p-0 flex flex-col">
               <div className="text-2xl md:text-5xl text-brand">
                 <SportsBasketballOutlined fontSize="inherit" className="md:mb-8 " />
@@ -80,7 +80,9 @@ export default function Home() {
       {/* instagram Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant font-semibold sm:text-4xl flex-grow text-gray-100">instagram reels <span className="small text-sm">(click to play)</span> </h2>
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">
+            instagram reels <span className="small text-sm normal-case">(click to play)</span>{" "}
+          </h2>
         </div>
         <div className="py-2 md:py-10 px-4 sm:px-6 lg:px-8 w-full bg-main-100">
           <div>
@@ -92,18 +94,20 @@ export default function Home() {
       {/* youtube Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-3xl font-assistant font-semibold sm:text-4xl flex-grow text-gray-100">youtube videos</h2>
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">YouTube Videos</h2>
         </div>
-      </section>
-      <section className="py-2 md:py-10 px-4 sm:px-6 lg:px-8  w-full bg-main-100">
-        <YouTubeGallery />
+        <div className="md:py-10 md:px-6 xl:px-8 w-full bg-main-100">
+          <div>
+            <YouTubeGallery />
+          </div>
+        </div>
         <div className="flex justify-center mt-6">
           <a
             target="_blank"
             href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
             color="#fff"
-            className="inline-flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-darkaccent hover:text-darkaccent outline-brand text-brand">
-            more on youtube <YouTube fontSize="small" className="ml-2" />
+            className="mb-6 inline-flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-darkaccent hover:text-darkaccent outline-brand text-brand">
+            More on YouTube <YouTube fontSize="small" className="ml-2" />
           </a>
         </div>
       </section>

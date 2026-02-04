@@ -1,6 +1,6 @@
 "use client";
 import {useEffect} from "react";
-import {Navigation, Mousewheel, A11y, FreeMode} from "swiper/modules";
+import {Navigation, Mousewheel, A11y, FreeMode, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import Loading from "@/components/Loading";
 import useYouTubeStore from "@/store/youtubeStore"; // Import the Zustand store
@@ -19,15 +19,18 @@ const YouTubeGallery = () => {
   return isLoading ? (
     <Loading />
   ) : (
-    <div className="text-gray-50 w-full">
+    <div className="text-gray-50 w-full youtube-swiper overflow-visible">
       <Swiper
         className=""
-        modules={[Navigation, A11y, Mousewheel, FreeMode]}
+        modules={[Navigation, A11y, Mousewheel, FreeMode, Pagination]}
         mousewheel={false}
         spaceBetween={20}
         freeMode={false}
         navigation
-        pagination={{clickable: true}}
+        loop={true}
+        pagination={{
+          dynamicBullets: true,
+        }}
         slidesPerView={1}
         breakpoints={{
           640: {slidesPerView: 1, spaceBetween: 20},
@@ -50,7 +53,7 @@ const YouTubeGallery = () => {
                 <h2 className="md:text-xl sm:text-lg text-center">{item.title}</h2>
               </div>
             </SwiperSlide>
-          ) : null
+          ) : null,
         )}
       </Swiper>
     </div>
