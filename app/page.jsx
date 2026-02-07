@@ -134,7 +134,7 @@ export default function Home() {
 
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">Business</h2>
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">Business & Non Profits</h2>
         </div>
         <div className="md:py-10 md:px-6 xl:px-8 w-full bg-main-100">
           <div>
