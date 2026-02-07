@@ -1,10 +1,25 @@
 "use client";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
+import {useEffect, useState} from "react";
 
 export default function HeroSection({backgroundType, backgroundSrc, overlayContent, mediaClassName = "", containerClass = "", overlayClassName = "", buttonLink, imagePosition}) {
   const pathname = usePathname();
   const isVideo = backgroundType === "video";
+
+  const [mobileVideoObjectClass, setMobileVideoObjectClass] = useState("object-center");
+
+  useEffect(() => {
+    if (!isVideo) return;
+
+    // Tailwind `sm` breakpoint is 640px. Only randomize on mobile.
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
+    if (!isMobile) return;
+
+    const options = ["object-left", "object-center", "object-right"];
+    const randomClass = options[Math.floor(Math.random() * options.length)];
+    setMobileVideoObjectClass(randomClass);
+  }, [isVideo]);
 
   return (
     <div className={`bg-dark relative w-full overflow-hidden ${containerClass}`}>
@@ -19,7 +34,7 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
               muted
               playsInline
               preload="auto"
-              className={`absolute inset-0 w-full h-full object-cover z-0 ${mediaClassName}`}
+              className={`absolute inset-0 w-full h-full object-cover ${mobileVideoObjectClass} z-0 ${mediaClassName}`}
             >
               <source src={backgroundSrc} type="video/mp4" />
             </video>
