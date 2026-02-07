@@ -11,7 +11,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full">
         <HeroSection
-          containerClass="h-[75vh] sm:h-[60vh] md:h-[80vh]"
+          containerClass="h-[60vh]"
           backgroundType="video"
           backgroundSrc="https://d3fpz3joletla1.cloudfront.net/Compilation.mp4"
           overlayContent={{
@@ -21,7 +21,7 @@ export default function Home() {
             buttonText: "contact",
           }}
           buttonLink="/contact"
-          mediaClassName="object-cover"
+          mediaClassName="h-full w-full object-cover"
           overlayClassName="top-1/2"
           imagePosition="center"
         />
@@ -81,7 +81,7 @@ export default function Home() {
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
           <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">
-            instagram reels <span className="small text-sm normal-case">(click to play)</span>{" "}
+            Social Media <span className="small text-sm normal-case">(click to play)</span>{" "}
           </h2>
         </div>
         <div className="py-2 md:py-10 px-4 sm:px-6 lg:px-8 w-full bg-main-100">
@@ -94,11 +94,51 @@ export default function Home() {
       {/* youtube Section */}
       <section className="w-full">
         <div className="bg-main-950 py-4 px-8">
-          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">YouTube Videos</h2>
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">Sports</h2>
         </div>
         <div className="md:py-10 md:px-6 xl:px-8 w-full bg-main-100">
           <div>
-            <YouTubeGallery />
+            <YouTubeGallery tag="sports"/>
+          </div>
+        </div>
+        <div className="flex justify-center mt-6">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
+            color="#fff"
+            className="mb-6 inline-flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-darkaccent hover:text-darkaccent outline-brand text-brand">
+            More on YouTube <YouTube fontSize="small" className="ml-2" />
+          </a>
+        </div>
+      </section>
+
+      <section className="w-full">
+        <div className="bg-main-950 py-4 px-8">
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">Special Occasions</h2>
+        </div>
+        <div className="md:py-10 md:px-6 xl:px-8 w-full bg-main-100">
+          <div>
+            <YouTubeGallery tag="special occasion"/>
+          </div>
+        </div>
+        <div className="flex justify-center mt-6">
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCWqeQRgDPEryMbcJBfPITvQ"
+            color="#fff"
+            className="mb-6 inline-flex items-center rounded-full px-6 py-3 text-sm sm:text-base lg:text-lg font-medium outline outline-1 hover:outline-darkaccent hover:text-darkaccent outline-brand text-brand">
+            More on YouTube <YouTube fontSize="small" className="ml-2" />
+          </a>
+        </div>
+      </section>
+
+      <section className="w-full">
+        <div className="bg-main-950 py-4 px-8">
+          <h2 className="text-2xl font-sans lg:text-3xl flex-grow text-gray-100 uppercase">Business</h2>
+        </div>
+        <div className="md:py-10 md:px-6 xl:px-8 w-full bg-main-100">
+          <div>
+            <YouTubeGallery tag="promo"/>
           </div>
         </div>
         <div className="flex justify-center mt-6">

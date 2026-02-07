@@ -7,13 +7,20 @@ export default function HeroSection({backgroundType, backgroundSrc, overlayConte
   const isVideo = backgroundType === "video";
 
   return (
-    <div className={`bg-dark relative w-full overflow-hidden ${containerClass} ${isVideo ? "h-auto min-h-0" : ""}`}>
+    <div className={`bg-dark relative w-full overflow-hidden ${containerClass}`}>
       {/* Hero Section */}
-      <div className={`relative w-full ${isVideo ? "h-auto" : "h-full"} z-0`}>
+      <div className="relative w-full h-full z-0">
         {/* Background */}
         {backgroundType === "video" ? (
           <>
-            <video autoPlay loop muted playsInline preload="auto" className={`relative w-full max-w-full h-auto z-0 ${mediaClassName}`}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className={`absolute inset-0 w-full h-full object-cover z-0 ${mediaClassName}`}
+            >
               <source src={backgroundSrc} type="video/mp4" />
             </video>
             {/* Overlay layer */}

@@ -5,7 +5,7 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import Loading from "@/components/Loading";
 import useYouTubeStore from "@/store/youtubeStore"; // Import the Zustand store
 
-const YouTubeGallery = () => {
+const YouTubeGallery = ({ tag }) => {
   const {videos, isLoading, error, refreshVideos} = useYouTubeStore();
 
   useEffect(() => {
@@ -39,7 +39,7 @@ const YouTubeGallery = () => {
           1900: {slidesPerView: 4, spaceBetween: 50},
         }}>
         {videos?.map((item) =>
-          item.tags.includes("sports") ? (
+          (!tag || item.tags.includes(tag)) ? (
             <SwiperSlide key={item.id}>
               <div className="relative w-full pb-[56.25%]">
                 <iframe
@@ -60,4 +60,10 @@ const YouTubeGallery = () => {
   );
 };
 
+
+YouTubeGallery.defaultProps = {
+  tag: null,
+};
+
 export default YouTubeGallery;
+``
